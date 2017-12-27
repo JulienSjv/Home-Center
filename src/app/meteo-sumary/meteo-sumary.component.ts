@@ -17,8 +17,17 @@ export class MeteoSumaryComponent implements OnInit {
   coords: any;
 
   ngOnInit() {
-    this.getCoords();
+    // this.getCoords();
     // this.getWeather();
+    this.getWeatherCity('Montpellier');
+  }
+
+  getWeatherCity(city) {
+    this._meteoService.searchCity(city).subscribe(
+      res => {
+        this.weather = res;
+      }
+    )
   }
 
   getCoords() {
@@ -26,11 +35,6 @@ export class MeteoSumaryComponent implements OnInit {
       res => {
         console.log(res)
         this.coords = res;
-        this._meteoService.searchLatLong(this.coords.lat, this.coords.long).subscribe(
-          data => {
-            console.log(data)
-            this.weather = data;
-          })
       })
   }
 

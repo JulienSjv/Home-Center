@@ -9,18 +9,18 @@ import { MeteoService } from '../meteo.service';
 })
 export class MeteoComponent implements OnInit {
 
-  meteo;
+  weather;
   cityName;
   coords;
 
-  constructor(private meteoService: MeteoService) { }
+  constructor(private _meteoService: MeteoService) { }
 
   ngOnInit() {
-    this.getMeteo();
+    // this.getMeteo();
   }
 
   getMeteo(): void {
-    this.meteoService.getCoords()
+    this._meteoService.getCoords()
       .subscribe(res => this.coords = res.json());
       console.log(this.coords)
     // this.meteoService.searchLatLong(this.coords.lat, this.coords.long)
@@ -28,10 +28,11 @@ export class MeteoComponent implements OnInit {
   }
 
   searchCity() {
-    this.meteoService.searchCity(this.cityName)
+    this._meteoService.searchCity(this.cityName)
       .subscribe(
       (res) => {
-        this.meteo = res;
+        console.log(res)
+        this.weather = res;
       }
       )
   }
