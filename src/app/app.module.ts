@@ -15,7 +15,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { AccueilComponent } from './accueil/accueil.component';
 import { MeteoDetailsComponent } from './meteo-details/meteo-details.component';
 import { MeteoSumaryComponent } from './meteo-sumary/meteo-sumary.component';
-
+import { RoundPipe } from './round.pipe';
+import { MeteoIcon} from './meteo-icon.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,9 @@ import { MeteoSumaryComponent } from './meteo-sumary/meteo-sumary.component';
     MessagesComponent,
     AccueilComponent,
     MeteoDetailsComponent,
-    MeteoSumaryComponent
+    MeteoSumaryComponent,
+    RoundPipe,
+    MeteoIcon
   ],
   imports: [
     BrowserModule,

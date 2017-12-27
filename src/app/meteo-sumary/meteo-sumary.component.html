@@ -1,0 +1,14 @@
+<div class="container-meteo-sumary">
+  <a class="nav-link" routerLink="/meteo">
+    <div class="card border-light   mb-3" style="max-width: 20rem;">
+      <div class="card-header">Météo d'aujourd'hui </div>
+      <div class="card-body text-dark">
+        <h4 class="card-title">{{weather.name}} {{weather.main.temp | round}}°C</h4>
+        <div class="icon-meteo">
+          <img src="{{weather.weather[0].icon | meteoicon}}" alt="">
+        </div>
+        <!-- <p class="card-text">{{weather.weather[0].description}}</p> -->
+      </div>
+    </div>
+  </a>
+</div>

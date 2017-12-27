@@ -17,6 +17,14 @@ export class MeteoComponent implements OnInit {
 
   ngOnInit() {
     // this.getMeteo();
+    this.getWeatherCity('Montpellier');
+  }
+  getWeatherCity(city) {
+    this._meteoService.searchCity(city).subscribe(
+      res => {
+        this.weather = res;
+      }
+    )
   }
 
   getMeteo(): void {
