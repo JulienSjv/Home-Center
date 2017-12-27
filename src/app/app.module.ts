@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { AlertModule } from 'ngx-bootstrap';
+
 import { MeteoComponent } from './meteo/meteo.component';
 
 import { MeteoService } from './meteo.service';
@@ -27,7 +29,8 @@ import { MeteoSumaryComponent } from './meteo-sumary/meteo-sumary.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpModule
+    HttpModule,
+    AlertModule.forRoot()
   ],
   providers: [MeteoService, MessageService],
   bootstrap: [AppComponent]
