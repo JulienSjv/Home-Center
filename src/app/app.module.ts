@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpModule }    from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MeteoComponent } from './meteo/meteo.component';
@@ -12,6 +12,7 @@ import { MessageService } from './message.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { AccueilComponent } from './accueil/accueil.component';
 import { MeteoDetailsComponent } from './meteo-details/meteo-details.component';
+import { MeteoSumaryComponent } from './meteo-sumary/meteo-sumary.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +20,14 @@ import { MeteoDetailsComponent } from './meteo-details/meteo-details.component';
     MeteoComponent,
     MessagesComponent,
     AccueilComponent,
-    MeteoDetailsComponent
+    MeteoDetailsComponent,
+    MeteoSumaryComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpModule
   ],
   providers: [MeteoService, MessageService],
   bootstrap: [AppComponent]
