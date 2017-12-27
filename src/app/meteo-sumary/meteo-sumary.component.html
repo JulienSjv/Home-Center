@@ -1,4 +1,4 @@
-<div class="container-meteo-sumary">
+<div *ngIf="weather" class="container-meteo-sumary">
   <a class="nav-link" routerLink="/meteo">
     <div class="card border-light   mb-3" style="max-width: 20rem;">
       <div class="card-header">Météo d'aujourd'hui </div>
@@ -11,4 +11,8 @@
       </div>
     </div>
   </a>
+</div>
+
+<div *ngIf="coords">
+  coords: {{coords.lat}}
 </div>

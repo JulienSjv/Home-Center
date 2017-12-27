@@ -8,6 +8,8 @@ import { MeteoService } from '../meteo.service';
 })
 export class MeteoSumaryComponent implements OnInit {
 
+ geoLoc = false;
+
   constructor(private _meteoService: MeteoService) {
 
 
@@ -17,32 +19,30 @@ export class MeteoSumaryComponent implements OnInit {
   coords: any;
 
   ngOnInit() {
-    // this.getCoords();
-    // this.getWeather();
-    this.getWeatherCity('Montpellier');
+
+    this.geoLoc? this.getWeather() : this.getWeatherCity('Montpellier');
   }
 
   getWeatherCity(city) {
     this._meteoService.searchCity(city).subscribe(
       res => {
+        console.log(res);
         this.weather = res;
       }
     )
   }
 
-  getCoords() {
+  getWeather() {
     this._meteoService.getCoords().subscribe(
       res => {
         console.log(res)
-        this.coords = res;
+        this._meteoService.searchLatLong(res.lat, res.lon).subscribe(
+          data => {
+            console.log(data)
+            this.weather = data;
+          })
       })
   }
 
-  getWeather() {
-    this._meteoService.searchLatLong(this.coords.lat, this.coords.long).subscribe(
-      data => {
-        console.log(data)
-        this.weather = data;
-      })
-  }
+ 
 }
