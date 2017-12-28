@@ -1,7 +1,32 @@
-<mat-card class="card-feed-entry">
-  <mat-card-title><h4>{{feed.title}}</h4></mat-card-title>
-  <mat-card-subtitle>{{feed.author}} - {{feed.pubDate | dateTimeFormat}}</mat-card-subtitle>
+<div class="card">
+  <h4 class="card-header">
+    <span class="badge badge-primary">
+      [{{feed.categories[0]}}]</span>
+    {{feed.title}}</h4>
+  <div class="card-body">
+    <h4 class="card-title">
+
+      {{feed.author}} - {{feed.pubDate | dateTimeFormat}}</h4>
+    <p class="card-text">{{feed.description | stripHtmlTags}}</p>
+    <a href="{{feed.link}}">
+      <button type="button" class="btn btn-outline-info">Lire la suite</button>
+    </a>
+  </div>
+</div>
+
+
+<!-- <mat-card class="card-feed-entry">
+  <mat-card-title>
+    <h4>{{feed.title}}</h4>
+  </mat-card-title>
+  <mat-card-subtitle>
+    <span class="badge badge-primary"><h5>{{feed.categories[0]}}</h5></span>
+    {{feed.author}} - {{feed.pubDate | dateTimeFormat}}
+  </mat-card-subtitle>
   <mat-card-content>{{feed.description | keepHtml}}</mat-card-content>
-  <span><a href="{{feed.link}}"><button type="button" class="btn btn-outline-info">Lire la suite</button>
-  </a></span>
-</mat-card>
+  <span>
+    <a href="{{feed.link}}">
+      <button type="button" class="btn btn-outline-info">Lire la suite</button>
+    </a>
+  </span>
+</mat-card> -->

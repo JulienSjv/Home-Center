@@ -1,0 +1,15 @@
+<div class="container-feed">
+    <div class="container-feed-header">
+      <div class="container-feed-title">
+        <h2>Next Impact</h2>
+      </div>
+      <div class="container-feed-icon">
+        <a (click)="refreshFeed()">
+          <i class="fas fa-sync-alt fa-2x"></i>
+        </a>
+      </div>
+    </div>
+    <div class="container-feed-contenu">
+      <app-feed-card *ngFor="let feed of feeds" [feed]="feed"></app-feed-card>
+    </div>
+  </div>

@@ -28,6 +28,7 @@ import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
 // Material design.
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { EscapeHtmlPipe } from './pipe/keep-html.pipe';
+import { FeedNxiComponent } from './feed-nxi/feed-nxi.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { EscapeHtmlPipe } from './pipe/keep-html.pipe';
     DateTimeFormatPipe,
     FeedCardComponent,
     StripHtmlTagsPipe,
-    EscapeHtmlPipe
+    EscapeHtmlPipe,
+    FeedNxiComponent
   ],
   imports: [
     BrowserModule,

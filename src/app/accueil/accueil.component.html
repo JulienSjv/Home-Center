@@ -1,19 +1,2 @@
 <app-meteo-sumary></app-meteo-sumary>
-
-<div class="container-feed">
-  <mat-toolbar color="primary">
-
-    <span class="center">
-      <h2>Flux RSS: Next Impact</h2>
-    </span>
-    <span class="left feed-icon">
-      <button mat-button (click)="refreshFeed()">
-        <mat-icon>refresh</mat-icon>
-      </button>
-    </span>
-  </mat-toolbar>
-
-  <div class="container-feed-contenu">
-    <app-feed-card *ngFor="let feed of feeds" [feed]="feed"></app-feed-card>
-  </div>
-</div>
+<app-feed-nxi></app-feed-nxi>

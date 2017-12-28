@@ -8,8 +8,8 @@ import { MeteoService } from '../meteo.service';
 })
 export class MeteoSumaryComponent implements AfterViewInit, OnDestroy, OnInit {
 
-  geoLoc = false;
-  tempo = 1800000;
+  private geoLoc = false;
+  private tempo = 1800000;
 
   constructor(private _meteoService: MeteoService) {
 
