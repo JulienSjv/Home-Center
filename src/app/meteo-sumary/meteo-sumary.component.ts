@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { MeteoService } from '../meteo.service';
 
 @Component({
@@ -6,9 +6,10 @@ import { MeteoService } from '../meteo.service';
   templateUrl: './meteo-sumary.component.html',
   styleUrls: ['./meteo-sumary.component.css']
 })
-export class MeteoSumaryComponent implements OnInit {
+export class MeteoSumaryComponent implements AfterViewInit, OnDestroy, OnInit {
 
- geoLoc = false;
+  geoLoc = false;
+  tempo = 1800000;
 
   constructor(private _meteoService: MeteoService) {
 
@@ -17,32 +18,50 @@ export class MeteoSumaryComponent implements OnInit {
 
   weather: any;
   coords: any;
+  time: Date;
+  intervalId: any;
 
   ngOnInit() {
 
-    this.geoLoc? this.getWeather() : this.getWeatherCity('Montpellier');
+    // this.geoLoc ? this.getWeather() : this.getWeatherCity('Montpellier');
+  }
+
+  ngAfterViewInit() {
+    this.geoLoc ? this.getWeather() : this.getWeatherCity('Montpellier');
+
   }
 
   getWeatherCity(city) {
+
     this._meteoService.searchCity(city).subscribe(
       res => {
-        console.log(res);
+        // console.log(res);
         this.weather = res;
+        this.time = new Date();
       }
     )
+    this.intervalId = setInterval(() => {
+      this.getWeatherCity(city);
+    }, this.tempo);
   }
 
   getWeather() {
+
     this._meteoService.getCoords().subscribe(
       res => {
-        console.log(res)
         this._meteoService.searchLatLong(res.lat, res.lon).subscribe(
           data => {
-            console.log(data)
             this.weather = data;
           })
       })
+    this.intervalId = setInterval(() => {
+      this.getWeather();
+    }, this.tempo);
   }
 
- 
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+  }
+
+
 }

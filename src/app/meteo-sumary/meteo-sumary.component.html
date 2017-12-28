@@ -7,12 +7,14 @@
         <div class="icon-meteo">
           <img src="{{weather.weather[0].icon | meteoicon}}" alt="">
         </div>
-        <!-- <p class="card-text">{{weather.weather[0].description}}</p> -->
+      </div>
+      <div class="date">
+        <span class="card-text">{{time | dateTimeFormat}}</span>
       </div>
     </div>
   </a>
 </div>
 
-<div *ngIf="coords">
+<!-- <div *ngIf="coords">
   coords: {{coords.lat}}
-</div>
+</div> -->

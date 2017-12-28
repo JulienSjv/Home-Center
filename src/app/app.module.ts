@@ -15,8 +15,11 @@ import { AppRoutingModule } from './/app-routing.module';
 import { AccueilComponent } from './accueil/accueil.component';
 import { MeteoDetailsComponent } from './meteo-details/meteo-details.component';
 import { MeteoSumaryComponent } from './meteo-sumary/meteo-sumary.component';
-import { RoundPipe } from './round.pipe';
-import { MeteoIcon} from './meteo-icon.pipe';
+
+import { RoundPipe } from './pipe/round.pipe';
+import { MeteoIcon} from './pipe/meteo-icon.pipe';
+import {DateTimeFormatPipe} from './pipe/date-time.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,8 @@ import { MeteoIcon} from './meteo-icon.pipe';
     MeteoDetailsComponent,
     MeteoSumaryComponent,
     RoundPipe,
-    MeteoIcon
+    MeteoIcon,
+    DateTimeFormatPipe
   ],
   imports: [
     BrowserModule,
