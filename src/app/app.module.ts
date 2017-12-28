@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-import { HttpModule }    from '@angular/http';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AlertModule } from 'ngx-bootstrap';
@@ -9,16 +9,26 @@ import { AlertModule } from 'ngx-bootstrap';
 import { MeteoComponent } from './meteo/meteo.component';
 
 import { MeteoService } from './meteo.service';
-import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
+import { FeedService } from './feed-service.service';
+
+import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { AccueilComponent } from './accueil/accueil.component';
 import { MeteoDetailsComponent } from './meteo-details/meteo-details.component';
 import { MeteoSumaryComponent } from './meteo-sumary/meteo-sumary.component';
+import { FeedCardComponent } from './feed-card/feed-card.component';
 
 import { RoundPipe } from './pipe/round.pipe';
-import { MeteoIcon} from './pipe/meteo-icon.pipe';
-import {DateTimeFormatPipe} from './pipe/date-time.pipe';
+import { MeteoIcon } from './pipe/meteo-icon.pipe';
+import { DateTimeFormatPipe } from './pipe/date-time.pipe';
+import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
+
+
+// Material design.
+import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
+import { EscapeHtmlPipe } from './pipe/keep-html.pipe';
+
 
 @NgModule({
   declarations: [
@@ -30,16 +40,23 @@ import {DateTimeFormatPipe} from './pipe/date-time.pipe';
     MeteoSumaryComponent,
     RoundPipe,
     MeteoIcon,
-    DateTimeFormatPipe
+    DateTimeFormatPipe,
+    FeedCardComponent,
+    StripHtmlTagsPipe,
+    EscapeHtmlPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
     AlertModule.forRoot()
   ],
-  providers: [MeteoService, MessageService],
+  providers: [MeteoService, MessageService, FeedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
