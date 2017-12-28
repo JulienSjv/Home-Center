@@ -1,7 +1,8 @@
 <div class="container-feed">
     <div class="container-feed-header">
       <div class="container-feed-title">
-        <h4>Next Inpact - {{feeds?.length}} News</h4>
+        <h4>Next Inpact - {{feeds?.length}} News </h4>
+        <span>{{time | dateTimeFormat}}</span>
       </div>
       <div class="container-feed-icon">
         <a (click)="refreshFeed()">

@@ -10,7 +10,7 @@ export class FeedNxiComponent implements OnInit, AfterViewInit {
 
   private feedUrl: string = 'https://www.nextinpact.com/rss/news.xml';
   private feeds: any;
-
+  private time: Date;
   private tempo = 3600000;
 
   intervalId: any;
@@ -27,6 +27,7 @@ export class FeedNxiComponent implements OnInit, AfterViewInit {
     this.refreshFeed();
   }
   private refreshFeed() {
+    this.time = new Date();
     this.feedService.getFeedContent(this.feedUrl)
       .subscribe(
       feed => this.feeds = feed,
