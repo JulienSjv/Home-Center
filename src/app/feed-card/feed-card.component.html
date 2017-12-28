@@ -6,8 +6,8 @@
       {{feed.title}}</h6>
     <div class="card-body">
       <!-- <h6 class="card-title"> -->
-<p class="card-text container-card-text">
-      {{feed.author}} - {{feed.pubDate | dateTimeFormat}} </p>
+<p class="card-text container-card-text alert alert-light">
+      {{feed.pubDate | dateTimeFormat}} </p>
       <!-- <p class="card-text">{{feed.description | stripHtmlTags}}</p> -->
       <a href="{{feed.link}}">
         <button type="button" class="btn btn-outline-info">Lire la suite</button>
@@ -15,3 +15,5 @@
     </div>
   </div>
 </div>
+
+<!-- {{feed.author}} -  -->

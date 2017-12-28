@@ -6,3 +6,7 @@
 display: -webkit-inline-box;
 margin-right: 20px;
 }
+
+.container-card .card-body {
+    padding: 0;
+}
