@@ -8,7 +8,7 @@ import { FeedService } from '../feed-service.service';
 })
 export class FeedUnivfComponent implements OnInit, AfterViewInit {
 
-  private feedUrl: string = 'http://www.universfreebox.com/backend.php?id_rubrique=6';
+  private feedUrl: string = 'http://www.universfreebox.com/backend.php?id_rubrique=29';
   private feeds: any;
   private time: Date;
   private tempo = 3600000;

@@ -1,6 +1,7 @@
 .container-card {
     margin-bottom: 20px;
     max-width: 550px;
+    max-height: 200px;
 }
 
 .container-card-text {

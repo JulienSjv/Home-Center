@@ -23,7 +23,7 @@ import { RoundPipe } from './pipe/round.pipe';
 import { MeteoIcon } from './pipe/meteo-icon.pipe';
 import { DateTimeFormatPipe } from './pipe/date-time.pipe';
 import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
-
+import { AsyncPipe } from '@angular/common';
 
 // Material design.
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
@@ -47,6 +47,7 @@ import { FeedGroupComponent } from './feed-group/feed-group.component';
     FeedCardComponent,
     StripHtmlTagsPipe,
     EscapeHtmlPipe,
+    // AsyncPipe,
     FeedNxiComponent,
     FeedUnivfComponent,
     FeedGroupComponent

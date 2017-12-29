@@ -1,9 +1,28 @@
 .container-feed {
     max-width: 500px;
-    /* margin-top: 100px; */
-    margin-left: 30px;
+    max-height: 250px;
+}
+.container-feed .carousel-item {
+    margin-top: 15px;
 }
 
+/* .container-feed .carousel-indicators li {
+    background-color: rgb(165, 162, 162);
+
+}
+
+.carousel-indicators .active {
+    background-color: rgb(106, 105, 105);
+}
+
+.container-feed .carousel-indicators .carousel-control-prev-icon {
+    color: black;
+} */
+
+.container-feed .carousel-control-next, .carousel-control-prev {
+    margin-top: 130px;
+    height: 100px;
+}
 
 .container-feed-header {
     color: rgb(7, 82, 143);
@@ -22,8 +41,11 @@
 }
 
 .container-feed-contenu {
+    border-radius: 5px;
     max-width: 500px;
     min-width: 200px;
-    height: 500px;
-    overflow-y: scroll;
+    height: 210px;
+    overflow: hidden;
+    background-color: rgb(222, 66, 81);
+
 }
