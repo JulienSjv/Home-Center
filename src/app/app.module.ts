@@ -24,6 +24,7 @@ import { MeteoIcon } from './pipe/meteo-icon.pipe';
 import { DateTimeFormatPipe } from './pipe/date-time.pipe';
 import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
 import { AsyncPipe } from '@angular/common';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 // Material design.
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
@@ -47,7 +48,7 @@ import { FeedGroupComponent } from './feed-group/feed-group.component';
     FeedCardComponent,
     StripHtmlTagsPipe,
     EscapeHtmlPipe,
-    // AsyncPipe,
+    TimeAgoPipe,
     FeedNxiComponent,
     FeedUnivfComponent,
     FeedGroupComponent

@@ -2,7 +2,7 @@
     <div class="container-feed-header">
       <div class="container-feed-title">
         <h4>Next Inpact</h4>
-        <!-- <span *ngIf="time">{{time | dateTimeFormat}}</span> -->
+        <span>{{time | timeAgo}}</span>
       </div>
       <div class="container-feed-icon">
         <a (click)="refreshFeed()">
