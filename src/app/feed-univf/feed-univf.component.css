@@ -6,6 +6,10 @@
     margin-top: 15px;
 }
 
+.container-feed .carousel-inner {
+    margin-bottom: 20xp;
+}
+
 /* .container-feed .carousel-indicators li {
     background-color: rgb(165, 162, 162);
 

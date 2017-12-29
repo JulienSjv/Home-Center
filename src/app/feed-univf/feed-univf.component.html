@@ -10,10 +10,10 @@
       </a>
     </div>
   </div>
-  <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+  <div *ngIf="feeds" id="carouselIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <ng-container *ngFor="let feed of feeds?.slice(0, 10); let i = index">
-        <li data-target="#carouselIndicators" data-slide-to="i"></li>
+        <li data-target="#carouselIndicators" [attr.data-slide-to]="i"></li>
       </ng-container>
     </ol>
     <div class="carousel-inner" role="listbox">
