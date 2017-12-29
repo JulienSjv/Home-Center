@@ -1,7 +1,7 @@
 <div class="container-card">
   <div class="card ">
     <h6 class="card-header">
-      <span class="badge badge-primary">
+      <span *ngIf="feed.categories[0]" class="badge badge-primary">
         [{{feed.categories[0]}}]</span>
       {{feed.title}}</h6>
     <div class="card-body">

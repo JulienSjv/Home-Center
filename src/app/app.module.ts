@@ -29,6 +29,8 @@ import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
 import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { EscapeHtmlPipe } from './pipe/keep-html.pipe';
 import { FeedNxiComponent } from './feed-nxi/feed-nxi.component';
+import { FeedUnivfComponent } from './feed-univf/feed-univf.component';
+import { FeedGroupComponent } from './feed-group/feed-group.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { FeedNxiComponent } from './feed-nxi/feed-nxi.component';
     FeedCardComponent,
     StripHtmlTagsPipe,
     EscapeHtmlPipe,
-    FeedNxiComponent
+    FeedNxiComponent,
+    FeedUnivfComponent,
+    FeedGroupComponent
   ],
   imports: [
     BrowserModule,
