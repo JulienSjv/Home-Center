@@ -1,7 +1,7 @@
 <div class="container-feed">
   <div class="container-feed-header">
     <div class="container-feed-title">
-      <h4>Univers Freebox  </h4>
+      <h4>Univers Freebox </h4>
       <!-- <span *ngIf="time">{{time | dateTimeFormat}}</span> -->
     </div>
     <div class="container-feed-icon">
@@ -12,23 +12,17 @@
   </div>
   <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <ng-container *ngFor="let feed of feeds?.slice(0, 10); let i = index" >
+      <ng-container *ngFor="let feed of feeds?.slice(0, 10); let i = index">
         <li data-target="#carouselIndicators" [attr.data-slide-to]="i" class="{{ (i == 0) ? 'active' : ''}}"></li>
       </ng-container>
     </ol>
     <div class="carousel-inner" role="listbox">
-      <!-- <div class="carousel-item">
-        <div class="row mar-30"> -->
+
       <div class="container-feed-contenu">
         <div *ngFor="let feed of feeds?.slice(0, 10); let i = index" class="{{ (i == 0) ? 'carousel-item active' : 'carousel-item'}}">
           <app-feed-card [feed]="feed"></app-feed-card>
         </div>
       </div>
-      <!-- <div class=" col-md-3" *ngFor="let feed of feeds?.slice(0, 4)">
-                <app-feed-card (checked)="OnChecked($event)" [feed]="feed"></app-feed-card>
-              </div> -->
-      <!-- </div>
-      </div> -->
     </div>
     <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -39,22 +33,6 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-
-
-  <!-- <div class="container-feed-header">
-    <div class="container-feed-title">
-      <h4>Univers Freebox - {{feeds?.length}} News </h4>
-      <span>{{time | dateTimeFormat}}</span>
-    </div>
-    <div class="container-feed-icon">
-      <a (click)="refreshFeed()">
-        <i class="fas fa-sync-alt fa-1x"></i>
-      </a>
-    </div>
-  </div>
-  <div class="container-feed-contenu">
-    <app-feed-card *ngFor="let feed of feeds" [feed]="feed"></app-feed-card>
-  </div> -->
 </div>
 
 
