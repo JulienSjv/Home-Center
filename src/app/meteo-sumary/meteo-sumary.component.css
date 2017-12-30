@@ -37,6 +37,10 @@
 }
 
 .container-feed-icon {
-    color: forestgreen;
+    color: rgb(112, 136, 112);
     margin-left: 20px;
+}
+.container-feed-icon:hover {
+    color: forestgreen;
+
 }
