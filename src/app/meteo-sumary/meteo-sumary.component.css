@@ -2,17 +2,22 @@
     float: right;
     margin-right: 20px;
     bottom: 30px;
-    border: 1px solid rgb(0, 162, 255);
+    /* border: 1px solid rgb(0, 162, 255); */
     border-radius: 5px;
     margin-right: 19px;
     margin-top: -1px;
+}
+
+.container-meteo-sumary .card-header {
+    display: -webkit-inline-box;
+
 }
 
 .container-meteo-sumary a {
     color: inherit
 }
 .container-meteo-sumary:hover {
-    border: 1px solid rgb(0, 162, 255);
+    /* border: 1px solid rgb(0, 162, 255); */
     border-radius: 5px;
     margin-right: 19px;
     margin-top: -1px;
@@ -29,4 +34,9 @@
 }
 .container-meteo-sumary .date {
     text-align: center;
+}
+
+.container-feed-icon {
+    color: forestgreen;
+    margin-left: 20px;
 }

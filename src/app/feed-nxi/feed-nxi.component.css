@@ -19,7 +19,8 @@
 .container-feed-header {
     color: rgb(7, 82, 143);
     display: -webkit-inline-box;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
+    width: 100%;
 }
 
 .container-feed-icon {
@@ -29,11 +30,11 @@
 }
 
 .container-feed-contenu {
-    border-radius: 5px;
+    /* border-radius: 2px; */
     max-width: 500px;
     min-width: 200px;
     height: 210px;
     overflow: hidden;
-    background-color: rgb(255, 193, 7);
+    background-color: rgb(206, 123, 0);
 
 }

@@ -1,18 +1,25 @@
 <div *ngIf="weather" class="container-meteo-sumary">
-  <a class="nav-link" routerLink="/meteo">
-    <div class="card border-light   mb-3" style="max-width: 20rem;">
-      <div class="card-header">Météo d'aujourd'hui </div>
+  <div class="card border-light   mb-3" style="max-width: 20rem;">
+    <div class="card-header">Météo d'aujourd'hui
+      <div class="container-feed-icon">
+        <a (click)="getWeather()">
+          <i class="fas fa-sync-alt fa-1x"></i>
+        </a>
+      </div>
+    </div>
+    <a class="nav-link" routerLink="/meteo">
       <div class="card-body text-dark">
         <h4 class="card-title">{{weather.name}} {{weather.main.temp | round}}°C</h4>
         <div class="icon-meteo">
           <img src="{{weather.weather[0].icon | meteoicon}}" alt="">
         </div>
       </div>
-      <div class="date">
-        <span class="card-text">{{time | dateTimeFormat}}</span>
-      </div>
+    </a>
+    <div class="date">
+      <span class="card-text">{{time | timeAgo}}</span>
     </div>
-  </a>
+  </div>
+
 </div>
 
 <!-- <div *ngIf="coords">

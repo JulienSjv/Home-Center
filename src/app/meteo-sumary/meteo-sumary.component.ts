@@ -46,7 +46,7 @@ export class MeteoSumaryComponent implements AfterViewInit, OnDestroy, OnInit {
   }
 
   getWeather() {
-
+    this.time = new Date();
     this._meteoService.getCoords().subscribe(
       res => {
         this._meteoService.searchLatLong(res.lat, res.lon).subscribe(
