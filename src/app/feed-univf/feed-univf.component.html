@@ -10,10 +10,10 @@
       </a>
     </div>
   </div>
-  <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+  <div id="carouselIndicators2" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <ng-container *ngFor="let feed of feeds?.slice(0, 10); let i = index">
-        <li data-target="#carouselIndicators" [attr.data-slide-to]="i" class="{{ (i == 0) ? 'active' : ''}}"></li>
+      <ng-container *ngFor="let feed of feeds?.slice(0, 10); let j = index">
+        <li data-target="#carouselIndicators2" [attr.data-slide-to]="j" class="{{ (j == 0) ? 'active' : ''}}"></li>
       </ng-container>
     </ol>
     <div class="carousel-inner" role="listbox">
@@ -24,11 +24,11 @@
         </div>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#carouselIndicators2" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+    <a class="carousel-control-next" href="#carouselIndicators2" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
