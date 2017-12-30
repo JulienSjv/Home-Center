@@ -37,8 +37,11 @@
 }
 .container-feed-icon:hover {
     color: forestgreen;
+    font-size: 18px;
+
 
 }
+
 .container-feed-contenu {
     /* border-radius: 5px; */
     max-width: 500px;

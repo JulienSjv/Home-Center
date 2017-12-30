@@ -38,9 +38,10 @@
 
 .container-feed-icon {
     color: rgb(112, 136, 112);
-    margin-left: 20px;
+    margin-left: 50px;
 }
 .container-feed-icon:hover {
     color: forestgreen;
+    font-size: 18px;
 
 }

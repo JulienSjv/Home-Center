@@ -34,6 +34,7 @@
 }
 .container-feed-icon:hover {
     color: forestgreen;
+    font-size: 18px;
 
 }
 
@@ -43,6 +44,6 @@
     min-width: 200px;
     height: 210px;
     overflow: hidden;
-    background-color: rgb(206, 123, 0);
+    background-color: rgb(222, 140, 17);
 
 }
