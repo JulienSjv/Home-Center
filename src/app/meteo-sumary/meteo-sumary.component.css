@@ -9,7 +9,8 @@
 }
 
 .container-meteo-sumary .card-header {
-    display: -webkit-inline-box;
+    /* display: -webkit-inline-box; */
+    text-align: center;
 
 }
 
