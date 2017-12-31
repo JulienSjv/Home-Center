@@ -32,6 +32,7 @@ import { EscapeHtmlPipe } from './pipe/keep-html.pipe';
 import { FeedNxiComponent } from './feed-nxi/feed-nxi.component';
 import { FeedUnivfComponent } from './feed-univf/feed-univf.component';
 import { FeedGroupComponent } from './feed-group/feed-group.component';
+import { SpeechRecognitionComponent } from './speech-recognition/speech-recognition.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { FeedGroupComponent } from './feed-group/feed-group.component';
     TimeAgoPipe,
     FeedNxiComponent,
     FeedUnivfComponent,
-    FeedGroupComponent
+    FeedGroupComponent,
+    SpeechRecognitionComponent
   ],
   imports: [
     BrowserModule,
