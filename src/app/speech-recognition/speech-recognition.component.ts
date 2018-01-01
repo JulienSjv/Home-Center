@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SpeechRecognitionService } from '../speech-recognition.service';
+import { SpeechSynthesisService } from '../speech-synthesis.service'
 
 @Component({
   selector: 'app-speech-recognition',
@@ -10,13 +11,16 @@ export class SpeechRecognitionComponent implements OnInit, OnDestroy {
   showSearchButton: boolean;
   speechData: string;
 
-  constructor(private speechRecognitionService: SpeechRecognitionService) {
+  constructor(
+    private speechRecognitionService: SpeechRecognitionService,
+    private speechSynthesisService: SpeechSynthesisService) {
     this.showSearchButton = true;
     this.speechData = "";
   }
 
   ngOnInit() {
     console.log("hello")
+    this.speechSynthesisService.Test('coucou ça va, je t\'écoute, di moi ce que tu veux');
   }
 
   ngOnDestroy() {

@@ -37,6 +37,7 @@ import { FeedNxiComponent } from './feed-nxi/feed-nxi.component';
 import { FeedUnivfComponent } from './feed-univf/feed-univf.component';
 import { FeedGroupComponent } from './feed-group/feed-group.component';
 import { SpeechRecognitionComponent } from './speech-recognition/speech-recognition.component';
+import { SpeechSynthesisService } from './speech-synthesis.service';
 
 
 @NgModule({
@@ -71,7 +72,7 @@ import { SpeechRecognitionComponent } from './speech-recognition/speech-recognit
     MatIconModule,
     AlertModule.forRoot()
   ],
-  providers: [MeteoService, MessageService, FeedService, ChatService],
+  providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
