@@ -16,11 +16,12 @@ export class SpeechRecognitionComponent implements OnInit, OnDestroy {
     private speechSynthesisService: SpeechSynthesisService) {
     this.showSearchButton = true;
     this.speechData = "";
+    this.speechSynthesisService.InitVoice();
   }
 
   ngOnInit() {
     console.log("hello")
-    this.speechSynthesisService.Test('coucou ça va, je t\'écoute, di moi ce que tu veux');
+    // this.speechSynthesisService.Test('coucou ça va?, je t\'écoute, di moi ce que tu veux');
   }
 
   ngOnDestroy() {

@@ -1,6 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import * as _ from "lodash";
+import { SpeechSynthesisService } from './speech-synthesis.service'
 
 interface IWindow extends Window {
   webkitSpeechRecognition: any;
@@ -11,7 +12,7 @@ interface IWindow extends Window {
 export class SpeechRecognitionService {
   speechRecognition: any;
 
-  constructor(private zone: NgZone) {
+  constructor(private zone: NgZone, private speechSynthesisService: SpeechSynthesisService) {
   }
 
   record(): Observable<string> {

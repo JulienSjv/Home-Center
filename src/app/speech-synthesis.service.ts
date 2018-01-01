@@ -13,11 +13,20 @@ export class SpeechSynthesisService {
   private voices: any;
 
   constructor() {
+    this.InitVoice();
+  }
+
+  InitVoice() {
+    const awaitVoices = new Promise(done => speechSynthesis.onvoiceschanged = done);
+    awaitVoices.then(() => {
+      let voices = speechSynthesis.getVoices();
+      this.voices = voices[8];
+    });
   }
 
 
-
   Test(input) {
+    // this.InitVoice();
     if ('speechSynthesis' in window) {
       console.log('Your browser supports speech synthesis.');
       // speak('hi');
@@ -28,19 +37,19 @@ export class SpeechSynthesisService {
     const { SpeechSynthesis }: IWindow = <IWindow>window;
     var msg = new SpeechSynthesisUtterance();
 
-    const awaitVoices = new Promise(done => speechSynthesis.onvoiceschanged = done);
-    awaitVoices.then(() => {
-      let voices = speechSynthesis.getVoices();
-      msg.voice = voices[8];
+    // const awaitVoices = new Promise(done => speechSynthesis.onvoiceschanged = done);
+    // awaitVoices.then(() => {
+    //   let voices = speechSynthesis.getVoices();
+       msg.voice = this.voices;
       msg.text = input;
       msg.lang = 'fr-FR';
       msg.volume = 1;
-      msg.rate = 1;
+      msg.rate = 1.1;
       msg.pitch = 1;
-      console.log(voices);
+      console.log(this.voices);
       console.log(msg);
       (<any>window).speechSynthesis.speak(msg);
-    });
+    // });
 
     // this.voices = window.speechSynthesis.onvoiceschanged = function () {
     //  return (<any>window).speechSynthesis.getVoices();
