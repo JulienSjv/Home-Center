@@ -16,6 +16,7 @@ export class ChatService {
   readonly client = new ApiAiClient({ accessToken: this.token });
   conversation = new BehaviorSubject<Message[]>([]);
   constructor(private speechSynthesisService: SpeechSynthesisService) {}
+
   // Sends and receives messages via DialogFlow
   converse(msg: string) {
     const userMessage = new Message(msg, 'user');
@@ -23,14 +24,21 @@ export class ChatService {
     return this.client.textRequest(msg)
                .then(res => {
                   const speech = res.result.fulfillment.speech;
-                  console.log(speech);
+                  // console.log(speech);
                   this.speechSynthesisService.Speak(speech);
                   const botMessage = new Message(speech, 'bot');
                   this.update(botMessage);
                });
   }
+  
   // Adds message to source
   update(msg: Message) {
     this.conversation.next([msg]);
   }
+
+  Test(input: String)   {
+    console.log(input)
+    this.speechSynthesisService.Speak(input);
+  }
+
 }

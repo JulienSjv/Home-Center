@@ -13,25 +13,27 @@ export class SpeechSynthesisService {
   private voices: any;
 
   constructor() {
-    // this.InitVoice();
+    this.InitVoice();
   }
 
-  // InitVoice() {
-  //   if ('speechSynthesis' in window) {
-  //     console.log('Your browser supports speech synthesis.');
-  //     const awaitVoices = new Promise(done => speechSynthesis.onvoiceschanged = done);
-  //     awaitVoices.then(() => {
-  //       let voices = speechSynthesis.getVoices();
-  //       this.voices = voices[8];
-  //     });
-  //   } else {
-  //     alert('Sorry your browser does not support speech synthesis. Try this in <a href="https://www.google.com/chrome/browser/desktop/index.html">Google Chrome</a>.');
-  //   }
+  InitVoice() {
+    if ('speechSynthesis' in window) {
+      console.log('Your browser supports speech synthesis.');
+      const awaitVoices = new Promise(done => speechSynthesis.onvoiceschanged = done);
+      awaitVoices.then(() => {
+        let voices = speechSynthesis.getVoices();
+        this.voices = voices[8];
+      });
+    } else {
+      alert('Sorry your browser does not support speech synthesis. Try this in <a href="https://www.google.com/chrome/browser/desktop/index.html">Google Chrome</a>.');
+    }
 
-  // }
+  }
+
 
 
   Speak(input) {
+    console.log(input)
     const { SpeechSynthesisUtterance }: IWindow = <IWindow>window;
     const { SpeechSynthesis }: IWindow = <IWindow>window;
     var msg = new SpeechSynthesisUtterance();
