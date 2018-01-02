@@ -1,16 +1,22 @@
 <div class="container-feed">
   <div class="card-header container-feed-header">
+    <div class="container-feed-icon">
+      <a (click)="refreshFeed()" >
+          <i class="fas fa-sync-alt fa-1x"></i>
+        <!-- <i class="{{ (feeds==null) ? 'fas fa-sync-alt fa-spin fa-1x' : 'fas fa-sync-alt fa-1x'}}" ></i> -->
+        <!-- <i class="fas fa-sync-alt fa-spin fa-1x" *ngIf="loader"></i> -->
+        <!-- (click)="showFirst=!showFirst">
+          <i class="material-icons" *ngIf="showFirst">filter_drama</i>
+          <i class="material-icons" *ngIf="!showFirst">place</i>-->
+      </a>
+    </div>
     <div class="container-feed-title">
       <a href="https://www.nextinpact.com/">
         <h4>Next Inpact</h4>
       </a>
       <small>{{time | timeAgo}}</small>
     </div>
-    <div class="container-feed-icon">
-      <a (click)="refreshFeed()">
-        <i class="fas fa-sync-alt fa-1x"></i>
-      </a>
-    </div>
+
   </div>
   <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -19,7 +25,6 @@
       </ng-container>
     </ol>
     <div class="carousel-inner" role="listbox">
-
       <div class="container-feed-contenu">
         <div *ngFor="let feed of feeds?.slice(0, 10); let i = index" class="{{ (i == 0) ? 'carousel-item active' : 'carousel-item'}}">
           <app-feed-card [feed]="feed"></app-feed-card>

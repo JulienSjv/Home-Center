@@ -38,6 +38,7 @@ import { FeedUnivfComponent } from './feed-univf/feed-univf.component';
 import { FeedGroupComponent } from './feed-group/feed-group.component';
 import { SpeechRecognitionComponent } from './speech-recognition/speech-recognition.component';
 import { SpeechSynthesisService } from './speech-synthesis.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { SpeechSynthesisService } from './speech-synthesis.service';
     FeedUnivfComponent,
     FeedGroupComponent,
     SpeechRecognitionComponent,
-    ChatDialogComponent
+    ChatDialogComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,17 @@
 <div class="container-feed">
   <div class="card-header container-feed-header">
+    <div class="container-feed-icon">
+      <a (click)="refreshFeed()">
+        <i class="fas fa-sync-alt fa-1x"></i>
+      </a>
+    </div>
     <div class="container-feed-title">
       <a href="http://www.universfreebox.com/">
         <h4>Univers Freebox </h4>
       </a>
       <small>{{time | timeAgo}}</small>
     </div>
-    <div class="container-feed-icon">
-      <a (click)="refreshFeed()">
-        <i class="fas fa-sync-alt fa-1x"></i>
-      </a>
-    </div>
+
   </div>
   <div id="carouselIndicators2" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">

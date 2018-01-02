@@ -26,6 +26,7 @@ export class FeedUnivfComponent implements OnInit, AfterViewInit {
     this.refreshFeed();
   }
   private refreshFeed() {
+    this.intervalId = null;
     this.time = new Date();
     this.feedService.getFeedContent(this.feedUrl)
       .subscribe(

@@ -27,14 +27,22 @@
     width: 100%;
 }
 
+.container-feed-title {
+    /* width: 80%; */
+}
+
 .container-feed-icon {
     color: rgb(112, 136, 112);
+    width: 10%;
     /* margin: 8px; */
-    margin-left: 200px;
+    /* margin-left: 200px; */
+    /* right: 10px; */
+    /* float: right; */
+    /* margin: auto; */
 }
 .container-feed-icon:hover {
     color: forestgreen;
-    font-size: 18px;
+    /* font-size: 18px; */
 
 }
 

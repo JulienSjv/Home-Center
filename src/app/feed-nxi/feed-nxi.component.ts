@@ -11,7 +11,7 @@ export class FeedNxiComponent implements OnInit, AfterViewInit {
   private feedUrl: string = 'https://www.nextinpact.com/rss/news.xml';
   private feeds: any;
   private time: Date;
-  private tempo = 3600000;
+  private tempo: number = 3600000;
 
   intervalId: any;
 
@@ -23,18 +23,26 @@ export class FeedNxiComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     // this.refreshFeed();
   }
+
   ngAfterViewInit() {
     this.refreshFeed();
+
   }
   private refreshFeed() {
+    this.intervalId = null;
+    // this.feeds = null
     this.time = new Date();
     this.feedService.getFeedContent(this.feedUrl)
       .subscribe(
-      feed => this.feeds = feed,
+      feed => {
+        this.feeds = feed
+      },
       error => console.log(error));
     this.intervalId = setInterval(() => {
       this.refreshFeed();
     }, this.tempo);
 
   }
+
+
 }
