@@ -30,7 +30,7 @@ export class MeteoComponent implements OnInit {
   getMeteo(): void {
     this._meteoService.getCoords()
       .subscribe(res => this.coords = res.json());
-      console.log(this.coords)
+      // console.log(this.coords)
     // this.meteoService.searchLatLong(this.coords.lat, this.coords.long)
     // .subscribe(res => this.meteo = res);
   }

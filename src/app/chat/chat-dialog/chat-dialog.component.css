@@ -1,13 +1,20 @@
 .container-chat {
     margin-top: 100px;
     text-align: center;
+    max-height: 400px;
+    min-height: 400px;
 
 }
 
 .container-chat-content {
     /* text-align: center; */
     margin: auto;
-    width: 50%;
+    width: 40%;
+    text-align: unset;
+    overflow-y: scroll;
+    max-height: 450px;
+    min-height: 400px;
+
 }
 
 .message {

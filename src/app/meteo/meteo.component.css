@@ -1,0 +1,25 @@
+.container-meteo {
+    margin: auto;
+    text-align: center;
+    width: 30%;
+    margin-top: 100px;
+
+}
+
+.container-meteo-search {
+    display: inline-grid;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.container-meteo-search button {
+    margin: auto;
+    width: 40%;
+}
+.container-meteo img {
+    margin: 10px;
+    margin-bottom: 10px;
+}
+

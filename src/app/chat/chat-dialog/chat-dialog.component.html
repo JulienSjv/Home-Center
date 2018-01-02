@@ -1,6 +1,6 @@
 <div class="container-chat">
-  <div class="container-chat-content">
     <h1>Angular Bot</h1>
+  <div #scrollMe class="container-chat-content">
     <ng-container *ngFor="let message of messages | async">
       <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
                                     'to':   message.sentBy === 'user' }">

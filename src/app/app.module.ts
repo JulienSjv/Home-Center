@@ -28,6 +28,8 @@ import { RoundPipe } from './pipe/round.pipe';
 import { MeteoIcon } from './pipe/meteo-icon.pipe';
 import { DateTimeFormatPipe } from './pipe/date-time.pipe';
 import { StripHtmlTagsPipe } from './pipe/strip-html-tags.pipe';
+import { CapitalizePipe } from './pipe/capitalize.pipe';
+import { DegwindPipe } from './pipe/degwind.pipe';
 import { AsyncPipe } from '@angular/common';
 import { TimeAgoPipe } from 'time-ago-pipe';
 
@@ -39,6 +41,7 @@ import { FeedGroupComponent } from './feed-group/feed-group.component';
 import { SpeechRecognitionComponent } from './speech-recognition/speech-recognition.component';
 import { SpeechSynthesisService } from './speech-synthesis.service';
 import { NavbarComponent } from './navbar/navbar.component';
+
 
 
 @NgModule({
@@ -60,7 +63,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     FeedGroupComponent,
     SpeechRecognitionComponent,
     ChatDialogComponent,
-    NavbarComponent
+    NavbarComponent,
+    CapitalizePipe,
+    DegwindPipe
   ],
   imports: [
     BrowserModule,
