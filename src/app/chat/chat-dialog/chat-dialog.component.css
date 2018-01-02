@@ -7,7 +7,6 @@
 }
 
 .container-chat-content {
-    /* text-align: center; */
     margin: auto;
     width: 40%;
     text-align: unset;
@@ -16,6 +15,20 @@
     min-height: 400px;
 
 }
+
+.container-chat-input {
+    display: -webkit-inline-box;
+    margin: 20px;
+}
+
+.container-chat-input button {
+    margin-left: 5px;
+}
+
+.container-chat-input .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
+}
+
 
 .message {
     border-radius: 50px;

@@ -1,5 +1,5 @@
 <div class="container-chat">
-    <h1>Angular Bot</h1>
+  <h1>Angular Bot</h1>
   <div #scrollMe class="container-chat-content">
     <ng-container *ngFor="let message of messages | async">
       <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
@@ -7,9 +7,9 @@
         {{ message.content }}
       </div>
     </ng-container>
-    <label for="nameField">Your Message</label>
-    <input type="text" [(ngModel)]="formValue" (keyup.enter)="sendMessage()">
-    <!-- <input type="text" [(ngModel)]=cityName> -->
-    <button (click)="sendMessage()">Send</button>
+    <div class="container-chat-input">
+      <input class="form-control" type="text" [(ngModel)]="formValue" (keyup.enter)="sendMessage()">
+      <button class="btn btn-outline-success" (click)="sendMessage()">Envoyer</button>
+    </div>
   </div>
 </div>

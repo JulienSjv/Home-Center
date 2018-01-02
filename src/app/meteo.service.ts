@@ -18,17 +18,17 @@ export class MeteoService {
 
   private apiKey = '5e50de00e7dc01b9b6409db3278a2660';
 
-  private urlGetCity;// = 'http://ip-api.com/json';
-  private meteoUrlCity;// = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.apiKey + '&units=metric&lang=fr&q=';  // URL to web api
-  private urlLatLong;// = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.apiKey + '&units=metric&lang=fr&'
-
+  private urlGetCity;
+  private meteoUrlCity;
+  private urlLatLong;
+  private meteoUrlForcastCity;
 
   constructor(private http: Http,
     private messageService: MessageService) {
     this.urlGetCity = 'http://ip-api.com/json';
     this.meteoUrlCity = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.apiKey + '&units=metric&lang=fr&q=';  // URL to web api
-    this.urlLatLong = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.apiKey + '&units=metric&lang=fr&'
-
+    this.urlLatLong = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.apiKey + '&units=metric&lang=fr&';
+    this.meteoUrlForcastCity = 'http://api.openweathermap.org/data/2.5/forecast?APPID=' + this.apiKey + '&units=metric&lang=fr&q=';
   }
 
 
@@ -44,6 +44,11 @@ export class MeteoService {
 
   searchCity(cityName) {
     return this.http.get(this.meteoUrlCity + cityName)
+      .map(res => res.json());
+  }
+
+  searchCityForecast(cityName) {
+    return this.http.get(this.meteoUrlForcastCity + cityName)
       .map(res => res.json());
   }
 
