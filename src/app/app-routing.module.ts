@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
   { path: 'accueil', component: AccueilComponent },
   { path: 'meteo', component: MeteoComponent },
-  { path: 'chat', component: ChatDialogComponent },
+  { path: 'chatbox', component: ChatDialogComponent },
   { path: 'meteo/:city', component: MeteoDetailsComponent },
 ];
 

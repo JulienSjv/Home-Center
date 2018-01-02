@@ -18,7 +18,9 @@ export class FeedNxiComponent implements OnInit, AfterViewInit {
 
   constructor(
     private feedService: FeedService
-  ) { }
+  ) {
+  this.time = new Date();
+  }
 
   ngOnInit() {
     // this.refreshFeed();
