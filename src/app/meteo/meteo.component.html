@@ -1,25 +1,28 @@
-<div class="container-meteo">
-  <div class="container-meteo-search">
-    <input (keyup.enter)="searchCity()" [(ngModel)]=cityName class="form-control mr-sm-2" type="search" placeholder="Ville..?" aria-label="Search">
-    <button class="btn btn-outline-success my-2 " (click)=searchCity()>Chercher</button>
-  </div>
-  <div class="container-meteo-content" *ngIf="weather">
-    <div class="card meteo-group">
-      <div class="meteo-group-left">
-        <h5 class="card-header">{{weather.name}} {{weather.main.temp | round}}°C</h5>
-        <img src="{{weather.weather[0].icon | meteoicon}}" alt="" width="120" height="120">
-        <h5 class="card-title">{{weather.weather[0].description | capitalize}}</h5>
-      </div>
-      <div class="meteo-group-right">
-        <div class="card-body">
-          <div class="card-text details">
-            <span>
-              <img src="assets/meteo/icons/icon-umberella.png" alt="">{{weather.main.humidity}}%</span>
-            <span>
-              <img src="assets/meteo/icons/icon-wind.png" alt="">{{weather.wind.speed | round}} km/h</span>
-            <span>
-              <img src="assets/meteo/icons/icon-compass.png" alt="">{{weather.wind.deg | degwind}}
-            </span>
+<div class="container">
+  <div class="container-meteo">
+    <div class="container-meteo-search">
+      <input (keyup.enter)="searchCity()" [(ngModel)]=cityName class="form-control mr-sm-2" type="search" placeholder="Ville..?"
+        aria-label="Search">
+      <button class="btn btn-outline-success my-2 " (click)=searchCity()>Chercher</button>
+    </div>
+    <div class="container-meteo-content" *ngIf="weather">
+      <div class="card meteo-group">
+        <div class="meteo-group-left">
+          <h5 class="card-header">{{weather.name}} {{weather.main.temp | round}}°C</h5>
+          <img src="{{weather.weather[0].icon | meteoicon}}" alt="" width="120" height="120">
+          <h5 class="card-title">{{weather.weather[0].description | capitalize}}</h5>
+        </div>
+        <div class="meteo-group-right">
+          <div class="card-body">
+            <div class="card-text details">
+              <span>
+                <img src="assets/meteo/icons/icon-umberella.png" alt="">{{weather.main.humidity}}%</span>
+              <span>
+                <img src="assets/meteo/icons/icon-wind.png" alt="">{{weather.wind.speed | round}} km/h</span>
+              <span>
+                <img src="assets/meteo/icons/icon-compass.png" alt="">{{weather.wind.deg | degwind}}
+              </span>
+            </div>
           </div>
         </div>
       </div>

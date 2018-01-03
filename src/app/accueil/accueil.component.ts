@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { FeedService } from '../feed-service.service';
+import { Directive, AfterViewInit, OnDestroy } from '@angular/core';
 
 
 
@@ -8,20 +8,25 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './accueil.component.html',
   styleUrls: ['./accueil.component.css']
 })
-export class AccueilComponent implements OnInit {
-
-  // private feedUrl: string = 'https://www.nextinpact.com/rss/news.xml';
-  // private feeds: any;
-
-  // private tempo = 3600000;
-
-  // intervalId: any;
+export class AccueilComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
   constructor() { }
 
   ngOnInit() {
-    // this.refreshFeed();
+
+  }
+
+  ngAfterViewInit() {
+    document.querySelector('body').classList.add('accueil');
+    document.querySelector('body').style.backgroundImage = "";
+
+  }
+
+  ngOnDestroy(): void {
+    document.querySelector('body').classList.remove('accueil');
+    document.querySelector('body').style.backgroundImage = "";
+
   }
 
 

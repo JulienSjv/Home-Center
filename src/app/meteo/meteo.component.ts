@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Directive, AfterViewInit, OnDestroy } from '@angular/core';
 
 import { MeteoService } from '../meteo.service';
 
@@ -7,7 +8,7 @@ import { MeteoService } from '../meteo.service';
   templateUrl: './meteo.component.html',
   styleUrls: ['./meteo.component.css']
 })
-export class MeteoComponent implements OnInit {
+export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
 
   weather;
   cityName;
@@ -16,13 +17,28 @@ export class MeteoComponent implements OnInit {
   constructor(private _meteoService: MeteoService) { }
 
   ngOnInit() {
-    // this.getMeteo();
     this.getWeatherCity('Montpellier');
   }
+
+  ngAfterViewInit() {
+    document.querySelector('body').classList.add('meteo');
+
+  }
+
+  ngOnDestroy(): void {
+    document.querySelector('body').classList.remove('meteo');
+  }
+
+
+
+
+
   getWeatherCity(city) {
     this._meteoService.searchCity(city).subscribe(
       res => {
         this.weather = res;
+        document.querySelector('body').style.backgroundImage = "url("+ this._meteoService.getBgMeteo(this.weather.weather[0].icon) +")";
+        console.log(this.weather.weather[0].icon);
       }
     )
   }
@@ -30,7 +46,7 @@ export class MeteoComponent implements OnInit {
   getMeteo(): void {
     this._meteoService.getCoords()
       .subscribe(res => this.coords = res.json());
-      // console.log(this.coords)
+    // console.log(this.coords)
     // this.meteoService.searchLatLong(this.coords.lat, this.coords.long)
     // .subscribe(res => this.meteo = res);
   }
@@ -41,6 +57,7 @@ export class MeteoComponent implements OnInit {
       (res) => {
         console.log(res)
         this.weather = res;
+        document.querySelector('body').style.backgroundImage = "url("+ this._meteoService.getBgMeteo(this.weather.weather[0].icon) +")";        
       }
       )
   }

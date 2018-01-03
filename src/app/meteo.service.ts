@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Meteo } from './meteo/meteo-model';
 import { MessageService } from './message.service';
+import { Constants } from './util/constants';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -29,6 +30,10 @@ export class MeteoService {
     this.meteoUrlCity = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.apiKey + '&units=metric&lang=fr&q=';  // URL to web api
     this.urlLatLong = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.apiKey + '&units=metric&lang=fr&';
     this.meteoUrlForcastCity = 'http://api.openweathermap.org/data/2.5/forecast?APPID=' + this.apiKey + '&units=metric&lang=fr&q=';
+  }
+
+  getBgMeteo(value: string): string {
+    return Constants.LIST_BG_METEO[value];
   }
 
 

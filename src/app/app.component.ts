@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import { Directive, AfterViewInit, OnDestroy } from '@angular/core';
 
 
 
@@ -12,3 +13,16 @@ export class AppComponent {
   constructor() { }
 
 }
+
+// @Directive({ selector: '[blueDirective]' })
+// export class BlueDirective implements OnDestroy, AfterViewInit {
+
+//     ngAfterViewInit() {
+//         document.querySelector('body').classList.add('meteo');
+
+//     }
+//     ngOnDestroy(): void {
+//         document.querySelector('body').classList.remove('meteo');
+//     }
+// }
+

@@ -1,7 +1,14 @@
+/* .container {
+    background-color: rgb(49, 111, 105)
+} */
+
+.body {
+    background-color: rgb(49, 111, 105);
+}
 .container-meteo {
     margin: auto;
     text-align: center;
-    width: 30%;
+    width: 40%;
     margin-top: 100px;
 
 }
