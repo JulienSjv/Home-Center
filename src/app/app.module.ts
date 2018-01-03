@@ -42,6 +42,7 @@ import { SpeechRecognitionComponent } from './speech-recognition/speech-recognit
 import { SpeechSynthesisService } from './speech-synthesis.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FeedKrbComponent } from './feed-krb/feed-krb.component';
+import { FeedGoogleComponent } from './feed-google/feed-google.component';
 
 
 
@@ -67,7 +68,8 @@ import { FeedKrbComponent } from './feed-krb/feed-krb.component';
     NavbarComponent,
     CapitalizePipe,
     DegwindPipe,
-    FeedKrbComponent
+    FeedKrbComponent,
+    FeedGoogleComponent
   ],
   imports: [
     BrowserModule,

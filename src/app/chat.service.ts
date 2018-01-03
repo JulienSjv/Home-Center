@@ -36,9 +36,4 @@ export class ChatService {
     this.conversation.next([msg]);
   }
 
-  Test(input: String)   {
-    console.log(input)
-    this.speechSynthesisService.Speak(input);
-  }
-
 }

@@ -27,7 +27,7 @@ export class ChatDialogComponent implements OnInit, AfterViewChecked, AfterViewI
   }
 
   ngAfterViewInit(): void {
-    this.chat.Test("Bonjour Turte!"); // comment ça va aujourd'hui?");
+    this.speechSynthesisService.Speak("Bonjour Teurte!"); // comment ça va aujourd'hui?");
   }
   
 
