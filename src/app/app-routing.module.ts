@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'meteo', component: MeteoComponent },
   { path: 'chatbox', component: ChatDialogComponent },
   { path: 'meteo/:city', component: MeteoDetailsComponent },
+  { path: '**', component: AccueilComponent }
 ];
 
 @NgModule({

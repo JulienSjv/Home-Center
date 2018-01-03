@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule } from '@angular/http';
@@ -34,7 +35,7 @@ import { AsyncPipe } from '@angular/common';
 import { TimeAgoPipe } from 'time-ago-pipe';
 
 // Material design.
-import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
+// import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
 import { FeedNxiComponent } from './feed-nxi/feed-nxi.component';
 import { FeedUnivfComponent } from './feed-univf/feed-univf.component';
 import { FeedGroupComponent } from './feed-group/feed-group.component';
@@ -73,14 +74,15 @@ import { FeedGoogleComponent } from './feed-google/feed-google.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     HttpModule,
     // ChatModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
+    // MatCardModule,
+    // MatToolbarModule,
+    // MatButtonModule,
+    // MatIconModule,
     AlertModule.forRoot()
   ],
   providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService],
