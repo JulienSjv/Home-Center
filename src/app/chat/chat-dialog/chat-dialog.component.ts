@@ -24,6 +24,10 @@ export class ChatDialogComponent implements OnInit, AfterViewChecked, AfterViewI
     this.messages = this.chat.conversation.asObservable()
         .scan((acc, val) => acc.concat(val) 
       );
+      document.querySelector('body').style.backgroundImage = "";
+      document.querySelector('body').classList.add('chatbox');
+
+
   }
 
   ngAfterViewInit(): void {

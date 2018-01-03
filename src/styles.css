@@ -1,12 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
-.base {
-   
-}
+.SmallerPage {
+    zoom: 0.75;
+  }
 
-.accueil {
+.accueil, .meteo, .chatbox {
     background: #ececec;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.meteo {
-    
+.carousel-indicators {
+    bottom: 0px;
 }
+
+/* .meteo {
+    background: #ececec;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.chatbox {
+    background: #ececec;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */

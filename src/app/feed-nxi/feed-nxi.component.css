@@ -10,13 +10,17 @@
     margin-bottom: 20xp;
 }
 
+.container-feed .carousel-indicators {
+    bottom: 0px;
+}
+
 .container-feed-title a {
     text-decoration: none;
     /* color: inherit */
 }
 
 .container-feed .carousel-control-next, .carousel-control-prev {
-    margin-top: 130px;
+    margin-top: 150px;
     height: 100px;
 }
 
@@ -50,7 +54,7 @@
     /* border-radius: 2px; */
     max-width: 500px;
     min-width: 200px;
-    height: 210px;
+    height: 220px;
     overflow: hidden;
     background-color: rgb(222, 140, 17);
 
