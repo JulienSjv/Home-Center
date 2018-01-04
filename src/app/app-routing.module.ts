@@ -8,9 +8,9 @@ import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  { path: 'accueil', component: AccueilComponent},
-  { path: 'meteo', component: MeteoComponent },
-  { path: 'chatbox', component: ChatDialogComponent },
+  { path: 'accueil', component: AccueilComponent, data: { animation: { value: 'accueil'}}},
+  { path: 'meteo', component: MeteoComponent, data: { animation: { value: 'meteo'}} },
+  { path: 'chatbox', component: ChatDialogComponent, data: { animation: { value: 'chatbox'}} },
   // { path: 'meteo/:city', component: MeteoDetailsComponent },
   { path: '**', component: AccueilComponent }
 ];

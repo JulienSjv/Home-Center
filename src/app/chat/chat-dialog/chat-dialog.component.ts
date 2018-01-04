@@ -3,14 +3,12 @@ import { ChatService, Message } from '../../chat.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/scan';
 import { SpeechSynthesisService } from '../../speech-synthesis.service'
-import {routerTransition} from '../../router.animations';
 
 @Component({
   selector: 'chat-dialog',
   templateUrl: './chat-dialog.component.html',
   styleUrls: ['./chat-dialog.component.css'],
-  animations: [ routerTransition ],
-  host: {'[@routerTransition]': ''}
+ 
 })
 
 export class ChatDialogComponent implements OnInit, AfterViewChecked, AfterViewInit {

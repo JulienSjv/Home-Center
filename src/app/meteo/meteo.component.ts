@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Directive, AfterViewInit, OnDestroy } from '@angular/core';
-import {routerTransition} from '../router.animations';
 
 import { MeteoService } from '../meteo.service';
 
@@ -8,8 +7,7 @@ import { MeteoService } from '../meteo.service';
   selector: 'app-meteo',
   templateUrl: './meteo.component.html',
   styleUrls: ['./meteo.component.css'],
-  animations: [ routerTransition ],
-  host: {'[@routerTransition]': ''}
+  
 })
 export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
 
