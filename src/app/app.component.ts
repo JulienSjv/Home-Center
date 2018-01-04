@@ -1,28 +1,22 @@
 import { Component } from '@angular/core';
 // import { Directive, AfterViewInit, OnDestroy } from '@angular/core';
-
+import {routerTransition} from './router.animations';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [ routerTransition ],
+
 })
 export class AppComponent {
   title = 'Home Center';
   constructor() { }
 
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
+  }
+
+
 }
-
-// @Directive({ selector: '[blueDirective]' })
-// export class BlueDirective implements OnDestroy, AfterViewInit {
-
-//     ngAfterViewInit() {
-//         document.querySelector('body').classList.add('meteo');
-
-//     }
-//     ngOnDestroy(): void {
-//         document.querySelector('body').classList.remove('meteo');
-//     }
-// }
-

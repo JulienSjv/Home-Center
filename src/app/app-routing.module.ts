@@ -8,10 +8,10 @@ import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/accueil', pathMatch: 'full' },
-  { path: 'accueil', component: AccueilComponent },
+  { path: 'accueil', component: AccueilComponent},
   { path: 'meteo', component: MeteoComponent },
   { path: 'chatbox', component: ChatDialogComponent },
-  { path: 'meteo/:city', component: MeteoDetailsComponent },
+  // { path: 'meteo/:city', component: MeteoDetailsComponent },
   { path: '**', component: AccueilComponent }
 ];
 

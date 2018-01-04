@@ -3,11 +3,14 @@ import { ChatService, Message } from '../../chat.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/scan';
 import { SpeechSynthesisService } from '../../speech-synthesis.service'
+import {routerTransition} from '../../router.animations';
 
 @Component({
   selector: 'chat-dialog',
   templateUrl: './chat-dialog.component.html',
-  styleUrls: ['./chat-dialog.component.css']
+  styleUrls: ['./chat-dialog.component.css'],
+  animations: [ routerTransition ],
+  host: {'[@routerTransition]': ''}
 })
 
 export class ChatDialogComponent implements OnInit, AfterViewChecked, AfterViewInit {
@@ -31,7 +34,9 @@ export class ChatDialogComponent implements OnInit, AfterViewChecked, AfterViewI
   }
 
   ngAfterViewInit(): void {
-    this.speechSynthesisService.Speak("Bonjour Teurte!"); // comment ça va aujourd'hui?");
+    this.speechSynthesisService.Speak("Bonjour!"); // comment ça va aujourd'hui?");
+    // const botMessage = new Message("Bonjour!", 'bot');
+    // this.chat.update(botMessage);
   }
   
 

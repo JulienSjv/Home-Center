@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Directive, AfterViewInit, OnDestroy } from '@angular/core';
+import { routerTransition } from '../router.animations';
 
 
 
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.css']
+  styleUrls: ['./accueil.component.css'],
+  animations: [routerTransition],
+  host: { '[@routerTransition]': '' }
 })
+
 export class AccueilComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
@@ -28,7 +32,6 @@ export class AccueilComponent implements OnInit, AfterViewInit, OnDestroy {
     document.querySelector('body').style.backgroundImage = "";
 
   }
-
 
 
 }
