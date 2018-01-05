@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AlertModule } from 'ngx-bootstrap';
 import { ChatModule } from './chat/chat.module';
@@ -45,6 +46,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FeedKrbComponent } from './feed-krb/feed-krb.component';
 import { FeedGoogleComponent } from './feed-google/feed-google.component';
 import { LoaderComponent } from './loader/loader.component';
+import { FeedDetailsModalComponent } from './feed-details-modal/feed-details-modal.component';
 
 
 
@@ -72,7 +74,8 @@ import { LoaderComponent } from './loader/loader.component';
     DegwindPipe,
     FeedKrbComponent,
     FeedGoogleComponent,
-    LoaderComponent
+    LoaderComponent,
+    FeedDetailsModalComponent
   ],
   imports: [
     BrowserModule,
@@ -85,6 +88,7 @@ import { LoaderComponent } from './loader/loader.component';
     // MatToolbarModule,
     // MatButtonModule,
     // MatIconModule,
+    NgbModule.forRoot(),
     AlertModule.forRoot()
   ],
   providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService],

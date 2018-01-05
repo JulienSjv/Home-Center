@@ -9,11 +9,14 @@
       <p class="card-text container-card-text alert alert-light">
         {{feed.pubDate | dateTimeFormat}} </p>
       <!-- <p class="card-text">{{feed.description | stripHtmlTags}}</p> -->
+      <app-feed-details-modal [feed]="feed"></app-feed-details-modal>
       <a href="{{feed.link}}">
         <button type="button" class="btn btn-outline-info">Lire la suite</button>
       </a>
     </div>
   </div>
 </div>
+
+
 
 <!-- {{feed.author}} -  -->

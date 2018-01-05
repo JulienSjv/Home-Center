@@ -1,0 +1,28 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div [@dialog] class="feed-modal" >
+  <div id="modal-feed" class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{feed.title}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>{{feed.description | stripHtmlTags}}</p>
+      </div>
+      <div class="modal-footer">
+        <div *ngIf="feed.author" class="author">
+          <span>Auteur: {{feed.author}}</span>
+        </div>
+
+        <a target="_blank" href="{{feed.link}}">
+          <button type="button" class="btn btn-outline-info" (click)="c('Close click')">Lire la suite</button>
+        </a>
+        <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Fermer</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</ng-template>
+<button class="btn btn-outline-secondary" (click)="open(content)">Details</button>
