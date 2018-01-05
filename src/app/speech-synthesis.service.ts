@@ -35,7 +35,6 @@ export class SpeechSynthesisService {
       awaitVoices.then(() => {
         voices = speechSynthesis.getVoices();
         this.voices = voices[8];
-        console.log('getVoice');
       });
       return this.voices;
   }

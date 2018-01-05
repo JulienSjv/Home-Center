@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { trigger, state, style, animate, transition } from '@angular/core';
+import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-feed-details-modal',

@@ -1,52 +1,18 @@
 .container-meteo-sumary {
-    /* float: right; */
-    /* margin-right: 20px; */
-    bottom: 30px;
     border-radius: 5px;
-    /* margin-right: 19px; */
-    margin-top: 100px;
-    /* margin-right: -250px; */
     text-align: center;
-}
-
-/* .container-meteo-sumary .card-header, .container-meteo-sumary .icon-meteo, .container-meteo-sumary .date {
-    display: -webkit-inline-box;
-    text-align: center;
-} */
-
-.container-meteo-sumary .card-body {
-    height: 110px;
 }
 
 .container-meteo-sumary a {
     color: inherit
 }
 
-/* .container-meteo-sumary:hover {
-    border-radius: 5px;
-    margin-right: 19px;
-} */
-
-
 .container-meteo-sumary img{
-    width: 50px;
-    height: 50px;
+    margin: 10px;
+    width: 60px;
+    height: 60px;
 }
 
-/* .container-meteo-sumary .icon-meteo, .container-meteo-sumary .date {
-    text-align: center;
-} */
-
-/* .container-meteo-sumary .date {
-    text-align: center;
-} */
-
-/* .container-feed-icon {
-    color: rgb(112, 136, 112);
-    margin-left: 50px;
+.container-meteo-sumary .date {
+    margin-bottom: 10px;
 }
-.container-feed-icon:hover {
-    color: forestgreen;
-    font-size: 18px;
-
-} */

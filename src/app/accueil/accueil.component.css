@@ -1,14 +1,16 @@
 .container-accueil {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .app-meteo {
-    margin: auto;
-    width: 20%;
+  margin-top: 6%;
+  margin-left: 15%;
+  width: 20%;
 }
 
 .app-feed {
-    width: 74%;
-    height: auto;
+  margin-top: 6%;
+  width: 74%;
+  height: auto;
 }
