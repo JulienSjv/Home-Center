@@ -16,10 +16,7 @@
 
 .container-feed-title a {
     text-decoration: none;
-    /* color: inherit */
 }
-
-
 
 .container-feed .carousel-control-next, .carousel-control-prev {
     margin-top: 150px;
@@ -29,26 +26,23 @@
 .container-feed-header {
     color: rgb(7, 82, 143);
     display: -webkit-inline-box;
-    /* margin-bottom: 20px; */
     width: 100%;
+}
 
+.container-feed-loader {
+    margin-top: 50px;
 }
 
 .container-feed-icon {
     color: rgb(112, 136, 112);
-    /* margin: 8px; */
-    /* margin-left: 200px; */
     width: 10%;
 }
+
 .container-feed-icon:hover {
     color: forestgreen;
-    /* font-size: 18px; */
-
-
 }
 
 .container-feed-contenu {
-    /* border-radius: 5px; */
     max-width: 500px;
     min-width: 200px;
     height: 220px;

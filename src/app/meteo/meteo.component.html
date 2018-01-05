@@ -27,22 +27,23 @@
         </div>
       </div>
     </div>
+
+    <div class="container-meteo-content" *ngIf="!weather">
+      <div class="card meteo-group">
+        <div class="meteo-group-left">
+          <h5 class="card-header">Chargement..</h5>
+          <h5 class="card-title"></h5>
+        </div>
+        <div class="meteo-group-right">
+          <div class="card-body">
+            <p>
+              <app-loader></app-loader>
+            </p>
+            <div class="card-text details">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<!-- 
-<div class="info">
-  <h1>
-    <strong> City:</strong>{{weather.name}}</h1>
-  <h3>longitude:{{weather.coord.lon}}</h3>
-  <h3>longitude:{{weather.coord.lat}}</h3>
-  <h3>
-    <strong>Temp</strong>:{{weather.main.temp}}</h3>
-  <h3>
-    <strong>tempMax:</strong>{{weather.main.temp_max}} </h3>
-  <h3>
-    <strong>tempMin: </strong>{{weather.main.temp_min}}</h3>
-  <h3>
-    <strong>The weather description:</strong> {{weather.weather[0].description}}</h3>
-  <h3>
-    <strong>humidity :</strong>{{weather.main.humidity}}</h3>
-</div> -->

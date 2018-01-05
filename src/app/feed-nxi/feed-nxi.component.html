@@ -1,4 +1,4 @@
-<div class="container-feed">
+<div *ngIf="feeds" class="container-feed">
   <div class="card-header container-feed-header">
     <div class="container-feed-icon">
       <a (click)="refreshFeed()" >
@@ -11,7 +11,7 @@
       </a>
     </div>
     <div class="container-feed-title">
-      <a href="https://www.nextinpact.com/">
+      <a target="_blank" href="https://www.nextinpact.com/">
         <h4>Next Inpact</h4>
       </a>
       <small>{{time | timeAgo}}</small>
@@ -42,5 +42,21 @@
   </div>
 </div>
 
-
-<!-- - {{feeds?.length}} News -->
+<div *ngIf="!feeds" class="container-feed">
+    <div class="card-header container-feed-header">
+      <div class="container-feed-icon">
+        <a (click)="refreshFeed()">
+          <i class="fas fa-sync-alt fa-1x"></i>
+        </a>
+      </div>
+      <div class="container-feed-title">
+        <a target="_blank" href="https://www.nextinpact.com/">
+          <h4>Next Inpact</h4>
+        </a>
+        <small>Chargement..</small>
+      </div>
+    </div>
+    <div class="container-feed-loader">
+      <app-loader></app-loader>
+    </div>
+  </div>

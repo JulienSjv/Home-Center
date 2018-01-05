@@ -13,7 +13,7 @@ export class MeteoSumaryComponent implements AfterViewInit, OnDestroy, OnInit {
 
   constructor(private _meteoService: MeteoService) {
 
-
+    this.time = new Date();
   }
 
   weather: any;
