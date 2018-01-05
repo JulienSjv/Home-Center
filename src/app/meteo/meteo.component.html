@@ -2,19 +2,28 @@
   <div class="container-meteo">
     <div class="container-meteo-search">
       <input (keyup.enter)="searchCity()" [(ngModel)]=cityName class="form-control mr-sm-2" type="search" placeholder="Ville..?"
-        aria-label="Search">
+        aria-label="Search" required>
       <button class="btn btn-outline-success my-2 " (click)=searchCity()>Chercher</button>
+    </div>
+    <div *ngIf="city" class="alert alert-warning" role="alert">
+      <strong>Oups! </strong>Entrez une ville.
+    </div>
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+      <strong>Erreur! </strong>Ville non trouvée!
     </div>
     <div class="container-meteo-content" *ngIf="weather">
       <div class="card meteo-group">
         <div class="meteo-group-left">
-          <h5 class="card-header">{{weather.name}} {{weather.main.temp | round}}°C</h5>
+          <div class="card-header"><h5>{{weather.name}} {{weather.main.temp | round}}°C</h5>
+          <span>{{weather.sys.country | pays}}</span>
+          </div>
           <img src="{{weather.weather[0].icon | meteoicon}}" alt="" width="120" height="120">
           <h5 class="card-title">{{weather.weather[0].description | capitalize}}</h5>
         </div>
         <div class="meteo-group-right">
           <div class="card-body">
             <div class="card-text details">
+              <!-- <span>Pays: {{weather.sys.country | pays}}</span><br> -->
               <span>
                 <img src="assets/meteo/icons/icon-umberella.png" alt="">{{weather.main.humidity}}%</span>
               <span>

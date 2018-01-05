@@ -47,6 +47,7 @@ import { FeedKrbComponent } from './feed-krb/feed-krb.component';
 import { FeedGoogleComponent } from './feed-google/feed-google.component';
 import { LoaderComponent } from './loader/loader.component';
 import { FeedDetailsModalComponent } from './feed-details-modal/feed-details-modal.component';
+import { PaysPipe } from './pipe/pays.pipe';
 
 
 
@@ -75,7 +76,8 @@ import { FeedDetailsModalComponent } from './feed-details-modal/feed-details-mod
     FeedKrbComponent,
     FeedGoogleComponent,
     LoaderComponent,
-    FeedDetailsModalComponent
+    FeedDetailsModalComponent,
+    PaysPipe
   ],
   imports: [
     BrowserModule,

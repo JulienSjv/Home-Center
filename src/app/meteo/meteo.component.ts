@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Directive, AfterViewInit, OnDestroy } from '@angular/core';
-
 import { MeteoService } from '../meteo.service';
 
 @Component({
   selector: 'app-meteo',
   templateUrl: './meteo.component.html',
   styleUrls: ['./meteo.component.css'],
-  
+
 })
 export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
 
   weather;
   cityName;
   coords;
+  city: boolean = false;
+  error: boolean = false;
+  pays;
+
 
   constructor(private _meteoService: MeteoService) { }
 
@@ -23,6 +26,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     document.querySelector('body').classList.add('meteo');
+    // console.log(this.pays);
 
   }
 
@@ -31,15 +35,11 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
 
-
-
-
   getWeatherCity(city) {
     this._meteoService.searchCity(city).subscribe(
       res => {
         this.weather = res;
-        document.querySelector('body').style.backgroundImage = "url("+ this._meteoService.getBgMeteo(this.weather.weather[0].icon) +")";
-        console.log(this.weather.weather[0].icon);
+        document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
       }
     )
   }
@@ -53,13 +53,25 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   searchCity() {
-    this._meteoService.searchCity(this.cityName)
-      .subscribe(
-      (res) => {
-        console.log(res)
-        this.weather = res;
-        document.querySelector('body').style.backgroundImage = "url("+ this._meteoService.getBgMeteo(this.weather.weather[0].icon) +")";        
-      }
-      )
+    if (this.cityName != null) {
+      this.city = false;
+      this.error = false;
+      this._meteoService.searchCity(this.cityName)
+        .subscribe(
+        (res) => {
+          console.log(res);
+          this.weather = res;
+          document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
+          this.cityName = null;
+        },
+        error => {
+          this.error = true;
+          // this.cityName = null;
+        }
+        )
+    } else {
+      this.city = true;
+      this.error = false;
+    }
   }
 }
