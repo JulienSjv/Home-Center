@@ -48,6 +48,7 @@ import { FeedGoogleComponent } from './feed-google/feed-google.component';
 import { LoaderComponent } from './loader/loader.component';
 import { FeedDetailsModalComponent } from './feed-details-modal/feed-details-modal.component';
 import { PaysPipe } from './pipe/pays.pipe';
+import { TimeZoneService } from './time-zone.service';
 
 
 
@@ -93,7 +94,7 @@ import { PaysPipe } from './pipe/pays.pipe';
     NgbModule.forRoot(),
     AlertModule.forRoot()
   ],
-  providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService],
+  providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService, TimeZoneService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

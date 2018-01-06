@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Directive, AfterViewInit, OnDestroy } from '@angular/core';
 import { MeteoService } from '../meteo.service';
+import {TimeZoneService} from '../time-zone.service';
+import {Pays} from '../util/pays';
 
 @Component({
   selector: 'app-meteo',
@@ -15,10 +17,11 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
   coords;
   city: boolean = false;
   error: boolean = false;
-  pays;
+  country;
+  timeZone;
 
 
-  constructor(private _meteoService: MeteoService) { }
+  constructor(private _meteoService: MeteoService, private _timeZoneServie: TimeZoneService) { }
 
   ngOnInit() {
     this.getWeatherCity('Montpellier');
@@ -26,7 +29,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     document.querySelector('body').classList.add('meteo');
-    // console.log(this.pays);
+    // console.log(this.weather);
 
   }
 
@@ -39,7 +42,22 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
     this._meteoService.searchCity(city).subscribe(
       res => {
         this.weather = res;
+        this.getTimeZone(res.name);
+        // console.log(this.getTimeZone(this.weather.sys.country))
         document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
+      }
+    )
+  }
+
+  getTimeZone(city) {
+    this._timeZoneServie.getTimeZone(city).subscribe(
+      res => {
+        this.timeZone = res;
+        console.log(res);
+        document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
+      },
+      error => {
+        this.timeZone = null;
       }
     )
   }
@@ -56,11 +74,13 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.cityName != null) {
       this.city = false;
       this.error = false;
+      this.timeZone = null;
       this._meteoService.searchCity(this.cityName)
         .subscribe(
         (res) => {
           console.log(res);
           this.weather = res;
+          this.getTimeZone(res.name);
           document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
           this.cityName = null;
         },
@@ -73,5 +93,9 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
       this.city = true;
       this.error = false;
     }
+  }
+
+  getCountry(code) {
+    return Pays.LIST_PAYS[code];
   }
 }
