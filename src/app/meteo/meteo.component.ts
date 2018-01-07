@@ -42,19 +42,19 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
     this._meteoService.searchCity(city).subscribe(
       res => {
         this.weather = res;
-        this.getTimeZone(res.name);
+        console.log(res);
+         this.getTimeZone(res.coord.lat, res.coord.lon);
         // console.log(this.getTimeZone(this.weather.sys.country))
         document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
       }
     )
   }
 
-  getTimeZone(city) {
-    this._timeZoneServie.getTimeZone(city).subscribe(
+  getTimeZone(lat, lng) {
+    this._timeZoneServie.getTimeZone(lat, lng).subscribe(
       res => {
         this.timeZone = res;
         console.log(res);
-        document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
       },
       error => {
         this.timeZone = null;
@@ -80,7 +80,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
         (res) => {
           console.log(res);
           this.weather = res;
-          this.getTimeZone(res.name);
+          this.getTimeZone(res.coord.lat, res.coord.lon);
           document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
           this.cityName = null;
         },

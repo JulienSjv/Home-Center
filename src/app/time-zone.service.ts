@@ -7,16 +7,16 @@ export class TimeZoneService {
 
   private country: string;
   private city: string;
-  private api: string = 'GjXb7mWvGnfypdcex5LSmC8MjqHjg3';
-  private apiTimeZone: string = 'https://www.amdoren.com/api/timezone.php?api_key='+this.api+'&loc=';
+  private api: string = 'DOY532Y7XWA9';
+  private apiTimeZone: string = 'http://api.timezonedb.com/v2/get-time-zone?key=' + this.api + '&format=json&by=position&';
 
   constructor(
     private http: Http
   ) { }
 
-  getTimeZone(city: string): Observable<any> {
-    console.log(this.apiTimeZone + city)
-    return this.http.get(this.apiTimeZone + city)
+  getTimeZone(lat: string, lng: string): Observable<any> {
+    // console.log(this.apiTimeZone + city)
+    return this.http.get(this.apiTimeZone + 'lat=' + lat + '&lng=' + lng)
       .map(res => res.json())
       .catch(this.handleError);
   }

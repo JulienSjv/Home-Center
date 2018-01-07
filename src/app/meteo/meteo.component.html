@@ -15,7 +15,8 @@
       <div class="card meteo-group">
         <div class="meteo-group-left">
           <div class="card-header"><h5>{{weather.name}} {{weather.main.temp | round}}°C</h5>
-          <span>{{weather.sys.country | pays}}  {{timeZone.time | date: 'HH:mm'}}</span>
+          <span>{{weather.sys.country | pays}}</span>
+          <span *ngIf="timeZone">  {{timeZone.formatted | date: 'HH:mm'}}</span>          
           </div>
           <img src="{{weather.weather[0].icon | meteoicon}}" alt="" width="120" height="120">
           <h5 class="card-title">{{weather.weather[0].description | capitalize}}</h5>
