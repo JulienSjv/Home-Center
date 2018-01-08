@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Meteo } from './meteo/meteo-model';
 import { MessageService } from './message.service';
 import { Constants } from './util/constants';
+import { environment } from '../environments/environment';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -10,14 +11,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/catch';;
 import { tap } from 'rxjs/operators';
-
-// import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Http, Response } from '@angular/http';
 
 @Injectable()
 export class MeteoService {
 
-  private apiKey = '5e50de00e7dc01b9b6409db3278a2660';
+  readonly token = environment.openweather.apiKey;
 
   private urlGetCity;
   private meteoUrlCity;
@@ -27,9 +26,9 @@ export class MeteoService {
   constructor(private http: Http,
     private messageService: MessageService) {
     this.urlGetCity = 'http://ip-api.com/json';
-    this.meteoUrlCity = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.apiKey + '&units=metric&lang=fr&q=';  // URL to web api
-    this.urlLatLong = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.apiKey + '&units=metric&lang=fr&';
-    this.meteoUrlForcastCity = 'http://api.openweathermap.org/data/2.5/forecast?APPID=' + this.apiKey + '&units=metric&lang=fr&q=';
+    this.meteoUrlCity = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.token + '&units=metric&lang=fr&q=';  // URL to web api
+    this.urlLatLong = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.token + '&units=metric&lang=fr&';
+    this.meteoUrlForcastCity = 'http://api.openweathermap.org/data/2.5/forecast?APPID=' + this.token + '&units=metric&lang=fr&q=';
   }
 
   getBgMeteo(value: string): string {

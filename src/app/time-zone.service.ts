@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class TimeZoneService {
 
+  readonly token = environment.timezone.apiKey;
   private country: string;
   private city: string;
-  private api: string = 'DOY532Y7XWA9';
-  private apiTimeZone: string = 'http://api.timezonedb.com/v2/get-time-zone?key=' + this.api + '&format=json&by=position&';
+  private apiTimeZone: string = 'http://api.timezonedb.com/v2/get-time-zone?key=' + this.token + '&format=json&by=position&';
 
   constructor(
     private http: Http

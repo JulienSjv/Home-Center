@@ -7,5 +7,11 @@ export const environment = {
   production: false,
   dialogflow: {
     angularBot: '325169e546f4498dacade9ebf703e2c0'
+  },
+  openweather: {
+    apiKey: '5e50de00e7dc01b9b6409db3278a2660'
+  },
+  timezone: {
+    apiKey: 'DOY532Y7XWA9'
   }
 };
