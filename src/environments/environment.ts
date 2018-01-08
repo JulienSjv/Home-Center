@@ -13,5 +13,8 @@ export const environment = {
   },
   timezone: {
     apiKey: 'DOY532Y7XWA9'
+  },
+  googlemap: {
+    apiKey: 'AIzaSyCao9WsPk42Eon9epPjoiZ_e-EwkqZLkvs'
   }
 };

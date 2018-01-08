@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Directive, AfterViewInit, OnDestroy } from '@angular/core';
 import { MeteoService } from '../meteo.service';
-import {TimeZoneService} from '../time-zone.service';
-import {Pays} from '../util/pays';
+import { TimeZoneService } from '../time-zone.service';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Pays } from '../util/pays';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-meteo',
@@ -12,6 +15,8 @@ import {Pays} from '../util/pays';
 })
 export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
 
+  readonly token = environment.googlemap.apiKey;
+
   weather;
   cityName;
   coords;
@@ -19,9 +24,12 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
   error: boolean = false;
   country;
   timeZone;
+  showMap = false;
+  urlGoogleMap = 'https://www.google.com/maps/embed/v1/view?zoom=12&center=';
+  map;
 
 
-  constructor(private _meteoService: MeteoService, private _timeZoneServie: TimeZoneService) { }
+  constructor(private _meteoService: MeteoService, private _timeZoneServie: TimeZoneService, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.getWeatherCity('Montpellier');
@@ -43,8 +51,8 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
       res => {
         this.weather = res;
         console.log(res);
-         this.getTimeZone(res.coord.lat, res.coord.lon);
-        // console.log(this.getTimeZone(this.weather.sys.country))
+        this.getTimeZone(res.coord.lat, res.coord.lon);
+        this.map = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlGoogleMap + res.coord.lat + ',' + res.coord.lon + '&key=' + this.token);
         document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
       }
     )
@@ -81,6 +89,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
           console.log(res);
           this.weather = res;
           this.getTimeZone(res.coord.lat, res.coord.lon);
+          this.map = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlGoogleMap + res.coord.lat + ',' + res.coord.lon + '&key=' + this.token);
           document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
           this.cityName = null;
         },
@@ -97,5 +106,9 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
 
   getCountry(code) {
     return Pays.LIST_PAYS[code];
+  }
+
+  setData(res){
+
   }
 }

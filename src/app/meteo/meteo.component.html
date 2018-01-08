@@ -14,9 +14,15 @@
     <div class="container-meteo-content" *ngIf="weather">
       <div class="card meteo-group">
         <div class="meteo-group-left">
-          <div class="card-header"><h5>{{weather.name}} {{weather.main.temp | round}}°C</h5>
-          <span>{{weather.sys.country | pays}}</span>
-          <span *ngIf="timeZone">  {{timeZone.formatted | date: 'HH:mm'}}</span>          
+          <div class="card-header">
+            <h5>{{weather.name}} {{weather.main.temp | round}}°C</h5>
+            <span>{{weather.sys.country | pays}}</span>
+            <span *ngIf="timeZone"> {{timeZone.formatted | date: 'HH:mm'}}</span>
+            <div class="location">
+              <button class="btn btn-outline-info" (click)="showMap=!showMap">
+                <i class="fas fa-map-marker-alt location"></i>
+              </button>
+            </div>
           </div>
           <img src="{{weather.weather[0].icon | meteoicon}}" alt="" width="120" height="120">
           <h5 class="card-title">{{weather.weather[0].description | capitalize}}</h5>
@@ -30,12 +36,16 @@
               <span>
                 <img src="assets/meteo/icons/icon-wind.png" alt="">{{weather.wind.speed | round}} km/h</span>
               <span>
-                <img src="assets/meteo/icons/icon-compass.png" alt="">{{weather.wind.deg | degwind}}
-              </span>
+                <img src="assets/meteo/icons/icon-compass.png" alt="">{{weather.wind.deg | degwind}}</span>
             </div>
           </div>
+          <div *ngIf="showMap">
+            <iframe width="600" height="450" frameborder="0" style="border:0" [src]="map" allowfullscreen></iframe>
+          </div>
         </div>
+
       </div>
+
     </div>
 
     <div class="container-meteo-content" *ngIf="!weather">
