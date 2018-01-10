@@ -36,24 +36,20 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    document.querySelector('body').classList.add('meteo');
+    // document.querySelector('body').classList.add('meteo');
     // console.log(this.weather);
 
   }
 
   ngOnDestroy(): void {
-    document.querySelector('body').classList.remove('meteo');
+    // document.querySelector('body').classList.remove('meteo');
   }
 
 
   getWeatherCity(city) {
     this._meteoService.searchCity(city).subscribe(
       res => {
-        this.weather = res;
-        console.log(res);
-        this.getTimeZone(res.coord.lat, res.coord.lon);
-        this.map = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlGoogleMap + res.coord.lat + ',' + res.coord.lon + '&key=' + this.token);
-        document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
+        this.setData(res);
       }
     )
   }
@@ -86,11 +82,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
       this._meteoService.searchCity(this.cityName)
         .subscribe(
         (res) => {
-          console.log(res);
-          this.weather = res;
-          this.getTimeZone(res.coord.lat, res.coord.lon);
-          this.map = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlGoogleMap + res.coord.lat + ',' + res.coord.lon + '&key=' + this.token);
-          document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
+          this.setData(res);
           this.cityName = null;
         },
         error => {
@@ -109,6 +101,10 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   setData(res){
-
+    this.weather = res;
+    console.log(res);
+    this.getTimeZone(res.coord.lat, res.coord.lon);
+    this.map = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlGoogleMap + res.coord.lat + ',' + res.coord.lon + '&key=' + this.token);
+    document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
   }
 }
