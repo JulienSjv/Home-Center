@@ -22,12 +22,6 @@ export class TimeZoneService {
       .catch(this.handleError);
   }
 
-  private extractFeeds(res: Response): any {
-    let feed = res.json().items;
-    // console.log(feed);
-    return feed || {};
-  }
-
   private handleError(error: any) {
     // In a real world app, we might use a remote logging infrastructure
     // We'd also dig deeper into the error to get a better message

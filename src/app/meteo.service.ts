@@ -35,7 +35,6 @@ export class MeteoService {
     return Constants.LIST_BG_METEO[value];
   }
 
-
   getCoords() {
     return this.http.get(this.urlGetCity)
       .map(res => res.json())

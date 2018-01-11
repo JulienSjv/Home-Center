@@ -22,7 +22,6 @@ export class MeteoSumaryComponent implements AfterViewInit, OnDestroy, OnInit {
 
   ngOnInit() {
 
-    // this.geoLoc ? this.getWeather() : this.getWeatherCity('Montpellier');
   }
 
   ngAfterViewInit() {
@@ -34,7 +33,6 @@ export class MeteoSumaryComponent implements AfterViewInit, OnDestroy, OnInit {
 
     this._meteoService.searchCity(city).subscribe(
       res => {
-        // console.log(res);
         this.weather = res;
         this.time = new Date();
       }
