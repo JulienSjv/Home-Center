@@ -49,6 +49,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { FeedDetailsModalComponent } from './feed-details-modal/feed-details-modal.component';
 import { PaysPipe } from './pipe/pays.pipe';
 import { TimeZoneService } from './time-zone.service';
+import { MapModalComponent } from './map-modal/map-modal.component';
 
 
 
@@ -78,7 +79,8 @@ import { TimeZoneService } from './time-zone.service';
     FeedGoogleComponent,
     LoaderComponent,
     FeedDetailsModalComponent,
-    PaysPipe
+    PaysPipe,
+    MapModalComponent
   ],
   imports: [
     BrowserModule,

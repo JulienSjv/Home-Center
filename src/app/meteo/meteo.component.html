@@ -19,9 +19,12 @@
             <span>{{weather.sys.country | pays}}</span>
             <span *ngIf="timeZone"> {{timeZone.formatted | date: 'HH:mm'}}</span>
             <div class="location">
-              <button class="btn btn-outline-info" (click)="showMap=!showMap">
+
+                <app-map-modal [map]="map"></app-map-modal>
+
+              <!-- <button class="btn btn-outline-info" (click)="showMap=!showMap">
                 <i class="fas fa-map-marker-alt location"></i>
-              </button>
+              </button> -->
             </div>
           </div>
           <img src="{{weather.weather[0].icon | meteoicon}}" alt="" width="120" height="120">
@@ -40,7 +43,8 @@
             </div>
           </div>
           <div *ngIf="showMap">
-            <iframe width="600" height="450" frameborder="0" style="border:0" [src]="map" allowfullscreen></iframe>
+
+            <!-- <iframe width="600" height="450" frameborder="0" style="border:0" [src]="map" allowfullscreen></iframe> -->
           </div>
         </div>
 

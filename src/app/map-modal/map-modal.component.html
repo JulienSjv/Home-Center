@@ -1,0 +1,31 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div [@dialog] class="feed-modal">
+    <div id="modal-feed" class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Localisation Google Map</h4>
+          <button type="button" class="close" aria-label="Close" (click)="c()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div  class="modal-body">
+          <p > <iframe  width="600" height="450" frameborder="0" style="border:0" [src]="map" allowfullscreen></iframe></p>
+        </div>
+        <div class="modal-footer">
+          <!-- <div *ngIf="feed.author" class="author">
+            <span></span>
+          </div> -->
+
+          <!-- <a target="_blank" href="{{feed.link}}">
+            <button type="button" class="btn btn-outline-info" (click)="c()">Lire la suite</button>
+          </a> -->
+          <button type="button" class="btn btn-outline-dark" (click)="c()">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!-- <button class="btn btn-outline-secondary" (click)="open(content)">Details</button> -->
+<button class="btn btn-outline-info" (click)="open(content)">
+    <i class="fas fa-map-marker-alt location"></i>
+  </button>
