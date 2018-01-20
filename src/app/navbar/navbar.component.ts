@@ -20,11 +20,11 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     private voices: SpeechSynthesisVoice;
 
   ngOnInit() {
-    //  this.speechSynthesisService.InitVoice();
+
   }
 
   ngAfterViewInit(): void {
-    // this.speechSynthesisService.Speak("Bonjour TeurTe!"); // comment ça va aujourd'hui?");
+    
   }
 
 }
