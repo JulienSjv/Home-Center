@@ -1,4 +1,4 @@
-.feed-modal {
+/* .feed-modal {
     position: absolute;
     top: 200px !important;
 }
@@ -15,6 +15,10 @@
 
 .modal-footer {
     justify-content: center;
+} */
+
+.modal-map {
+    top: 200px;
 }
 
 .close {

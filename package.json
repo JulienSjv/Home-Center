@@ -26,7 +26,7 @@
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.8",
     "bootstrap": "^4.0.0-beta.2",
     "core-js": "^2.4.1",
-    "ngx-bootstrap": "^2.0.0-rc.0",
+    "ngx-bootstrap": "^2.0.1",
     "rxjs": "^5.5.2",
     "time-ago-pipe": "^1.2.1",
     "zone.js": "^0.8.14"

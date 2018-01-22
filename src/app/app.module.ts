@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule } from '@angular/http';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AlertModule } from 'ngx-bootstrap';
 import { ChatModule } from './chat/chat.module';
@@ -93,7 +93,7 @@ import { MapModalComponent } from './map-modal/map-modal.component';
     // MatToolbarModule,
     // MatButtonModule,
     // MatIconModule,
-    NgbModule.forRoot(),
+    ModalModule.forRoot(),
     AlertModule.forRoot()
   ],
   providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService, TimeZoneService],

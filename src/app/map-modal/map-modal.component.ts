@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input, TemplateRef   } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 
 @Component({
@@ -23,10 +24,11 @@ export class MapModalComponent {
 
   @Input() map: any;
 
-  constructor(private modalService: NgbModal) { }
-
-  open(content) {
-    this.modalService.open(content)
+  modalRef: BsModalRef;
+  constructor(private modalService: BsModalService) {}
+ 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
-
+  
 }
