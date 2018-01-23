@@ -1,24 +1,12 @@
-/* .feed-modal {
-    position: absolute;
-    top: 200px !important;
-}
 
-.modal-dialog {
-    max-width: 630px;
-    margin: 15px auto;
-    margin-left: -65px;
-}
-
-.modal-header h4 {
-    margin-left: 27%;
-}
 
 .modal-footer {
     justify-content: center;
-} */
+}
 
-.modal-map {
-    top: 200px;
+.feed-modal {
+    position: absolute;
+    top: 160px !important;
 }
 
 .close {
