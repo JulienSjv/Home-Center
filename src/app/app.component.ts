@@ -10,11 +10,21 @@ import { trigger, state, animate, style, group, animateChild, query, stagger, tr
   animations: [
     trigger('routerAnimations', [
       transition('accueil => meteo', slideRight),
+      transition('accueil => chatbox', slideRight),
+      transition('accueil => nexus', slideRight),
+
       transition('meteo => accueil', slideLeft),
       transition('meteo => chatbox', slideRight),
-      transition('chatbox => meteo', slideLeft),      
+      transition('meteo => nexus', slideRight),
+
       transition('chatbox => accueil', slideLeft),
-      transition('accueil => chatbox', slideRight),
+      transition('chatbox => meteo', slideLeft),      
+      transition('chatbox => nexus', slideRight),
+
+      transition('nexus => accueil', slideLeft),
+      transition('nexus => meteo', slideLeft),
+      transition('nexus => chatbox', slideLeft),
+
 
     ])
   ]

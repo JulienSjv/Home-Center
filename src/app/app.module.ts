@@ -50,6 +50,7 @@ import { FeedDetailsModalComponent } from './feed-details-modal/feed-details-mod
 import { PaysPipe } from './pipe/pays.pipe';
 import { TimeZoneService } from './time-zone.service';
 import { MapModalComponent } from './map-modal/map-modal.component';
+import { NexusComponent } from './nexus/nexus.component';
 
 
 
@@ -80,7 +81,8 @@ import { MapModalComponent } from './map-modal/map-modal.component';
     LoaderComponent,
     FeedDetailsModalComponent,
     PaysPipe,
-    MapModalComponent
+    MapModalComponent,
+    NexusComponent
   ],
   imports: [
     BrowserModule,
