@@ -20,7 +20,7 @@ export class AccueilComponent implements OnInit, AfterViewInit, OnDestroy {
 
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     document.querySelector('body').classList.add('accueil');
     document.querySelector('body').style.backgroundImage = "";
 

@@ -10,6 +10,8 @@ export class NexusComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    document.querySelector('body').style.backgroundImage = "";
+      document.querySelector('body').classList.add('nexus');
   }
 
 }
