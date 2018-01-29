@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule } from '@angular/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDropdownModule } from 'ngx-bootstrap';
+
 
 import { AlertModule } from 'ngx-bootstrap';
 import { ChatModule } from './chat/chat.module';
@@ -98,7 +100,8 @@ import { FooterComponent } from './footer/footer.component';
     // MatButtonModule,
     // MatIconModule,
     ModalModule.forRoot(),
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService, TimeZoneService],
   bootstrap: [AppComponent]

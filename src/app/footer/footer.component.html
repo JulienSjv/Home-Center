@@ -4,31 +4,28 @@
       <span class="text-muted">Place sticky footer content here.</span>
     </div>
     <div class="container-dropup">
-      <div class="btn-group dropup">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdownMenu2" aria-haspopup="true" aria-expanded="false">
+      <div class="btn-group" dropdown [dropup]="isDropup">
+        <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
           Dropup
+          <span class="caret"></span>
         </button>
-        <div class="dropdown-menu dropdown" >
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <ul *dropdownMenu class="dropdown-menu" role="menu">
+          <li role="menuitem">
             <a class="dropdown-item" href="#">Action</a>
+          </li>
+          <li role="menuitem">
             <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
+          </li>
+          <li role="menuitem">
+            <a class="dropdown-item" href="#">Something else here
+            </a>
+          </li>
+          <li class="divider dropdown-divider"></li>
+          <li role="menuitem">
             <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
-      <!-- <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="true">
-          Dropdown
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <button class="dropdown-item" type="button">Action</button>
-          <button class="dropdown-item" type="button">Another action</button>
-          <button class="dropdown-item" type="button">Something else here</button>
-        </div>
-      </div> -->
     </div>
   </div>
 </footer>

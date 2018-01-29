@@ -8,7 +8,7 @@
     background-color: #343a40;
 }
 .container-footer {
-    display: -webkit-box;
+    display: -webkit-inline-box;
 }
 .container-dropup {
     width: 87%;
