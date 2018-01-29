@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FeedService } from '../feed-service.service';
 
 @Component({
   selector: 'app-feed-group',
@@ -7,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedGroupComponent implements OnInit {
 
-  
-  constructor() { }
+  feeds: any;
+  constructor(private feedService: FeedService) { }
 
   ngOnInit() {
+      this.getFeeds();
+  }
+
+  getFeeds() {
+    this.feedService.getFeeds()
+    .subscribe(
+      feeds => {
+        this.feeds = feeds,
+        console.log(feeds);
+      })
   }
 
 }
