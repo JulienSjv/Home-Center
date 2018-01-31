@@ -25,7 +25,7 @@
         </ng-container>
       </ol>
       <div class="carousel-inner" role="listbox">
-        <div class="container-feed-contenu">
+        <div class="container-feed-contenu" [ngStyle]="{'background-color': feedc.color}">
           <div *ngFor="let feed of feeds?.slice(0, 10); let j = index" class="{{ (j == 0) ? 'carousel-item active' : 'carousel-item'}}">
             <app-feed-card [feed]="feed"></app-feed-card>
           </div>
