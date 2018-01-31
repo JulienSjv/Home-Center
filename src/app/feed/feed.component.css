@@ -1,0 +1,52 @@
+.container-feed {
+    max-width: 500px;
+    max-height: 400px;
+}
+.container-feed .carousel-item {
+    margin-top: 15px;
+}
+
+.container-feed .carousel-inner {
+    margin-bottom: 20xp;
+}
+
+.container-feed .carousel-indicators {
+    bottom: 0px;
+}
+
+.container-feed-title a {
+    text-decoration: none;
+}
+
+.container-feed .carousel-control-next, .carousel-control-prev {
+    margin-top: 150px;
+    height: 100px;
+}
+
+.container-feed-header {
+    color: rgb(7, 82, 143);
+    display: -webkit-inline-box;
+    width: 100%;
+}
+
+.container-feed-loader {
+    margin-top: 50px;
+}
+
+.container-feed-icon {
+    color: rgb(112, 136, 112);
+    width: 10%;
+}
+
+.container-feed-icon:hover {
+    color: forestgreen;
+}
+
+.container-feed-contenu {
+    max-width: 500px;
+    min-width: 200px;
+    height: 220px;
+    overflow: hidden;
+    background-color: rgb(75, 75, 75);
+
+}

@@ -1,14 +1,23 @@
-  <div class="container-feed-group">
-    <div class="row">
+<div class="container-feed-group">
+  <div class="row">
+    <div *ngFor="let feedc of allFeeds; let i = index;">
+      <div *ngIf="feedc.selected">
       <div class="card-deck">
         <div class="card col">
           <div class="card-body">
             <p class="card-text">
-              <app-feed-nxi></app-feed-nxi>
+              <app-feed [feedc]="feedc"></app-feed>
             </p>
           </div>
         </div>
-        <div class="card col">
+        <!-- <div *ngIf="i%2!==0" class="w-100"></div> -->
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="card col">
           <div class="card-body">
             <p class="card-text">
               <app-feed-univf></app-feed-univf>
@@ -31,7 +40,4 @@
               <app-feed-google></app-feed-google>
             </p>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        </div> -->

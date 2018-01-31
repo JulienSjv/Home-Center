@@ -1,0 +1,62 @@
+<div *ngIf="feeds" class="container-feed">
+    <div class="card-header container-feed-header">
+      <div class="container-feed-icon">
+        <a (click)="refreshFeed()" >
+            <i class="fas fa-sync-alt fa-1x"></i>
+          <!-- <i class="{{ (feeds==null) ? 'fas fa-sync-alt fa-spin fa-1x' : 'fas fa-sync-alt fa-1x'}}" ></i> -->
+          <!-- <i class="fas fa-sync-alt fa-spin fa-1x" *ngIf="loader"></i> -->
+          <!-- (click)="showFirst=!showFirst">
+            <i class="material-icons" *ngIf="showFirst">filter_drama</i>
+            <i class="material-icons" *ngIf="!showFirst">place</i>-->
+        </a>
+      </div>
+      <div class="container-feed-title">
+        <a target="_blank" href="{{feedc.url}}">
+          <h4>{{feedc.nom}}</h4>
+        </a>
+        <small>{{time | timeAgo}}</small>
+      </div>
+  
+    </div>
+    <div id="{{feedc.id}}" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <ng-container *ngFor="let feed of feeds?.slice(0, 10); let i = index">
+          <li [attr.data-target]="'#' + feedc.id" [attr.data-slide-to]="i" class="{{ (i == 0) ? 'active' : ''}}"></li>
+        </ng-container>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="container-feed-contenu">
+          <div *ngFor="let feed of feeds?.slice(0, 10); let j = index" class="{{ (j == 0) ? 'carousel-item active' : 'carousel-item'}}">
+            <app-feed-card [feed]="feed"></app-feed-card>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#{{feedc.id}}" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#{{feedc.id}}" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  
+  <div *ngIf="!feeds" class="container-feed">
+      <div class="card-header container-feed-header">
+        <div class="container-feed-icon">
+          <a (click)="refreshFeed()">
+            <i class="fas fa-sync-alt fa-1x"></i>
+          </a>
+        </div>
+        <div class="container-feed-title">
+          <a target="_blank" href="feed.url">
+            <h4>Next Inpact</h4>
+          </a>
+          <small>Chargement..</small>
+        </div>
+      </div>
+      <div class="container-feed-loader">
+        <app-loader></app-loader>
+      </div>
+    </div>

@@ -8,7 +8,7 @@ import { FeedService } from '../feed-service.service';
 })
 export class FeedGroupComponent implements OnInit {
 
-  feeds: any;
+  allFeeds: any;
   constructor(private feedService: FeedService) { }
 
   ngOnInit() {
@@ -19,7 +19,7 @@ export class FeedGroupComponent implements OnInit {
     this.feedService.getFeeds()
     .subscribe(
       feeds => {
-        this.feeds = feeds,
+        this.allFeeds = feeds,
         console.log(feeds);
       })
   }
