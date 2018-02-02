@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule } from '@angular/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { AngularDraggableModule } from 'angular2-draggable';
 
 
 import { AlertModule } from 'ngx-bootstrap';
@@ -96,6 +97,7 @@ import { FeedComponent } from './feed/feed.component';
     FormsModule,
     AppRoutingModule,
     HttpModule,
+    AngularDraggableModule,
     // ChatModule,
     // MatCardModule,
     // MatToolbarModule,

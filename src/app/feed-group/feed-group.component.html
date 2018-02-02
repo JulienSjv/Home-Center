@@ -2,7 +2,7 @@
   <div class="row">
     <div *ngFor="let feedc of allFeeds; let i = index;">
       <div *ngIf="feedc.selected">
-      <div class="card-deck">
+      <div [preventDefaultEvent]="preventDefaultEvent" ngDraggable (started)="onDragBegin($event)" (stopped)="onDragEnd($event)" class="card-deck">
         <div class="card col">
           <div class="card-body">
             <p class="card-text">
