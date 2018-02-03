@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FeedService } from '../feed-service.service';
+import {AngularDraggableDirective} from 'angular2-draggable';
 
 @Component({
   selector: 'app-feed-group',
@@ -7,7 +8,7 @@ import { FeedService } from '../feed-service.service';
   styleUrls: ['./feed-group.component.css']
 })
 export class FeedGroupComponent implements OnInit {
-
+  @ViewChild(AngularDraggableDirective) directive = null
   allFeeds: any;
   properties: any;
   preventDefaultEvent = true;

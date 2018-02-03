@@ -1,20 +1,32 @@
 <div class="container-feed-group">
+  <!-- <button (click)="toggle = !toggle"></button> -->
+  <div class="feed-config">
+    <app-feed-config-modal [allFeeds]="allFeeds"></app-feed-config-modal>
+  </div>
   <div class="row">
     <div *ngFor="let feedc of allFeeds; let i = index;">
       <div *ngIf="feedc.selected">
-      <div [preventDefaultEvent]="preventDefaultEvent" ngDraggable (started)="onDragBegin($event)" (stopped)="onDragEnd($event)" class="card-deck">
-        <div class="card col">
-          <div class="card-body">
-            <p class="card-text">
-              <app-feed [feedc]="feedc"></app-feed>
-            </p>
+        <div [ngDraggable]="toggle" [preventDefaultEvent]="preventDefaultEvent" ngDraggable (started)="onDragBegin($event)" (stopped)="onDragEnd($event)"
+          class="card-deck">
+          <!-- <div movable [movableEnabled]="toggle" class="card-deck"> -->
+
+          <div class="card col">
+            <div class="card-body">
+              <p class="card-text">
+                <app-feed [feedc]="feedc"></app-feed>
+              </p>
+            </div>
           </div>
+          <!-- <div *ngIf="i%2!==0" class="w-100"></div> -->
         </div>
-        <!-- <div *ngIf="i%2!==0" class="w-100"></div> -->
       </div>
     </div>
-    </div>
   </div>
+  <!-- <div movable [movableEnabled]="toggle">
+    <div><b>Simple movable</b></div>
+    The complete element can be used for moving.<br />
+    <button (click)="toggle = !toggle">toggle enabled state</button>
+  </div> -->
 </div>
 
 <!-- <div class="card col">

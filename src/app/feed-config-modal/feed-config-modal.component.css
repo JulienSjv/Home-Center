@@ -1,0 +1,10 @@
+.close {
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .2s ease-in-out 0s;
+            transition:         transform .2s ease-in-out 0s;
+  }
+
+  .close:hover {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }

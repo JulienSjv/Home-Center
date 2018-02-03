@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap';
 import { AngularDraggableModule } from 'angular2-draggable';
+import { MovableModule } from 'ng2-movable/index';
 
 
 import { AlertModule } from 'ngx-bootstrap';
@@ -56,6 +57,7 @@ import { MapModalComponent } from './map-modal/map-modal.component';
 import { NexusComponent } from './nexus/nexus.component';
 import { FooterComponent } from './footer/footer.component';
 import { FeedComponent } from './feed/feed.component';
+import { FeedConfigModalComponent } from './feed-config-modal/feed-config-modal.component';
 
 
 
@@ -89,7 +91,8 @@ import { FeedComponent } from './feed/feed.component';
     MapModalComponent,
     NexusComponent,
     FooterComponent,
-    FeedComponent
+    FeedComponent,
+    FeedConfigModalComponent
   ],
   imports: [
     BrowserModule,
@@ -98,6 +101,7 @@ import { FeedComponent } from './feed/feed.component';
     AppRoutingModule,
     HttpModule,
     AngularDraggableModule,
+    MovableModule,
     // ChatModule,
     // MatCardModule,
     // MatToolbarModule,

@@ -26,7 +26,7 @@ export class FeedService {
 
   private extractFeeds(res: Response): Feed {
     let feed = res.json().items;
-    // console.log(feed);
+     console.log(feed);
     return feed || {};
   }
 

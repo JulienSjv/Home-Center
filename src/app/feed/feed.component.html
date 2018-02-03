@@ -13,7 +13,7 @@
     </div>
 
   </div>
-  <div id="{{feedc.id}}" class="carousel slide" data-ride="carousel">
+  <div *ngIf="feeds?.length > 0; else nofeed" id="{{feedc.id}}" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <ng-container *ngFor="let feed of feeds?.slice(0, 10); let i = index">
         <li [attr.data-target]="'#' + feedc.id" [attr.data-slide-to]="i" class="{{ (i == 0) ? 'active' : ''}}"></li>
@@ -36,8 +36,14 @@
     </a>
   </div>
 </div>
-
-<div *ngIf="!feeds" class="container-feed">
+<ng-template #nofeed>
+  <div class="container-feed-loader" style="width: 550px; color: red;">
+    <!-- <app-loader></app-loader> -->
+    <i class="fas fa-exclamation-triangle"></i>
+    Erreur..
+  </div>
+</ng-template>
+<div *ngIf="!feeds" class="container-feed" style="width: 550px;">
   <div class="card-header container-feed-header">
     <div class="container-feed-icon">
       <a (click)="refreshFeed()">
