@@ -1,6 +1,5 @@
-.container-feed-group {
-  /* margin-top: 100px;
-    float: right; */
+.container-feed-group .row {
+  margin-left: 0px;
 }
 
 .container-feed-group .card {
@@ -15,6 +14,13 @@
 
 .feed-config {
   margin: auto;
-  margin-left: 2%;
+  margin-left: 20px;
   margin-top: -1%;
+}
+
+.nav-config {
+  position: fixed;
+  bottom: 50px;
+  left: 95%;
+  z-index: 99999;
 }

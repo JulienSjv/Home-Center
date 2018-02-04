@@ -1,17 +1,31 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FeedService } from '../feed-service.service';
 import { AngularDraggableDirective } from 'angular2-draggable';
+import { trigger, style, state, transition, animate, keyframes, query, stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-feed-group',
   templateUrl: './feed-group.component.html',
-  styleUrls: ['./feed-group.component.css']
+  styleUrls: ['./feed-group.component.css'],
+  animations: [
+    trigger('slideInOut', [
+      state('in', style({
+        transform: 'translate3d(0, 0, 0)'
+      })),
+      state('out', style({
+        transform: 'translate3d(100%, 0, 0)'
+      })),
+      transition('in => out', animate('400ms ease-in-out')),
+      transition('out => in', animate('400ms ease-in-out'))
+    ]),
+  ]
 })
 export class FeedGroupComponent implements OnInit {
   @ViewChild(AngularDraggableDirective) directive = null
   allFeeds: any;
   properties: any;
   preventDefaultEvent = true;
+  menuState:string = 'out';
 
 
   constructor(private feedService: FeedService) { }
@@ -20,6 +34,11 @@ export class FeedGroupComponent implements OnInit {
     this.getFeeds();
     // this.updatePosition();
 
+  }
+
+  toggleMenu() {
+    // 1-line if statement that toggles the value:
+    this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }
 
   getFeeds() {

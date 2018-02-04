@@ -60,6 +60,7 @@ import { NexusComponent } from './nexus/nexus.component';
 import { FooterComponent } from './footer/footer.component';
 import { FeedComponent } from './feed/feed.component';
 import { FeedConfigModalComponent } from './feed-config-modal/feed-config-modal.component';
+import { PanelComponent } from './panel/panel.component';
 
 
 
@@ -94,7 +95,8 @@ import { FeedConfigModalComponent } from './feed-config-modal/feed-config-modal.
     NexusComponent,
     FooterComponent,
     FeedComponent,
-    FeedConfigModalComponent
+    FeedConfigModalComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
