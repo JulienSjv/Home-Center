@@ -7,6 +7,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap';
 import { AngularDraggableModule } from 'angular2-draggable';
 import { MovableModule } from 'ng2-movable/index';
+import { ColorPickerModule } from 'ngx-color-picker';
+import { DndModule } from 'ng2-dnd';
 
 
 import { AlertModule } from 'ngx-bootstrap';
@@ -102,6 +104,8 @@ import { FeedConfigModalComponent } from './feed-config-modal/feed-config-modal.
     HttpModule,
     AngularDraggableModule,
     MovableModule,
+    ColorPickerModule,
+    DndModule.forRoot(),
     // ChatModule,
     // MatCardModule,
     // MatToolbarModule,

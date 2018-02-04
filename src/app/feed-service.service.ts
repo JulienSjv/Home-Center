@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Feed } from './model/feed';
 
@@ -18,6 +18,22 @@ export class FeedService {
       .map(res => res.json());
   }
 
+  updateFeeds(allFeeds) {
+    const httpOptions = {
+      headers: new Headers({ 'Content-Type': 'application/json' })
+    };
+    // let headers = new Headers();
+    // headers.append('Content-Type', 'application/json');
+
+    let url = this.urlFeeds;
+
+    return this.http
+      .put(url, JSON.stringify(allFeeds), httpOptions)
+      .toPromise()
+      .then(res => <any[]>res.json().data)
+      .then(data => { return data; });
+  }
+
   getFeedContent(url: string): Observable<Feed> {
     return this.http.get(this.rssToJsonServiceBaseUrl + url)
       .map(this.extractFeeds)
@@ -26,7 +42,7 @@ export class FeedService {
 
   private extractFeeds(res: Response): Feed {
     let feed = res.json().items;
-     console.log(feed);
+    console.log(feed);
     return feed || {};
   }
 

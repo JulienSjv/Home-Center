@@ -1,10 +1,50 @@
 .close {
-    border-radius: 50%;
-    -webkit-transition: -webkit-transform .2s ease-in-out 0s;
-            transition:         transform .2s ease-in-out 0s;
-  }
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .2s ease-in-out 0s;
+  transition: transform .2s ease-in-out 0s;
+}
 
-  .close:hover {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-  }
+.close:hover {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.modal-footer {
+  justify-content: center;
+}
+
+.feed-body:hover {
+  background-color: rgb(232, 232, 232);
+}
+
+/* .modal-dialog-edit-feeds {
+  min-width: 820px !important;
+} */
+
+/* .add-feed {
+  color: rgb(193, 193, 193);
+} */
+
+/* .del-feed {
+  color: red;
+}
+
+.del-feed:hover {
+  color: white;
+} */
+
+
+/* .add-feed:hover {
+  color: rgb(8, 139, 220);
+} */
+
+
+
+
+/* .colorpicker-parent {
+  position: relative;
+}
+
+.color-picker {
+  position: fixed
+} */

@@ -1,6 +1,6 @@
-<ng-template #template>
-  <div class="feed-modal">
-    <div id="modal-feed" class="modal-dialog" role="document">
+<!-- <ng-template #feedModalEdit>
+  <div class="feed-config-modal">
+    <div id="modal-feed-config" class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Edit Feeds</h4>
@@ -8,30 +8,97 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div *ngFor="let feedc of allFeeds; let i = index;" class="modal-body" [ngStyle]="{'color': feedc.color}">
-          <h5>{{feedc.nom}}</h5>
-          <div class="form-group">
-
-            <label for="exampleInputEmail1">URL</label>
-            <input type="text" class="form-control" id="{{feedc.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedc.url">
-            <div class="form-check">
-              <!-- <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"> -->
-              <label class="form-check-label" for="{{feedc.id}}">Afficher</label>
-              <input class="form-check-input" id="{{feedc.id}}" type="checkbox" [(ngModel)]="feedc.selected"/>
-
-            </div>
-          </div>
-        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>URL</th>
+              <th>Couleur</th>
+              <th>Afficher</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let feedm of allFeedsEdit; let i = index;" class="modal-body" >
+              <td><input type="text" class="form-control" id="{{feedm.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedm.nom"></td>
+              <td><input type="text" class="form-control" id="{{feedm.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedm.url"></td>
+              <td><input id="{{feedm.id}}" [value]="feedm.color"
+                [style.background]="feedm.color"
+                [cpPosition]="'bottom'"
+                [cpPositionRelativeToArrow]="true"
+                [cpCancelButton]="true"
+                [cpCancelButtonClass]= "'btn btn-primary btn-xs'"
+                [cpOKButton]="true"
+                [cpOKButtonClass]= "'btn btn-primary btn-xs'"
+                [cpSaveClickOutside]="false"
+                [(colorPicker)]="feedm.color"/></td>
+              <td style="text-align: center;"><input class="form-check-input" id="{{feedm.id}}" type="checkbox" [(ngModel)]="feedm.selected"/></td>
+            </tr>
+          </tbody>
+        </table>
         <div class="modal-footer">
-          <!-- <a target="_blank" href="{{feed.link}}">
-              <button type="button" class="btn btn-outline-info" (click)="modalRef.hide()">Lire la suite</button>
-            </a> -->
+            <button type="button" class="btn btn-outline-success" (click)="saveFeed()">Save</button>
           <button type="button" class="btn btn-outline-dark" (click)="modalRef.hide()">Fermer</button>
         </div>
       </div>
     </div>
   </div>
 </ng-template>
-<button type="button" class="btn btn-outline-secondary" (click)="openModal(template)">
+<button type="button" class="btn btn-outline-secondary" (click)="openModal(feedModalEdit)">
+  <i class="fas fa-cogs"></i>
+</button> -->
+
+
+<button class="btn btn-outline-primary" (click)="openModal(feedModalEdit)">
   <i class="fas fa-cogs"></i>
 </button>
+
+<ng-template #feedModalEdit class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Edit Feeds <button type="button" class="btn btn-outline-info" (click)="addFeed()"><i class="fas fa-plus add-feed"></i></button></h4>
+        <button type="button" class="close pull-right" (click)="modalRef.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Ordre</th>
+              <th>Nom</th>
+              <th>URL</th>
+              <th>Couleur</th>
+              <th>Afficher</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody dnd-sortable-container [sortableData]="allFeedsEdit">
+            <tr *ngFor="let feedm of allFeedsEdit; let j = index;" dnd-sortable [sortableIndex]="j" class="modal-body feed-body">
+              <td dnd-sortable-handle><i class="fas fa-bars"></i> {{j+1}}</td>
+              <td>
+                <input type="text" class="form-control" id="{{feedm.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedm.nom" style="width: 150px;"> 
+              </td>
+              <td>
+                <input type="text" class="form-control" id="{{feedm.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedm.url" style="width: 250px;">
+              </td>
+              <td>
+                <input class="form-control" id="{{feedm.id}}" [value]="" [style.background]="feedm.color" [cpPosition]="'bottom'" [cpPositionRelativeToArrow]="true"
+                  [cpCancelButton]="true" [cpCancelButtonClass]="'btn btn-primary btn-xs'" [cpOKButton]="true" [cpOKButtonClass]="'btn btn-primary btn-xs'"
+                  [cpSaveClickOutside]="false" [(colorPicker)]="feedm.color" style="width: 40px;" />
+              </td>
+              <td style="text-align: center;">
+                <input class="form-check-input" id="{{feedm.id}}" type="checkbox" [(ngModel)]="feedm.selected" />
+              </td>
+              <td><button type="button" class="btn btn-outline-danger" (click)="delFeed(j)"><i class="far fa-trash-alt del-feed" ></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success" (click)="saveFeed(); modalRef.hide()">Save</button>
+        <button type="button" class="btn btn-outline-dark" (click)="modalRef.hide();">Fermer</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

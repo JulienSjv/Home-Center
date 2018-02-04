@@ -1,13 +1,14 @@
 <div class="container-feed-group">
   <!-- <button (click)="toggle = !toggle"></button> -->
   <div class="feed-config">
-    <app-feed-config-modal [allFeeds]="allFeeds"></app-feed-config-modal>
+    <app-feed-config-modal [allFeedsEdit]="allFeeds"></app-feed-config-modal>
+    <button type="button" class="btn btn-outline-success" (click)="getFeeds()"><i class="fas fa-sync"></i></button>
+
   </div>
   <div class="row">
     <div *ngFor="let feedc of allFeeds; let i = index;">
       <div *ngIf="feedc.selected">
-        <div [ngDraggable]="toggle" [preventDefaultEvent]="preventDefaultEvent" ngDraggable (started)="onDragBegin($event)" (stopped)="onDragEnd($event)"
-          class="card-deck">
+        <div class="card-deck">
           <!-- <div movable [movableEnabled]="toggle" class="card-deck"> -->
 
           <div class="card col">
