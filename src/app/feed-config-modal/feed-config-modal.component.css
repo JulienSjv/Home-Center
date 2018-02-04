@@ -9,10 +9,21 @@
   transform: rotate(90deg);
 }
 
-.modal-footer {
+.modal-footer, .table-feed td {
   justify-content: center;
+  text-align: center;
 }
+
+.drag:hover {
+  color: rgb(14, 124, 208)
+}
+
+ /* .table-feed td .form-check-input {
+  text-align: right;
+} */
 
 .feed-body:hover {
   background-color: rgb(232, 232, 232);
 }
+
+

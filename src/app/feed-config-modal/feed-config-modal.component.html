@@ -16,7 +16,7 @@
         </button>
       </div>
       <div class="modal-body table-responsive">
-        <table class="table">
+        <table class="table table-feed">
           <thead>
             <tr>
               <th>Ordre</th>
@@ -29,8 +29,8 @@
           </thead>
           <tbody dnd-sortable-container [sortableData]="allFeedsEdit">
             <tr *ngFor="let feedm of allFeedsEdit; let j = index;" dnd-sortable [sortableIndex]="j" class="modal-body feed-body">
-              <td dnd-sortable-handle>
-                <i class="fas fa-bars"></i> {{j+1}}</td>
+              <td dnd-sortable-handle class="drag">
+                <i class="fas fa-bars" ></i></td>
               <td>
                 <input type="text" class="form-control" id="{{feedm.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedm.nom"
                   style="width: 150px;">
@@ -44,7 +44,7 @@
                   [cpCancelButton]="true" [cpCancelButtonClass]="'btn btn-primary btn-xs'" [cpOKButton]="true" [cpOKButtonClass]="'btn btn-primary btn-xs'"
                   [cpSaveClickOutside]="false" [(colorPicker)]="feedm.color" style="width: 40px;" />
               </td>
-              <td style="text-align: center;">
+              <td >
                 <input class="form-check-input" id="{{feedm.id}}" type="checkbox" [(ngModel)]="feedm.selected" />
               </td>
               <td>
@@ -63,3 +63,5 @@
     </div>
   </div>
 </ng-template>
+
+<!-- style="text-align: center;" -->

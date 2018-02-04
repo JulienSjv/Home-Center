@@ -3,6 +3,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
 import { FeedService } from '../feed-service.service';
+import {FormArray, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-feed-config-modal',
@@ -22,6 +23,15 @@ import { FeedService } from '../feed-service.service';
 })
 
 export class FeedConfigModalComponent {
+
+  listOne: FormArray = new FormArray([
+    new FormControl('Coffee'),
+    new FormControl('Orange Juice'),
+    new FormControl('Red Wine'),
+    new FormControl('Unhealty drink!'),
+    new FormControl('Water')
+  ]);
+
   @Input() allFeedsEdit: any;
 
   modalRef: BsModalRef;
@@ -38,7 +48,7 @@ export class FeedConfigModalComponent {
   }
 
   delFeed(feedId) {
-    console.log(feedId);
+    // console.log(feedId);
     this.allFeedsEdit.splice(feedId, 1);
   }
 

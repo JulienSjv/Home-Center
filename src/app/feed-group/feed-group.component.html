@@ -1,4 +1,4 @@
-<div class="container-feed-group">
+<div *ngIf="allFeeds" class="container-feed-group">
   <div class="feed-config">
     <app-feed-config-modal [allFeedsEdit]="allFeeds"></app-feed-config-modal>
     <button type="button" class="btn btn-outline-success" (click)="getFeeds()">
@@ -20,6 +20,20 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!allFeeds" class="container-feed-group">
+    <div class="feed-config">
+        <button type="button" class="btn btn-outline-success" (click)="getFeeds()">
+          <i class="fas fa-sync"></i>
+        </button>
+      </div>
+  <div class="row">
+    <div class="alert alert-danger" role="alert" style="margin: 50px;">
+        <i class="fas fa-exclamation-triangle fa-2x"></i> 
+        <span style="margin-left: 15px;">Erreur: Serveur indisponible.</span> 
     </div>
   </div>
 </div>
