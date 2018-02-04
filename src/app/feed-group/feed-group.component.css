@@ -1,22 +1,20 @@
 .container-feed-group {
-    /* margin-top: 100px;
+  /* margin-top: 100px;
     float: right; */
 }
-.container-feed-group .card {
-    margin-bottom: 10px;
-}
 
+.container-feed-group .card {
+  margin-bottom: 10px;
+}
 
 .container-feed-group .card-deck {
-    max-width: 1200px;
-    /* min-width: 1000px; */
-    margin: 5px;
-
-    
+  max-width: 1200px;
+  /* min-width: 1000px; */
+  margin: 5px;
 }
+
 .feed-config {
-    margin: auto;
-    margin-left: 2%;
-    margin-top: -1%;
+  margin: auto;
+  margin-left: 2%;
+  margin-top: -1%;
 }
-

@@ -22,8 +22,6 @@ export class FeedService {
     const httpOptions = {
       headers: new Headers({ 'Content-Type': 'application/json' })
     };
-    // let headers = new Headers();
-    // headers.append('Content-Type', 'application/json');
 
     let url = this.urlFeeds;
 

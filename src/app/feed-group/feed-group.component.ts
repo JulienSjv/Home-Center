@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FeedService } from '../feed-service.service';
-import {AngularDraggableDirective} from 'angular2-draggable';
+import { AngularDraggableDirective } from 'angular2-draggable';
 
 @Component({
   selector: 'app-feed-group',

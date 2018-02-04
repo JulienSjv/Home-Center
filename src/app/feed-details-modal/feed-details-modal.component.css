@@ -1,19 +1,19 @@
 .feed-modal {
-    position: absolute;
-    top: 200px !important;
+  position: absolute;
+  top: 200px !important;
 }
 
 .author {
-    margin: auto;
+  margin: auto;
 }
 
 .close {
-    border-radius: 50%;
-    -webkit-transition: -webkit-transform .2s ease-in-out 0s;
-            transition:         transform .2s ease-in-out 0s;
-  }
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .2s ease-in-out 0s;
+  transition: transform .2s ease-in-out 0s;
+}
 
-  .close:hover {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-  }
+.close:hover {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}

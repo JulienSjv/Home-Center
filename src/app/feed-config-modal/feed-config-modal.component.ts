@@ -51,7 +51,7 @@ export class FeedConfigModalComponent {
         color: "#9e9e9e",
         selected: true
       }
-      this.allFeedsEdit.push(newFeed);
+    this.allFeedsEdit.push(newFeed);
   }
 
   getFeeds() {

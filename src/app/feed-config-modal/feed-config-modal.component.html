@@ -1,53 +1,3 @@
-<!-- <ng-template #feedModalEdit>
-  <div class="feed-config-modal">
-    <div id="modal-feed-config" class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Edit Feeds</h4>
-          <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Nom</th>
-              <th>URL</th>
-              <th>Couleur</th>
-              <th>Afficher</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let feedm of allFeedsEdit; let i = index;" class="modal-body" >
-              <td><input type="text" class="form-control" id="{{feedm.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedm.nom"></td>
-              <td><input type="text" class="form-control" id="{{feedm.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedm.url"></td>
-              <td><input id="{{feedm.id}}" [value]="feedm.color"
-                [style.background]="feedm.color"
-                [cpPosition]="'bottom'"
-                [cpPositionRelativeToArrow]="true"
-                [cpCancelButton]="true"
-                [cpCancelButtonClass]= "'btn btn-primary btn-xs'"
-                [cpOKButton]="true"
-                [cpOKButtonClass]= "'btn btn-primary btn-xs'"
-                [cpSaveClickOutside]="false"
-                [(colorPicker)]="feedm.color"/></td>
-              <td style="text-align: center;"><input class="form-check-input" id="{{feedm.id}}" type="checkbox" [(ngModel)]="feedm.selected"/></td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-outline-success" (click)="saveFeed()">Save</button>
-          <button type="button" class="btn btn-outline-dark" (click)="modalRef.hide()">Fermer</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</ng-template>
-<button type="button" class="btn btn-outline-secondary" (click)="openModal(feedModalEdit)">
-  <i class="fas fa-cogs"></i>
-</button> -->
-
-
 <button class="btn btn-outline-primary" (click)="openModal(feedModalEdit)">
   <i class="fas fa-cogs"></i>
 </button>
@@ -56,7 +6,11 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title pull-left">Edit Feeds <button type="button" class="btn btn-outline-info" (click)="addFeed()"><i class="fas fa-plus add-feed"></i></button></h4>
+        <h4 class="modal-title pull-left">Edit Feeds
+          <button type="button" class="btn btn-outline-info" (click)="addFeed()">
+            <i class="fas fa-plus add-feed"></i>
+          </button>
+        </h4>
         <button type="button" class="close pull-right" (click)="modalRef.hide()" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -75,12 +29,15 @@
           </thead>
           <tbody dnd-sortable-container [sortableData]="allFeedsEdit">
             <tr *ngFor="let feedm of allFeedsEdit; let j = index;" dnd-sortable [sortableIndex]="j" class="modal-body feed-body">
-              <td dnd-sortable-handle><i class="fas fa-bars"></i> {{j+1}}</td>
+              <td dnd-sortable-handle>
+                <i class="fas fa-bars"></i> {{j+1}}</td>
               <td>
-                <input type="text" class="form-control" id="{{feedm.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedm.nom" style="width: 150px;"> 
+                <input type="text" class="form-control" id="{{feedm.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedm.nom"
+                  style="width: 150px;">
               </td>
               <td>
-                <input type="text" class="form-control" id="{{feedm.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedm.url" style="width: 250px;">
+                <input type="text" class="form-control" id="{{feedm.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedm.url"
+                  style="width: 250px;">
               </td>
               <td>
                 <input class="form-control" id="{{feedm.id}}" [value]="" [style.background]="feedm.color" [cpPosition]="'bottom'" [cpPositionRelativeToArrow]="true"
@@ -90,7 +47,11 @@
               <td style="text-align: center;">
                 <input class="form-check-input" id="{{feedm.id}}" type="checkbox" [(ngModel)]="feedm.selected" />
               </td>
-              <td><button type="button" class="btn btn-outline-danger" (click)="delFeed(j)"><i class="far fa-trash-alt del-feed" ></i></button></td>
+              <td>
+                <button type="button" class="btn btn-outline-danger" (click)="delFeed(j)">
+                  <i class="far fa-trash-alt del-feed"></i>
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>

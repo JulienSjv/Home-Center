@@ -1,9 +1,9 @@
 <div class="container-feed-group">
-  <!-- <button (click)="toggle = !toggle"></button> -->
   <div class="feed-config">
     <app-feed-config-modal [allFeedsEdit]="allFeeds"></app-feed-config-modal>
-    <button type="button" class="btn btn-outline-success" (click)="getFeeds()"><i class="fas fa-sync"></i></button>
-
+    <button type="button" class="btn btn-outline-success" (click)="getFeeds()">
+      <i class="fas fa-sync"></i>
+    </button>
   </div>
   <div class="row">
     <div *ngFor="let feedc of allFeeds; let i = index;">
@@ -18,39 +18,8 @@
               </p>
             </div>
           </div>
-          <!-- <div *ngIf="i%2!==0" class="w-100"></div> -->
         </div>
       </div>
     </div>
   </div>
-  <!-- <div movable [movableEnabled]="toggle">
-    <div><b>Simple movable</b></div>
-    The complete element can be used for moving.<br />
-    <button (click)="toggle = !toggle">toggle enabled state</button>
-  </div> -->
 </div>
-
-<!-- <div class="card col">
-          <div class="card-body">
-            <p class="card-text">
-              <app-feed-univf></app-feed-univf>
-            </p>
-          </div>
-        </div>
-
-        <div class="w-100"></div>
-
-        <div class="card col">
-          <div class="card-body">
-            <p class="card-text">
-              <app-feed-krb></app-feed-krb>
-            </p>
-          </div>
-        </div>
-        <div class="card col">
-          <div class="card-body">
-            <p class="card-text">
-              <app-feed-google></app-feed-google>
-            </p>
-          </div>
-        </div> -->
