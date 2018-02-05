@@ -50,6 +50,11 @@ export class FeedGroupComponent implements OnInit {
       })
   }
 
+  onClickedOutside(e: Event) {
+    console.log('Clicked outside:', e);
+    this.menuState = 'out';
+  }
+
   onDragBegin(event) {
     console.log("BEGIN");
     // console.log(event);

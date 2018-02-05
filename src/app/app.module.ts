@@ -9,6 +9,7 @@ import { AngularDraggableModule } from 'angular2-draggable';
 import { MovableModule } from 'ng2-movable/index';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { DndModule } from 'ng2-dnd';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 
 import { AlertModule } from 'ngx-bootstrap';
@@ -108,6 +109,7 @@ import { PanelComponent } from './panel/panel.component';
     MovableModule,
     ColorPickerModule,
     DndModule.forRoot(),
+    ClickOutsideModule,
     // ChatModule,
     // MatCardModule,
     // MatToolbarModule,

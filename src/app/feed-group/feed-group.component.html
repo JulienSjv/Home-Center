@@ -1,17 +1,25 @@
-<div class="nav-config">
+<!-- <div class="nav-config">
   
-  <div class="icon-settings">
-    <button type="button" class="btn btn-outline-secondary" (click)="toggleMenu()">
+  <div (clickOutside)="onClickedOutside($event)" class="icon-settings">
+    <button type="button" class="btn btn-outline-secondary" (click)="toggleMenu()"> 
       <i class="fas fa-sliders-h"></i>
     </button>
   </div>
 
-</div>
+</div> -->
 
-<div class="">
-    <app-panel [ngStyle]="{'display':menuState === 'in' ? 'block' : 'none' }" [@slideInOut]="menuState"></app-panel>
+<div (clickOutside)="onClickedOutside($event)" class="">
+    <div class="nav-config">
+        <div class="icon-settings">
+          <button type="button" class="btn btn-outline-secondary" (click)="toggleMenu()"> 
+            <i class="fas fa-sliders-h"></i>
+          </button>
+        </div>
+      
+      </div>
+    <app-panel [@slideInOut]="menuState"></app-panel>
   </div>
-
+  <!-- [ngStyle]="{'display':menuState === 'in' ? 'block' : 'none' }" -->
 <div *ngIf="allFeeds" class="container-feed-group">
   <div class="feed-config">
     <app-feed-config-modal [allFeedsEdit]="allFeeds"></app-feed-config-modal>
