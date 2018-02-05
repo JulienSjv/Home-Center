@@ -30,7 +30,8 @@
           <tbody dnd-sortable-container [sortableData]="allFeedsEdit">
             <tr *ngFor="let feedm of allFeedsEdit; let j = index;" dnd-sortable [sortableIndex]="j" class="modal-body feed-body">
               <td dnd-sortable-handle class="drag">
-                <i class="fas fa-bars" ></i></td>
+                <i class="fas fa-bars"></i>
+              </td>
               <td>
                 <input type="text" class="form-control" id="{{feedm.id}}" aria-describedby="emailHelp" placeholder="" [(ngModel)]="feedm.nom"
                   style="width: 150px;">
@@ -44,8 +45,11 @@
                   [cpCancelButton]="true" [cpCancelButtonClass]="'btn btn-primary btn-xs'" [cpOKButton]="true" [cpOKButtonClass]="'btn btn-primary btn-xs'"
                   [cpSaveClickOutside]="false" [(colorPicker)]="feedm.color" style="width: 40px;" />
               </td>
-              <td >
-                <input class="form-check-input" id="{{feedm.id}}" type="checkbox" [(ngModel)]="feedm.selected" />
+              <td>
+                <label class="custom-control custom-checkbox">
+                  <input class="custom-control-input" id="{{feedm.id}}" type="checkbox" [(ngModel)]="feedm.selected" />
+                  <span class="custom-control-indicator"></span>
+                </label>
               </td>
               <td>
                 <button type="button" class="btn btn-outline-danger" (click)="delFeed(j)">

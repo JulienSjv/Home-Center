@@ -44,7 +44,7 @@ export class FeedConfigModalComponent {
   saveFeed() {
     console.log(this.allFeedsEdit);
     this.feedService.updateFeeds(this.allFeedsEdit)
-      .then((res) => console.log(res));
+      .subscribe((res) => console.log(res));
   }
 
   delFeed(feedId) {
