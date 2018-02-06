@@ -6,7 +6,7 @@
   top: 500px;
   right: 0;
   bottom: 100px;
-  width: 15%;
+  width: 22%;
   min-width: 250px;
   z-index: 9999;
   /* font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; */
@@ -24,6 +24,7 @@ ul {
 
 .container-panel .card {
   /* text-align: center; */
+  width: 100%;
 }
 
 .container-panel .card-img {
@@ -48,7 +49,14 @@ ul {
 }
 
 .bg-config .del-bg {
-  float: right;
+  /* float: right; */
+  margin-left: 20px;
+  color: rgb(172, 172, 172);
+}
+
+.bg-config .del-bg:hover {
+
+  color: red;
 }
 
 .bg-selected {
@@ -56,6 +64,6 @@ ul {
 }
 
 .input-nom {
-  width: 200px;
+  width: 150px;
   display: -webkit-inline-box;
 }

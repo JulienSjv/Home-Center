@@ -18,6 +18,10 @@ export class PanelComponent implements OnInit {
   {
     nom:"testdenomsdsdsdsdsdsdsdsdsdsdsdsdsdsd3",
     selected: false
+  },
+  {
+    nom:"testdenomsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdfsdsdfdsfsdfsdfsdfsdfsd4",
+    selected: false
   }
   ];
 
