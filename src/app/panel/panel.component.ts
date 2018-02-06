@@ -7,11 +7,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelComponent implements OnInit {
 
+  backgrounds = [{
+    nom:"testdenom",
+    selected: true
+  },
+  {
+    nom:"testdenomsdsdsdsdsdsd2",
+    selected: false
+  },
+  {
+    nom:"testdenomsdsdsdsdsdsdsdsdsdsdsdsdsdsd3",
+    selected: false
+  }
+  ];
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  listClick(event, newValue) {
+    // console.log(newValue);
+   
+
+    this.backgrounds.forEach(element => {
+      if (element.nom === newValue.nom) {
+        element.selected = true;
+      } else {
+        element.selected = false;
+      }
+    });
+    // this.backgrounds = newValue;  // don't forget to update the model here
+    // ... do other stuff here ...
+  console.log(this.backgrounds)
+}
 
   
 

@@ -1,22 +1,61 @@
 :host {
-    background: #3a3a3e;
-    color: #fff;
-    position: fixed;
-    left: auto;
-    top: 500px;
-    right: 0;
-    bottom: 100px;
-    width: 10%;
-    min-width: 250px;
-    z-index: 9999;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    border-radius: 5px 0px 0px 5px;
-  }
-   
-  ul {
-    font-size: 18px;
-    line-height: 3;
-    font-weight: 400;
-    padding-top: 50px;
-    list-style: none;
-  }
+  /* background: #3a3a3e;
+    color: #fff; */
+  position: fixed;
+  left: auto;
+  top: 500px;
+  right: 0;
+  bottom: 100px;
+  width: 15%;
+  min-width: 250px;
+  z-index: 9999;
+  /* font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; */
+  border-radius: 5px 0px 0px 5px;
+  overflow-y: scroll;
+}
+
+ul {
+  font-size: 18px;
+  line-height: 3;
+  font-weight: 400;
+  /* padding-top: 50px; */
+  list-style: none;
+}
+
+.container-panel .card {
+  /* text-align: center; */
+}
+
+.container-panel .card-img {
+  width: 30%
+}
+
+.container-panel .card-header {
+  display: inline-flex;
+}
+
+.panel-save {
+  color: rgb(172, 172, 172);
+  margin-left: auto;
+}
+
+.panel-save:hover {
+  color: rgb(37, 202, 37);
+}
+
+.bg-config {
+  text-align: center;
+}
+
+.bg-config .del-bg {
+  float: right;
+}
+
+.bg-selected {
+  border: 4px solid rgb(81, 147, 223);
+}
+
+.input-nom {
+  width: 200px;
+  display: -webkit-inline-box;
+}

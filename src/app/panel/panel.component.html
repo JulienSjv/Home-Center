@@ -1,14 +1,40 @@
-<!-- <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<!-- <div class="card">
+  <h5 class="card-header">Background</h5>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Dapibus ac facilisis in</li>
+      <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+  </div>
+</div> -->
+
+<div class="container-panel">
+  <div class="card border-dark mb-3" style="max-width: 18rem;">
+    <div class="card-header">
+      <h5>Backgrounds</h5><i class="far fa-save fa-2x panel-save"></i>
+      <!-- <span class="panel-save"></span> -->
     </div>
-  </div> -->
+    <!-- <div class="card-body text-dark"> -->
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let bg of backgrounds; let i = index;" class="list-group-item">
+        <div class="bg-config">
+          <img class="card-img" [ngClass]="{'bg-selected': bg.selected }" (click)="listClick($event, bg)" src="https://picsum.photos/10" alt="IMG">
+          <span class="bg-nom"><input type="text" class="form-control input-nom" [(ngModel)]="bg.nom"></span>
+          <!-- <div class="bg-config-footer"> -->
+            <!-- <span class="selected-bg">
+              <i class="far fa-check-circle"></i>
+            </span> -->
+            <span></span>
+            <span class="del-bg">
+              <i class="fas fa-times"></i>
 
+            </span>
+          <!-- </div> -->
 
-<ul>
-  <li>Menu Item</li>
-  <li>Menu Item</li>
-</ul>
+        </div>
+      </li>
+    </ul>
+    <!-- </div> -->
+  </div>
+</div>
