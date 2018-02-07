@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UploadEvent, UploadFile } from 'ngx-file-drop';
 
 @Component({
   selector: 'app-panel',
@@ -7,20 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelComponent implements OnInit {
 
+  public files: UploadFile[] = [];
+  drop = false;
+
   backgrounds = [{
-    nom:"testdenom",
+    nom: "testdenom",
     selected: true
   },
   {
-    nom:"testdenomsdsdsdsdsdsd2",
+    nom: "testdenomsdsdsdsdsdsd2",
     selected: false
   },
   {
-    nom:"testdenomsdsdsdsdsdsdsdsdsdsdsdsdsdsd3",
+    nom: "testdenomsdsdsdsdsdsdsdsdsdsdsdsdsdsd3",
     selected: false
   },
   {
-    nom:"testdenomsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdfsdsdfdsfsdfsdfsdfsdfsd4",
+    nom: "testdenomsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdfsdsdfdsfsdfsdfsdfsdfsd4",
+    selected: false
+  },
+  {
+    nom: "testdenomsdsdsdsdsdsdsdsdsdsdsdfsdfsdfsd4",
+    selected: false
+  },
+  {
+    nom: "testdenomsdsdsdssdsdsdfsdsdfdsfsdfsdfsdfsdfsd4",
     selected: false
   }
   ];
@@ -32,7 +44,7 @@ export class PanelComponent implements OnInit {
 
   listClick(event, newValue) {
     // console.log(newValue);
-   
+
 
     this.backgrounds.forEach(element => {
       if (element.nom === newValue.nom) {
@@ -43,9 +55,31 @@ export class PanelComponent implements OnInit {
     });
     // this.backgrounds = newValue;  // don't forget to update the model here
     // ... do other stuff here ...
-  console.log(this.backgrounds)
-}
+    // console.log(this.backgrounds)
+  }
 
-  
+  public dropped(event: UploadEvent) {
+    this.files = event.files;
+    for (const file of event.files) {
+      file.fileEntry.file(info => {
+        console.log(info);
+      });
+    }
+  }
+
+  public fileOver(event) {
+    console.log(event);
+  }
+
+  public fileLeave(event) {
+    console.log(event);
+  }
+
+  dropToggle() {
+    console.log("ALLO");
+    this.drop = !this.drop;
+  }
+
+
 
 }

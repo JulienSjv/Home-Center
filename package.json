@@ -32,6 +32,7 @@
     "ng2-movable": "^0.2.1",
     "ngx-bootstrap": "^2.0.1",
     "ngx-color-picker": "^5.3.1",
+    "ngx-file-drop": "^2.0.4",
     "rxjs": "^5.5.2",
     "time-ago-pipe": "^1.2.1",
     "zone.js": "^0.8.14"

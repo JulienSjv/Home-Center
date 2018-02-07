@@ -10,6 +10,7 @@ import { MovableModule } from 'ng2-movable/index';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { DndModule } from 'ng2-dnd';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { FileDropModule } from 'ngx-file-drop';
 
 
 import { AlertModule } from 'ngx-bootstrap';
@@ -110,6 +111,7 @@ import { PanelComponent } from './panel/panel.component';
     ColorPickerModule,
     DndModule.forRoot(),
     ClickOutsideModule,
+    FileDropModule,
     // ChatModule,
     // MatCardModule,
     // MatToolbarModule,
