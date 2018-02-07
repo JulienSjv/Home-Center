@@ -35,6 +35,15 @@ ul {
   display: inline-flex;
 }
 
+.panel-add {
+  color: rgb(172, 172, 172);
+  margin-left: 15px;
+}
+
+.panel-add:hover {
+  color: rgb(7, 91, 209)
+}
+
 .panel-save {
   color: rgb(172, 172, 172);
   margin-left: auto;
