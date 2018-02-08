@@ -6,7 +6,7 @@
   top: 600px;
   right: 0;
   bottom: 100px;
-  width: 15%;
+  /* width: 15%; */
   min-width: 250px;
   z-index: 9999;
   height: 40%;
@@ -53,6 +53,11 @@ ul {
   margin: 10px;
 }
 
+.bg-drop-zone:hover {
+  background-color: rgba(19, 121, 189, 0.277);
+  border-radius: 30px;
+}
+
 .bg-config {}
 
 .bg-config .del-bg {
@@ -69,7 +74,13 @@ ul {
 }
 
 .input-nom {
-  width: 150px;
+  width: 170px;
   display: -webkit-inline-box;
   margin-left: 10px;
+}
+
+.input-file {
+  opacity: 0;
+  /* position: absolute;
+  z-index: 0; */
 }

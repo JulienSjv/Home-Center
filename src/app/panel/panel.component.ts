@@ -76,7 +76,6 @@ export class PanelComponent implements OnInit {
   }
 
   dropToggle() {
-    console.log("ALLO");
     this.drop = !this.drop;
   }
 

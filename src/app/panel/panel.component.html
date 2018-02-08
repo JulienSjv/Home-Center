@@ -10,7 +10,7 @@
 </div> -->
 
 <div class="container-panel">
-  <div class="card text-white bg-dark mb-3">
+  <div class="card text-white bg-dark mb-3" style="width: 350px;">
     <div class="card-header">
       <h5>Backgrounds</h5>
       <button class="btn btn-outline-info panel-add" type="button" (click)="dropToggle()">
@@ -23,8 +23,15 @@
     </div>
     <div *ngIf="drop" class="drop-files bg-drop-zone">
       <file-drop headertext="" (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+        
         <span>
-          <i class="far fa-file-image fa-2x"></i>
+          <!-- <button class="btn btn-outline-primary" type="button"> -->
+              <label class="btn btn-outline-primary">
+                  ... <input type="file" style="display: none;">
+              </label>
+            
+          <!-- </button> -->
+          <!-- <input type="file" #fileInput placeholder="" class="bg-drop-zone" /> -->
         </span>
       </file-drop>
     </div>
