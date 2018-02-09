@@ -63,7 +63,23 @@ export class PanelComponent implements OnInit {
     for (const file of event.files) {
       file.fileEntry.file(info => {
         console.log(info);
+        //DO STUFF
       });
+    }
+  }
+
+  fileBrower(event) {
+    var files = event.srcElement.files;
+    console.log(files);
+    //DO STUFF
+  }
+
+  onFileChange(event) {
+    let reader = new FileReader();
+    if(event.target.files && event.target.files.length > 0) {
+      let file = event.target.files[0];
+      reader.readAsDataURL(file);
+      console.log(reader);
     }
   }
 
