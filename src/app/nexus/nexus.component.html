@@ -1,4 +1,118 @@
-<div class="container-nexus">
-  Works!
+<div *ngIf="categories" class="container-nexus">
+  <div class="nexus-menu">
+    <span>
+      <h3>Logiciels</h3>
+    </span>
+  </div>
+  <div class="container-nexus-group">
 
+
+    <table *ngFor="let categorie of categories" class="table table-softs">
+      <thead>
+        <tr>
+          <th></th>
+          <th>{{categorie.nom}}</th>
+          <th></th>
+          <th></th>
+          <th>
+            <i class="fas fa-download icon-dowload"></i>
+          </th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let soft of softs;">
+        <tr *ngIf="categorie.id == soft.categorie.id" class="ligne-soft">
+          <td>
+            <span class="icn16" [ngStyle]="{'background-position': '0 ' + (soft.num-1)*-16 +'px '}"></span>
+          </td>
+          <td>
+            <span>{{soft.nom}}</span>
+          </td>
+          <td>{{soft.version}}</td>
+          <td class="lastUpdate">{{soft.dateLastUpdate | timeAgo}}</td>
+          <td>
+            <label class="custom-control custom-checkbox">
+              <input class="custom-control-input" id="{{soft.id}}" type="checkbox" />
+              <span class="custom-control-indicator"></span>
+            </label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- <div *ngFor="let categorie of categories" class="card bg-light mb-3 categorie-soft" style="max-width: 18rem;">
+      <div class="card-header">
+        <h5>{{categorie.nom}}</h5>
+      </div>
+      <div class="card-body">
+        <div *ngFor="let soft of softs;">
+          <div *ngIf="categorie.id == soft.categorie.id">
+            <div class="container-soft">
+              <span class="icn16" [ngStyle]="{'background-position': '0 ' + (soft.num-1)*-16 +'px '}"></span>
+              <label class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="{{soft.id}}" type="checkbox" />
+                <span class="custom-control-indicator"></span>
+              </label>
+              <span>{{soft.nom}}</span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+  </div>
+  <div class="nexus-control">
+    <div class="nexus-control-button">
+      <button type="button" class="btn btn-outline-success">Go!</button>
+      <button type="reset" class="btn btn-outline-danger">Reset</button>
+    </div>
+    <div class="progress nexus-control-progress">
+      <div class="progress-bar-animated progress-bar-striped bg-success" role="progressbar" style="width: 50%" aria-valuenow="25"
+        aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+  </div>
 </div>
+
+<div *ngIf="!categories" class="container-nexus">
+  <div class="nexus-config">
+    <button type="button" class="btn btn-outline-success" (click)="getNexus()">
+      <i class="fas fa-sync"></i>
+    </button>
+  </div>
+  <div class="row">
+    <div class="alert alert-danger" role="alert" style="margin: 50px;">
+      <i class="fas fa-exclamation-triangle fa-2x"></i>
+      <span style="margin-left: 15px;">Erreur: Serveur indisponible.</span>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container-nexus">
+  <div class="container-nexus-group">
+
+    <div *ngFor="let categorie of categories" class="card bg-light mb-3 categorie-soft" style="max-width: 18rem;">
+      <div class="card-header">
+        <h5>{{categorie.nom}}</h5>
+      </div>
+      <div class="card-body">
+        <div *ngFor="let soft of softs;">
+          <div *ngIf="categorie.id == soft.categorie.id">
+            <div class="container-soft">
+              <span class="icn16" [ngStyle]="{'background-position': '0 ' + (soft.num-1)*-16 +'px '}"></span>
+              <label class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="{{soft.id}}" type="checkbox" />
+                <span class="custom-control-indicator"></span>
+              </label>
+              <span>{{soft.nom}}</span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div> -->

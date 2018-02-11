@@ -1,3 +1,101 @@
 .container-nexus {
   margin-top: 100px;
 }
+
+.container-nexus-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.nexus-menu {
+  margin: 20px;
+}
+
+.container-nexus-group .card-header {
+  text-align: center;
+}
+
+.categorie-soft {
+  margin: 20px;
+}
+
+.container-soft {
+  line-height: 20px;
+}
+
+.table-softs {
+  width: auto;
+  margin: 20px 50px 40px 50px;
+}
+
+.table-softs td {
+  /* width: 20px; */
+}
+
+.lastUpdate {
+  /* width: auto; */
+}
+
+.container-soft span {
+  margin-right: 5px;
+  margin-bottom: 2px;
+}
+
+.categorie-soft .custom-control {
+  margin-right: 0;
+}
+
+span.icn16 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icn16_cva2g {
+  background-position: 0 -16px;
+}
+
+.icn16 {
+  background-image: url("../../assets/nexus/icons/icons16.png");
+  background-repeat: no-repeat;
+  /* background-size: 18px 2784px; */
+  height: 16px;
+  width: 16px;
+}
+
+.icon-dowload {
+  color: rgb(179, 179, 179);
+}
+
+.icon-dowload:hover {
+  color: green
+}
+
+.ligne-soft:hover {
+  background-color: rgb(242, 242, 242);
+}
+
+.categorie-soft label {
+  /* margin-left: 10px; */
+}
+
+.categorie-soft .custom-control-indicator {
+  top: 10px;
+}
+
+.nexus-control {
+  text-align: center;
+  width: 60%;
+  height: 200px;
+  margin: auto;
+  /* border: 2px dotted rgb(162, 162, 162); */
+}
+.nexus-control-button button {
+  position: relative;
+  margin-right: 50px;
+  top: 20px;
+}
+
+.nexus-control-progress {
+  position: relative;
+  top: 80px;
+}

@@ -13,7 +13,7 @@ import { trigger, style, state, transition, animate, keyframes, query, stagger }
         transform: 'translate3d(0, 0, 0)'
       })),
       state('out', style({
-        transform: 'translate3d(100%, 0, 0)'
+        transform: 'translate3d(0, 120%, 0)'
       })),
       transition('in => out', animate('400ms ease-in-out')),
       transition('out => in', animate('400ms ease-in-out'))
@@ -71,11 +71,6 @@ export class FeedGroupComponent implements OnInit {
     // console.log(x);
     // console.log(y);
   }
-
-  toto(event) {
-    console.log(event.style.position.left)
-  }
-
 
 
 

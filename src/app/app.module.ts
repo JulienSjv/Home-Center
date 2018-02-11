@@ -63,6 +63,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FeedComponent } from './feed/feed.component';
 import { FeedConfigModalComponent } from './feed-config-modal/feed-config-modal.component';
 import { PanelComponent } from './panel/panel.component';
+import { NexusService } from './nexus.service';
 
 
 
@@ -121,7 +122,7 @@ import { PanelComponent } from './panel/panel.component';
     AlertModule.forRoot(),
     BsDropdownModule.forRoot()
   ],
-  providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService, TimeZoneService],
+  providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService, TimeZoneService, NexusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
