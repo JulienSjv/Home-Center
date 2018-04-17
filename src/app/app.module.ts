@@ -15,6 +15,8 @@ import { FileDropModule } from 'ngx-file-drop';
 
 import { AlertModule } from 'ngx-bootstrap';
 import { ChatModule } from './chat/chat.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 import { AppComponent } from './app.component';
@@ -120,7 +122,8 @@ import { NexusService } from './nexus.service';
     // MatIconModule,
     ModalModule.forRoot(),
     AlertModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    NgbModule.forRoot()
   ],
   providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService, TimeZoneService, NexusService],
   bootstrap: [AppComponent]
