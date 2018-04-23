@@ -42,13 +42,11 @@ export class FeedConfigModalComponent {
   }
 
   saveFeed() {
-    console.log(this.allFeedsEdit);
     this.feedService.updateFeeds(this.allFeedsEdit)
       .subscribe((res) => console.log(res));
   }
 
   delFeed(feedId) {
-    // console.log(feedId);
     this.allFeedsEdit.splice(feedId, 1);
   }
 

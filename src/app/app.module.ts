@@ -1,3 +1,4 @@
+//MODULES
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -11,31 +12,59 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { DndModule } from 'ng2-dnd';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { FileDropModule } from 'ngx-file-drop';
-
-
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AlertModule } from 'ngx-bootstrap';
 import { ChatModule } from './chat/chat.module';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './/app-routing.module';
+//import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
-
-import { AppComponent } from './app.component';
-
-
+//SERVICES
 import { MeteoService } from './meteo.service';
 import { MessageService } from './message.service';
 import { FeedService } from './feed-service.service';
 import { ChatService } from './chat.service';
+import { SpeechSynthesisService } from './speech-synthesis.service';
+import { TimeZoneService } from './time-zone.service';
+import { NexusService } from './nexus.service';
 
-import { MeteoComponent } from './meteo/meteo.component';
-import { MessagesComponent } from './messages/messages.component';
-import { AppRoutingModule } from './/app-routing.module';
+
+//COMPONENTS
+import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
+import { SpeechRecognitionComponent } from './speech-recognition/speech-recognition.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoaderComponent } from './loader/loader.component';
+import { MapModalComponent } from './map-modal/map-modal.component';
+import { NexusComponent } from './nexus/nexus.component';
+import { FooterComponent } from './footer/footer.component';
+import { PanelComponent } from './panel/panel.component';
+
+
+//utils
+import { MessagesComponent } from './messages/messages.component';
+
+
+//meteo
+import { MeteoComponent } from './meteo/meteo.component';
 import { MeteoDetailsComponent } from './meteo-details/meteo-details.component';
 import { MeteoSumaryComponent } from './meteo-sumary/meteo-sumary.component';
-import { FeedCardComponent } from './feed-card/feed-card.component';
-import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 
+
+//feeds
+import { FeedComponent } from './feed/feed.component';
+import { FeedGroupComponent } from './feed-group/feed-group.component';
+import { FeedCardComponent } from './feed-card/feed-card.component';
+import { FeedDetailsModalComponent } from './feed-details-modal/feed-details-modal.component';
+import { FeedConfigModalComponent } from './feed-config-modal/feed-config-modal.component';
+//import { FeedKrbComponent } from './feed-krb/feed-krb.component';
+//import { FeedGoogleComponent } from './feed-google/feed-google.component';
+//import { FeedNxiComponent } from './feed-nxi/feed-nxi.component';
+//import { FeedUnivfComponent } from './feed-univf/feed-univf.component';
+
+
+//PIPES
 import { RoundPipe } from './pipe/round.pipe';
 import { MeteoIcon } from './pipe/meteo-icon.pipe';
 import { DateTimeFormatPipe } from './pipe/date-time.pipe';
@@ -44,28 +73,12 @@ import { CapitalizePipe } from './pipe/capitalize.pipe';
 import { DegwindPipe } from './pipe/degwind.pipe';
 import { AsyncPipe } from '@angular/common';
 import { TimeAgoPipe } from 'time-ago-pipe';
-
-// Material design.
-// import { MatButtonModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule } from '@angular/material';
-import { FeedNxiComponent } from './feed-nxi/feed-nxi.component';
-import { FeedUnivfComponent } from './feed-univf/feed-univf.component';
-import { FeedGroupComponent } from './feed-group/feed-group.component';
-import { SpeechRecognitionComponent } from './speech-recognition/speech-recognition.component';
-import { SpeechSynthesisService } from './speech-synthesis.service';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FeedKrbComponent } from './feed-krb/feed-krb.component';
-import { FeedGoogleComponent } from './feed-google/feed-google.component';
-import { LoaderComponent } from './loader/loader.component';
-import { FeedDetailsModalComponent } from './feed-details-modal/feed-details-modal.component';
 import { PaysPipe } from './pipe/pays.pipe';
-import { TimeZoneService } from './time-zone.service';
-import { MapModalComponent } from './map-modal/map-modal.component';
-import { NexusComponent } from './nexus/nexus.component';
-import { FooterComponent } from './footer/footer.component';
-import { FeedComponent } from './feed/feed.component';
-import { FeedConfigModalComponent } from './feed-config-modal/feed-config-modal.component';
-import { PanelComponent } from './panel/panel.component';
-import { NexusService } from './nexus.service';
+
+
+
+
+
 
 
 
@@ -83,16 +96,12 @@ import { NexusService } from './nexus.service';
     FeedCardComponent,
     StripHtmlTagsPipe,
     TimeAgoPipe,
-    FeedNxiComponent,
-    FeedUnivfComponent,
     FeedGroupComponent,
     SpeechRecognitionComponent,
     ChatDialogComponent,
     NavbarComponent,
     CapitalizePipe,
     DegwindPipe,
-    FeedKrbComponent,
-    FeedGoogleComponent,
     LoaderComponent,
     FeedDetailsModalComponent,
     PaysPipe,
@@ -123,7 +132,8 @@ import { NexusService } from './nexus.service';
     ModalModule.forRoot(),
     AlertModule.forRoot(),
     BsDropdownModule.forRoot(),
-    NgbModule.forRoot()
+   // NgbModule.forRoot(),
+    CarouselModule.forRoot()
   ],
   providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService, TimeZoneService, NexusService],
   bootstrap: [AppComponent]

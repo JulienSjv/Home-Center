@@ -1,4 +1,9 @@
-<p>
-  meteo-details works!
-</p>
-<button (click)="goBack()">Retour</button>
+<div *ngIf="weatherForecast" class="days">
+  <div class="row row-no-gutter">
+    <div *ngFor="let day of weatherForecast.list" class="col-md-3">
+      <div class="day">
+        <h4>{{day.dt_txt | date:'EEEE'}}</h4>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12,7 +12,7 @@ import { MeteoService } from '../meteo.service';
 })
 export class MeteoDetailsComponent implements OnInit {
 
-  @Input() meteo: Meteo;
+  @Input() weatherForecast;
 
   constructor(
     private route: ActivatedRoute,

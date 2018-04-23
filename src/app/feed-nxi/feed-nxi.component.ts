@@ -8,7 +8,7 @@ import { FeedService } from '../feed-service.service';
 })
 export class FeedNxiComponent implements OnInit, AfterViewInit {
 
-  private feedUrl: string = 'https://www.nextinpact.com/rss/news.xml';
+  private feedUrl: string;// = 'https://www.nextinpact.com/rss/news.xml';
   private feeds: any;
   private time: Date;
   private tempo: number = 3600000;

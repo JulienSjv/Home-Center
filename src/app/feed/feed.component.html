@@ -13,7 +13,7 @@
     </div>
 
   </div>
-  <div *ngIf="feeds?.length > 0; else nofeed" id="{{feedc.id}}" class="carousel slide" data-ride="carousel">
+<!--   <div *ngIf="feeds?.length > 0; else nofeed" id="{{feedc.id}}" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <ng-container *ngFor="let feed of feeds?.slice(0, 10); let i = index">
         <li [attr.data-target]="'#' + feedc.id" [attr.data-slide-to]="i" class="{{ (i == 0) ? 'active' : ''}}"></li>
@@ -34,7 +34,14 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div>
+  </div> -->
+  <carousel *ngIf="feeds?.length > 0; else nofeed" id="{{feedc.id}}" >
+    <slide *ngFor="let feed of feeds?.slice(0, 10)">
+        <div class="container-feed-contenu" [ngStyle]="{'background-color': feedc.color}">
+          <app-feed-card [feed]="feed"></app-feed-card>
+        </div>
+    </slide>
+  </carousel>
 </div>
 <ng-template #nofeed>
   <div class="container-feed-loader" style="width: 550px; color: red;">

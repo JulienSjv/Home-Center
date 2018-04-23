@@ -13,27 +13,30 @@
     </div>
     <div class="container-meteo-content" *ngIf="weather">
       <div class="card meteo-group">
-        <div class="meteo-group-left">
-          <div class="card-header">
-            <h5>{{weather.name}} {{weather.main.temp | round}}°C</h5>
-            <span>{{weather.sys.country | pays}}</span>
-            <span *ngIf="timeZone"> {{timeZone.formatted | date: 'HH:mm'}}</span>
-            <div class="location">
+        <div class="card-header">
 
-                <app-map-modal [map]="map"></app-map-modal>
-
-              <!-- <button class="btn btn-outline-info" (click)="showMap=!showMap">
-                <i class="fas fa-map-marker-alt location"></i>
-              </button> -->
-            </div>
+          <h3>{{weather.name}} </h3>
+          <div class="sous-header">
+            <div class="pays">Location: {{weather.sys.country | pays}}</div>
+            <div class="espace"></div>
+            <div class="timezone" *ngIf="timeZone">Heure locale: {{timeZone.formatted | date: 'HH:mm'}}</div>
+            <!-- <div class="location">
+              <app-map-modal [map]="map"></app-map-modal>
+            </div> -->
           </div>
+
+          <!-- {{weather.main.temp | round}}°C -->
+        </div>
+        <div class="meteo-group-left">
+          <span class="today">
+            <h4>Aujourd'hui:</h4>
+          </span>
           <img src="{{weather.weather[0].icon | meteoicon}}" alt="" width="120" height="120">
           <h5 class="card-title">{{weather.weather[0].description | capitalize}}</h5>
         </div>
         <div class="meteo-group-right">
           <div class="card-body">
             <div class="card-text details">
-              <!-- <span>Pays: {{weather.sys.country | pays}}</span><br> -->
               <span>
                 <img src="assets/meteo/icons/icon-umberella.png" alt="">{{weather.main.humidity}}%</span>
               <span>
@@ -41,17 +44,19 @@
               <span>
                 <img src="assets/meteo/icons/icon-compass.png" alt="">{{weather.wind.deg | degwind}}</span>
             </div>
+            <span>
+              <button type="button" class="forecast btn btn-info" (click)=forecastToggle()>Prévisions</button>
+            </span>
           </div>
           <div *ngIf="showMap">
-
-            <!-- <iframe width="600" height="450" frameborder="0" style="border:0" [src]="map" allowfullscreen></iframe> -->
           </div>
         </div>
 
       </div>
-
     </div>
-
+    <div *ngIf="forecast">
+      <app-meteo-details [weatherForecast]="weatherForecast"></app-meteo-details>
+    </div>
     <div class="container-meteo-content" *ngIf="!weather">
       <div class="card meteo-group">
         <div class="meteo-group-left">

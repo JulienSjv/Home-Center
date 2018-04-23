@@ -8,7 +8,7 @@ import { FeedService } from '../feed-service.service';
 })
 export class FeedKrbComponent implements OnInit {
 
-  private feedUrl: string = 'https://korben.info/feed';
+  private feedUrl: string; // = 'https://korben.info/feed';
   private feeds: any;
   private time: Date;
   private tempo: number = 3600000;

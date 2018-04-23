@@ -8,7 +8,7 @@ import { FeedService } from '../feed-service.service';
 })
 export class FeedGoogleComponent implements OnInit {
 
-  private feedUrl: string = 'https://news.google.com/news/rss/settings/sections?ned=fr&hl=fr&gl=FR';
+  private feedUrl: string; // = 'https://news.google.com/news/rss/settings/sections?ned=fr&hl=fr&gl=FR';
   private feeds: any;
   private time: Date;
   private tempo: number = 3600000;

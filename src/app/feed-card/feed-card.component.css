@@ -2,6 +2,7 @@
     margin-bottom: 20px;
     min-width: 500px;
     max-height: 200px;
+    margin-top: 20px;
 }
 
 .container-card-text {
@@ -11,4 +12,9 @@ margin-right: 20px;
 
 .container-card .card-body {
     padding: 0;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    margin-top: 175px !important;
+    background-color: black;
 }

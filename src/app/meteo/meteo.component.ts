@@ -18,10 +18,12 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
   readonly token = environment.googlemap.apiKey;
 
   weather;
+  weatherForecast;
   cityName;
   coords;
   city: boolean = false;
   error: boolean = false;
+  forecast: boolean = false;
   country;
   timeZone;
   showMap = false;
@@ -50,6 +52,15 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
     this._meteoService.searchCity(city).subscribe(
       res => {
         this.setData(res);
+      }
+    )
+  }
+
+  getWeatherForecastCity(city) {
+    this._meteoService.searchCityForecast(city).subscribe(
+      res => {
+        this.weatherForecast = res;
+        console.log(res)
       }
     )
   }
@@ -108,5 +119,12 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
     document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weather.weather[0].icon) + ")";
     document.querySelector('body').style.backgroundRepeat ="no-repeat";
     document.querySelector('body').style.backgroundSize = "cover";
+  }
+
+  forecastToggle() {
+    this.forecast = !this.forecast;
+    if (this.forecast) {
+      this.getWeatherForecastCity('Montpellier')
+    }
   }
 }

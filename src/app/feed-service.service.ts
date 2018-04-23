@@ -27,9 +27,7 @@ export class FeedService {
 
     return this.http
       .put(url, JSON.stringify(allFeeds), httpOptions)
-      .map(res => res.json());
-      // .then(res => <any[]>res.json().data)
-      // .then(data => { return data; });
+      //.map(res => res.json());
   }
 
   getFeedContent(url: string): Observable<Feed> {
@@ -40,7 +38,6 @@ export class FeedService {
 
   private extractFeeds(res: Response): Feed {
     let feed = res.json().items;
-    // console.log(feed);
     return feed || {};
   }
 

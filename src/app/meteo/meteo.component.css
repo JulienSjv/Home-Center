@@ -41,4 +41,24 @@
     margin: 5px;
 }
 
+.forecast {
+    margin-top: 40px;
+}
+
+.today {
+    margin: 10px;
+}
+
+.sous-header {
+    width: 100%;
+    display: inline-flex;
+}
+.pays {
+    
+}
+.espace {
+    width: 34%;
+
+}
+
 
