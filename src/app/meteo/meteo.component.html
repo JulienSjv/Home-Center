@@ -14,12 +14,18 @@
     <div class="container-meteo-content" *ngIf="weather">
       <div class="card meteo-group">
         <div class="card-header">
+          <div class="title" (click)="MeteoDetailsToggle()">
+            <h3>{{weather.name}} </h3><i class="fas fa-angle-down"></i>
+          </div>
+          <div *ngIf="meteodetails" class="meteo-info-details">
+            <div class="pays">Location:<br> {{weather.sys.country | pays}}</div>
+            <!-- <div class="espace"></div> -->
+            <div class="location">
+              <app-map-modal [map]="map"></app-map-modal>
+            </div>
+            <!-- <div class="espace"></div> -->
 
-          <h3>{{weather.name}} </h3>
-          <div class="sous-header">
-            <div class="pays">Location: {{weather.sys.country | pays}}</div>
-            <div class="espace"></div>
-            <div class="timezone" *ngIf="timeZone">Heure locale: {{timeZone.formatted | date: 'HH:mm'}}</div>
+            <div class="timezone" *ngIf="timeZone">Heure locale:<br> {{timeZone.formatted | date: 'HH:mm'}}</div>
             <!-- <div class="location">
               <app-map-modal [map]="map"></app-map-modal>
             </div> -->

@@ -11,7 +11,7 @@
 .container-meteo {
     margin: auto;
     text-align: center;
-    width: 40%;
+    width: 50%;
     margin-top: 100px;
 
 }
@@ -34,11 +34,14 @@
 .container-meteo img {
     margin: 10px;
     margin-bottom: 10px;
-} 
+}
+
+.meteo-group {
+    /* width: 500px; */
+}
 
 .location {
-
-    margin: 5px;
+    margin: 20px 40px 0px 40px;
 }
 
 .forecast {
@@ -49,16 +52,20 @@
     margin: 10px;
 }
 
-.sous-header {
-    width: 100%;
+.meteo-info-details {
+    /* width: 100%; */
     display: inline-flex;
 }
+
 .pays {
     
 }
 .espace {
-    width: 34%;
+    /* width: 2%; */
+}
 
+.title  {
+    /* margin: 10px 0 10px 0; */
 }
 
 
