@@ -41,7 +41,7 @@
 }
 
 .location {
-    margin: 20px 40px 0px 40px;
+    margin: 10px 40px 10px 40px;
 }
 
 .forecast {
@@ -55,6 +55,24 @@
 .meteo-info-details {
     /* width: 100%; */
     display: inline-flex;
+    margin-top: 10px;
+    /* margin-left: 130px; */
+}
+
+.meteo-group {
+    display: inline-flex;
+}
+
+.meteo-date h1 {
+    text-align: center;
+}
+
+.meteo-group-right {
+    width: 60%
+}
+
+.meteo-group-left {
+    width: 40%
 }
 
 .pays {
@@ -64,12 +82,13 @@
     /* width: 2%; */
 }
 
-.title  .fa-angle-down {
+.meteoExtend  .fa-angle-down, .meteoExtend .fa-angle-up  {
     width: 100%;
-   color: #b3b3b3 
+   color: #b3b3b3 ;
+   margin-right: -500px;
 }
 
-.title .fa-angle-down:hover {
+.meteoExtend .fa-angle-down:hover, .meteoExtend .fa-angle-up:hover {
     color: black;
  }
 

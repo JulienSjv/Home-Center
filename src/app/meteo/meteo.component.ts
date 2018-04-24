@@ -24,7 +24,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
   city: boolean = false;
   error: boolean = false;
   forecast: boolean = false;
-  meteodetails: boolean = false;
+  meteoDetails: boolean = false;
   country;
   timeZone;
   showMap = false;
@@ -129,7 +129,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  MeteoDetailsToggle() {
-    this.meteodetails = !this.meteodetails;
+  meteoDetailsToggle() {
+    this.meteoDetails = !this.meteoDetails;
   }
 }
