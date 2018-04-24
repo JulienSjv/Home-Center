@@ -64,8 +64,13 @@
     /* width: 2%; */
 }
 
-.title  {
-    /* margin: 10px 0 10px 0; */
+.title  .fa-angle-down {
+    width: 100%;
+   color: #b3b3b3 
 }
+
+.title .fa-angle-down:hover {
+    color: black;
+ }
 
 
