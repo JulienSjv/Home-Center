@@ -24,7 +24,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
   city: boolean = false;
   error: boolean = false;
   forecast: boolean = false;
-  meteoDetails: boolean = false;
+  meteoDetails: boolean;
   country;
   timeZone;
   showMap = false;

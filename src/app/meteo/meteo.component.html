@@ -12,29 +12,11 @@
       <strong>Erreur! </strong>Ville non trouvée!
     </div>
     <div class="container-meteo-content" *ngIf="weather">
-      <div class="card meteo-group">
+      <div class="card meteo-group-card">
         <div class="card-header">
           <div class="title">
             <h3>{{weather.name}} </h3>
-
-            <!-- <some-element [ngClass]="{'first': true, 'second': true, 'third': false}">...</some-element> -->
-
-            <!-- <i class="glyphicon glyphicon-bell" [ngClass]="cookieData.search_unread_count != 0 ? 'notification-icon': ' '"> -->
-
-
-            <!-- <div *ngIf="!meteodetails; else elseBlock"></div> -->
-            <!-- <ng-template #elseBlock></ng-template> -->
-
-            <!-- <div *ngIf="meteoDetails;then content else other_content"></div>
-
-            <ng-template #content>
-              <i class="fas fa-angle-up"></i>
-            </ng-template>
-            <ng-template #other_content>
-              <i class="fas fa-angle-down"></i>
-            </ng-template> -->
           </div>
-
           <div class="meteo-info-container">
             <div *ngIf="meteoDetails" class="meteo-info-details">
               <div class="pays">Location:
@@ -44,7 +26,6 @@
                 <app-map-modal [map]="map"></app-map-modal>
               </div>
               <!-- <div class="espace"></div> -->
-
               <div class="timezone" *ngIf="timeZone">Heure locale:
                 <br> {{timeZone.formatted | date: 'HH:mm'}}</div>
               <!-- <div class="location">
@@ -52,26 +33,24 @@
             </div> -->
             </div>
           </div>
-          <div class="meteoExtend" (click)="meteoDetailsToggle()">
+          <div class="meteoExtend" (click)="meteoDetails = !meteoDetails">
             <i [ngClass]="meteoDetails ? 'fas fa-angle-up': 'fas fa-angle-down'"></i>
           </div>
-
           <!-- {{weather.main.temp | round}}°C -->
         </div>
+        <div class="meteo-date">
+          <h4>Aujourd'hui</h4>
+        </div>
         <div class="meteo-group">
-          <!-- <div class="meteo-date"> -->
-            <h4>Aujourd'hui:</h4>
-          <!-- </div> -->
-
           <div class="meteo-group-left">
-            <span class="today">
-            </span>
             <img src="{{weather.weather[0].icon | meteoicon}}" alt="" width="120" height="120">
             <h5 class="card-title">{{weather.weather[0].description | capitalize}}</h5>
           </div>
           <div class="meteo-group-right">
             <div class="card-body">
-              <h1>{{weather.main.temp | round}}°C </h1>
+              <div class="meteo-temps">
+                <h1>{{weather.main.temp | round}}°C </h1>
+              </div>
               <div class="card-text details">
                 <span>
                   <img src="assets/meteo/icons/icon-umberella.png" alt="">{{weather.main.humidity}}%</span>
@@ -80,19 +59,22 @@
                 <span>
                   <img src="assets/meteo/icons/icon-compass.png" alt="">{{weather.wind.deg | degwind}}</span>
               </div>
-              <span>
-                <button type="button" class="forecast btn btn-info" (click)=forecastToggle()>Prévisions</button>
-              </span>
             </div>
             <div *ngIf="showMap">
             </div>
           </div>
+        </div>
+        <div class="meteo-prevision">
+          <button type="button" class="forecast btn btn-info" (click)=forecastToggle()>Prévisions</button>
         </div>
       </div>
     </div>
     <div *ngIf="forecast">
       <app-meteo-details [weatherForecast]="weatherForecast"></app-meteo-details>
     </div>
+
+
+
     <div class="container-meteo-content" *ngIf="!weather">
       <div class="card meteo-group">
         <div class="meteo-group-left">
@@ -112,3 +94,22 @@
     </div>
   </div>
 </div>
+
+
+
+<!-- <some-element [ngClass]="{'first': true, 'second': true, 'third': false}">...</some-element> -->
+
+<!-- <i class="glyphicon glyphicon-bell" [ngClass]="cookieData.search_unread_count != 0 ? 'notification-icon': ' '"> -->
+
+
+<!-- <div *ngIf="!meteodetails; else elseBlock"></div> -->
+<!-- <ng-template #elseBlock></ng-template> -->
+
+<!-- <div *ngIf="meteoDetails;then content else other_content"></div>
+
+            <ng-template #content>
+              <i class="fas fa-angle-up"></i>
+            </ng-template>
+            <ng-template #other_content>
+              <i class="fas fa-angle-down"></i>
+            </ng-template> -->

@@ -11,7 +11,7 @@
 .container-meteo {
     margin: auto;
     text-align: center;
-    width: 50%;
+    width: 60%;
     margin-top: 100px;
 
 }
@@ -22,9 +22,14 @@
     background-color: #f7f7f7;   
     display: inline-grid;
     text-align: center;
-    width: 100%;
+    width: 50%;
     margin: auto;
     margin-bottom: 40px;
+}
+
+ .alert {
+    width: 50%;
+    margin: 10px auto;
 }
 
 .container-meteo-search button {
@@ -33,11 +38,12 @@
 }
 .container-meteo img {
     margin: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-.meteo-group {
-    /* width: 500px; */
+.meteo-group-card {
+    width: 80%;
+    margin: auto;
 }
 
 .location {
@@ -63,8 +69,15 @@
     display: inline-flex;
 }
 
-.meteo-date h1 {
-    text-align: center;
+.meteo-date {
+    /* text-align: center; */
+    margin: 10px 0 10px 0;
+}
+
+.meteo-temps h1 {
+    font-size: 60px;
+    margin-bottom: 50px;
+    color: dimgray
 }
 
 .meteo-group-right {
@@ -72,7 +85,12 @@
 }
 
 .meteo-group-left {
-    width: 40%
+    width: 50%
+}
+
+.meteo-prevision {
+    /* display: inline-block; */
+    margin-bottom: 20px;
 }
 
 .pays {
@@ -85,7 +103,7 @@
 .meteoExtend  .fa-angle-down, .meteoExtend .fa-angle-up  {
     width: 100%;
    color: #b3b3b3 ;
-   margin-right: -500px;
+   margin-right: -450px;
 }
 
 .meteoExtend .fa-angle-down:hover, .meteoExtend .fa-angle-up:hover {
