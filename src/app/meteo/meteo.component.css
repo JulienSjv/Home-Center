@@ -46,6 +46,11 @@
     margin: auto;
 }
 
+.meteo-group-card-loading {
+    width: 40%;
+    margin: auto;
+}
+
 .location {
     margin: 10px 40px 10px 40px;
 }
@@ -77,15 +82,24 @@
 .meteo-temps h1 {
     font-size: 60px;
     margin-bottom: 50px;
-    color: dimgray
+    color: #3e3e3e
 }
 
 .meteo-group-right {
-    width: 60%
+    width: 75%
+}
+
+.meteo-desc {
+    margin-left: 10px;
 }
 
 .meteo-group-left {
     width: 50%
+}
+
+.meteo-details {
+    display: flex;
+    margin-bottom: 50px;
 }
 
 .meteo-prevision {

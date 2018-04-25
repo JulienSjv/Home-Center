@@ -11,16 +11,16 @@
     <div *ngIf="error" class="alert alert-danger" role="alert">
       <strong>Erreur! </strong>Ville non trouvée!
     </div>
-    <div class="container-meteo-content" *ngIf="weather">
+    <div class="container-meteo-content" *ngIf="weatherForecast">
       <div class="card meteo-group-card">
         <div class="card-header">
           <div class="title">
-            <h3>{{weather.name}} </h3>
+            <h3>{{weatherForecast.city.name}} </h3>
           </div>
           <div class="meteo-info-container">
             <div *ngIf="meteoDetails" class="meteo-info-details">
               <div class="pays">Location:
-                <br> {{weather.sys.country | pays}}</div>
+                <br> {{weatherForecast.city.country | pays}}</div>
               <!-- <div class="espace"></div> -->
               <div class="location">
                 <app-map-modal [map]="map"></app-map-modal>
@@ -43,21 +43,24 @@
         </div>
         <div class="meteo-group">
           <div class="meteo-group-left">
-            <img src="{{weather.weather[0].icon | meteoicon}}" alt="" width="120" height="120">
-            <h5 class="card-title">{{weather.weather[0].description | capitalize}}</h5>
+            <img src="{{weatherForecast.list[0].weather[0].icon | meteoicon}}" alt="" width="120" height="120">
+            <h5 class="card-title meteo-desc">{{weatherForecast.list[0].weather[0].description | capitalize}}</h5>
           </div>
           <div class="meteo-group-right">
             <div class="card-body">
               <div class="meteo-temps">
-                <h1>{{weather.main.temp | round}}°C </h1>
+                <h1>{{weatherForecast.list[0].main.temp | round}}°C </h1>
               </div>
-              <div class="card-text details">
+              <div class="card-text meteo-details">
+                <div *ngFor="let temp of weatherForecast.list?.slice(0, 5)">
+                  <span >{{temp.dt_txt | date:'H'}}h <img src="{{temp.weather[0].icon | meteoicon}}" alt="" width="20" height="20"> {{temp.main.temp | round}}°C</span>
+                </div>
+                <!-- <span>
+                  <img src="assets/meteo/icons/icon-umberella.png" alt="">{{weatherForecast.list[0].main.humidity}}%</span>
                 <span>
-                  <img src="assets/meteo/icons/icon-umberella.png" alt="">{{weather.main.humidity}}%</span>
+                  <img src="assets/meteo/icons/icon-wind.png" alt="">{{weatherForecast.list[0].wind.speed | round}} km/h</span>
                 <span>
-                  <img src="assets/meteo/icons/icon-wind.png" alt="">{{weather.wind.speed | round}} km/h</span>
-                <span>
-                  <img src="assets/meteo/icons/icon-compass.png" alt="">{{weather.wind.deg | degwind}}</span>
+                  <img src="assets/meteo/icons/icon-compass.png" alt="">{{weatherForecast.list[0].wind.deg | degwind}}</span> -->
               </div>
             </div>
             <div *ngIf="showMap">
@@ -75,20 +78,13 @@
 
 
 
-    <div class="container-meteo-content" *ngIf="!weather">
-      <div class="card meteo-group">
-        <div class="meteo-group-left">
-          <h5 class="card-header">Chargement..</h5>
-          <h5 class="card-title"></h5>
-        </div>
-        <div class="meteo-group-right">
-          <div class="card-body">
-            <p>
-              <app-loader></app-loader>
-            </p>
-            <div class="card-text details">
-            </div>
-          </div>
+    <div class="container-meteo-content" *ngIf="!weatherForecast">
+      <div class="card meteo-group-card-loading">
+        <h5 class="card-header">Chargement..</h5>
+        <div class="card-body">
+          <p>
+            <app-loader></app-loader>
+          </p>
         </div>
       </div>
     </div>
