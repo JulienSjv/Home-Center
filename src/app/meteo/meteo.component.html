@@ -75,7 +75,7 @@
                 </td>
               </tr>
               <tr>
-                <td *ngFor="let temp of weatherForecast.list?.slice(0, 5)">{{temp.main.temp | round}}°C</td>
+                <td *ngFor="let temp of weatherForecast.list?.slice(1, 6)">{{temp.main.temp | round}}°C</td>
               </tr>
           </table>
 
