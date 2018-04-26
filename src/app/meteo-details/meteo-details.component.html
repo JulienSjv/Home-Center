@@ -1,9 +1,33 @@
 <div *ngIf="weatherForecast" class="days">
   <div class="row row-no-gutter">
-    <div *ngFor="let day of weatherForecast.list" class="col-md-3">
-      <div class="day">
-        <h4>{{day.dt_txt | date:'EEEE'}}</h4>
-      </div>
+    <!-- <div *ngFor="let day of weatherForecast.list?.slice(1, weatherForecast.list.lenght)" class="col-md-3"> -->
+    <div class="card-text day">
+      <table class="table table-sm">
+        <tbody>
+          <tr>
+            <td *ngFor="let temp of weatherForecast.list?.slice(6, weatherForecast.list.lenght)">
+              <div *ngIf="nextDays(temp.dt_txt)">
+                {{temp.dt_txt | date:'EEEE' | frenchDays}}
+              </div>
+
+            </td>
+          </tr>
+          <tr>
+            <td *ngFor="let temp of weatherForecast.list?.slice(6, weatherForecast.list.lenght)">
+              <div *ngIf="nextDays(temp.dt_txt)">
+                <img src="{{temp.weather[0].icon | meteoicon}}" alt="" width="30" height="30">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td *ngFor="let temp of weatherForecast.list?.slice(6, weatherForecast.list.lenght)">
+              <div *ngIf="nextDays(temp.dt_txt)">
+                {{temp.main.temp | round}}°C
+
+              </div>
+            </td>
+          </tr>
+      </table>
     </div>
   </div>
 </div>

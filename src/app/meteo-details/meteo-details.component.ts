@@ -1,9 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
-
-import { Meteo } from '../meteo/meteo-model';
-import { MeteoService } from '../meteo.service';
 
 @Component({
   selector: 'app-meteo-details',
@@ -14,16 +9,24 @@ export class MeteoDetailsComponent implements OnInit {
 
   @Input() weatherForecast;
 
-  constructor(
-    private route: ActivatedRoute,
-    private meteoService: MeteoService,
-    private location: Location
-  ) { }
+  constructor( ) { }
 
 
   ngOnInit(): void {
+    // console.log(this.weatherForecast)
+    // this.today(this.weatherForecast.list[20].dt_txt)
     // this.getMeteo();
   }
+
+  nextDays(string) {
+    let now = new Date();
+    let date = new Date(string);
+    // console.log("    "+now.getDay());
+    // console.log(date.getHours())
+    if (date.getHours() == 12) {
+      return  true
+  }
+}
 
   // getMeteo(): void {
   //   const city = this.route.snapshot.paramMap.get('city');
@@ -31,9 +34,6 @@ export class MeteoDetailsComponent implements OnInit {
   //     .subscribe(meteo => this.meteo = meteo);
   // }
 
-  goBack(): void {
-    this.location.back();
-  }
 
 
 }

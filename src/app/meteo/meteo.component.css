@@ -46,6 +46,10 @@
     margin: auto;
 }
 
+.container-meteo-refresh button {
+    display: -webkit-box;
+ }
+
 .meteo-group-card-loading {
     width: 40%;
     margin: auto;
@@ -122,7 +126,6 @@
 }
 
 .meteoExtend  .fa-angle-down, .meteoExtend .fa-angle-up  {
-    width: 100%;
    color: #b3b3b3 ;
    margin-right: -450px;
 }

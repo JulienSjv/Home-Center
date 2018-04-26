@@ -74,6 +74,7 @@ import { DegwindPipe } from './pipe/degwind.pipe';
 import { AsyncPipe } from '@angular/common';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { PaysPipe } from './pipe/pays.pipe';
+import { FrenchDaysPipe } from './pipe/french-days.pipe';
 
 
 
@@ -110,7 +111,8 @@ import { PaysPipe } from './pipe/pays.pipe';
     FooterComponent,
     FeedComponent,
     FeedConfigModalComponent,
-    PanelComponent
+    PanelComponent,
+    FrenchDaysPipe
   ],
   imports: [
     BrowserModule,

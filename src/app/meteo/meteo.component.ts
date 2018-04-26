@@ -81,7 +81,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
     this._timeZoneServie.getTimeZone(lat, lng).subscribe(
       res => {
         this.timeZone = res;
-        console.log(res);
+        // console.log(res);
       },
       error => {
         this.timeZone = null;
@@ -92,7 +92,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
   getMeteo(): void {
     this._meteoService.getCoords()
       .subscribe(res => {
-         console.log(res)
+        //  console.log(res)
         // this.getWeatherCity(res.city)
         this.getWeatherForecastCity(res.city)
         
@@ -132,7 +132,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
   setData(res){
     // this.weather = res;
     this.weatherForecast = res
-    console.log(new Date())
+    // console.log(new Date())
 
     this.getTimeZone(res.city.coord.lat, res.city.coord.lon);
     this.map = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlGoogleMap + res.city.coord.lat + ',' + res.city.coord.lon + '&key=' + this.token);

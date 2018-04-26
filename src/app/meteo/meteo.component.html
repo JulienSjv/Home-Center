@@ -12,8 +12,14 @@
       <strong>Erreur! </strong>Ville non trouvée!
     </div>
     <div class="container-meteo-content" *ngIf="weatherForecast">
+
       <div class="card meteo-group-card">
         <div class="card-header">
+          <div class="container-meteo-refresh">
+            <button type="button" class="btn btn-outline-info" (click)="getWeatherForecastCity(weatherForecast.city.name)">
+              <i class="fas fa-sync"></i>
+            </button>
+          </div>
           <div class="title">
             <h3>{{weatherForecast.city.name}} </h3>
           </div>
@@ -87,14 +93,14 @@
                 <img src="assets/meteo/icons/icon-compass.png" alt="">{{weatherForecast.list[0].wind.deg | degwind}}</span> -->
         </div>
         <div *ngIf="forecast">
-            <app-meteo-details [weatherForecast]="weatherForecast"></app-meteo-details>
-          </div>
+          <app-meteo-details [weatherForecast]="weatherForecast"></app-meteo-details>
+        </div>
         <div class="meteo-prevision">
           <button type="button" class="forecast btn btn-info" (click)=forecastToggle()>Prévisions</button>
         </div>
       </div>
     </div>
-    
+
     <div class="container-meteo-content" *ngIf="!weatherForecast">
       <div class="card meteo-group-card-loading">
         <h5 class="card-header">Chargement..</h5>

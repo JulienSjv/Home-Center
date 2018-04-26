@@ -45,6 +45,16 @@ export class Constants {
     '50n': 'assets/meteo/bg/mist.jpg',
   };
 
+  static readonly FRENCH_DAYS = {
+    'Monday': 'Lundi',
+    'Tuesday': 'Mardi',
+    'Wednesday': 'Mercredi',
+    'Thursday': 'Jeudi',
+    'Friday': 'Vendredi',
+    'Saturday': 'Samedi',
+    'Sunday': 'Dimanche'
+  }
+
   static readonly LIST_ICONS = {
     '1': '0'
   }
