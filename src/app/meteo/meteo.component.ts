@@ -135,7 +135,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
     console.log(new Date())
 
     this.getTimeZone(res.city.coord.lat, res.city.coord.lon);
-    this.map = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlGoogleMap + res.lat + ',' + res.lon + '&key=' + this.token);
+    this.map = this.sanitizer.bypassSecurityTrustResourceUrl(this.urlGoogleMap + res.city.coord.lat + ',' + res.city.coord.lon + '&key=' + this.token);
     document.querySelector('body').style.backgroundImage = "url(" + this._meteoService.getBgMeteo(this.weatherForecast.list[0].weather[0].icon) + ")";
     document.querySelector('body').style.backgroundRepeat ="no-repeat";
     document.querySelector('body').style.backgroundSize = "cover";

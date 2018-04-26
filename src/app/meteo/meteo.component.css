@@ -36,7 +36,7 @@
     margin: auto;
     width: 40%;
 }
-.container-meteo img {
+.container-meteo .main-img {
     margin: 10px;
     margin-bottom: 20px;
 }
@@ -79,18 +79,24 @@
     margin: 10px 0 10px 0;
 }
 
+.meteo-temps {
+    margin-top: -10px;
+}
+
 .meteo-temps h1 {
-    font-size: 60px;
-    margin-bottom: 50px;
+    font-size: 70px;
+    margin-bottom: 30px;
     color: #3e3e3e
 }
 
 .meteo-group-right {
-    width: 75%
+    width: 50%;
+    margin-top: 20px;
 }
 
 .meteo-desc {
-    margin-left: 10px;
+    margin-top: -30px;
+    margin-bottom: 30px;
 }
 
 .meteo-group-left {
@@ -99,12 +105,13 @@
 
 .meteo-details {
     display: flex;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 
 .meteo-prevision {
     /* display: inline-block; */
     margin-bottom: 20px;
+    margin-top: -30px;
 }
 
 .pays {

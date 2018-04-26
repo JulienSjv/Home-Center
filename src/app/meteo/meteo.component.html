@@ -43,41 +43,58 @@
         </div>
         <div class="meteo-group">
           <div class="meteo-group-left">
-            <img src="{{weatherForecast.list[0].weather[0].icon | meteoicon}}" alt="" width="120" height="120">
-            <h5 class="card-title meteo-desc">{{weatherForecast.list[0].weather[0].description | capitalize}}</h5>
+            <img class="main-img" src="{{weatherForecast.list[0].weather[0].icon | meteoicon}}" alt="" width="120" height="120">
           </div>
           <div class="meteo-group-right">
             <div class="card-body">
               <div class="meteo-temps">
                 <h1>{{weatherForecast.list[0].main.temp | round}}°C </h1>
               </div>
-              <div class="card-text meteo-details">
-                <div *ngFor="let temp of weatherForecast.list?.slice(0, 5)">
-                  <span >{{temp.dt_txt | date:'H'}}h <img src="{{temp.weather[0].icon | meteoicon}}" alt="" width="20" height="20"> {{temp.main.temp | round}}°C</span>
-                </div>
-                <!-- <span>
-                  <img src="assets/meteo/icons/icon-umberella.png" alt="">{{weatherForecast.list[0].main.humidity}}%</span>
-                <span>
-                  <img src="assets/meteo/icons/icon-wind.png" alt="">{{weatherForecast.list[0].wind.speed | round}} km/h</span>
-                <span>
-                  <img src="assets/meteo/icons/icon-compass.png" alt="">{{weatherForecast.list[0].wind.deg | degwind}}</span> -->
-              </div>
+
             </div>
             <div *ngIf="showMap">
             </div>
           </div>
         </div>
+        <h5 class="card-title meteo-desc">{{weatherForecast.list[0].weather[0].description | capitalize}}</h5>
+
+        <div class="card-text meteo-details">
+          <!-- <div *ngFor="let temp of weatherForecast.list?.slice(0, 5)">
+                <span>{{temp.dt_txt | date:'H'}}h
+                  <img src="{{temp.weather[0].icon | meteoicon}}" alt="" width="20" height="20"> {{temp.main.temp | round}}°C</span>
+              </div> -->
+
+          <table class="table table-sm">
+            <tbody>
+              <tr>
+                <td *ngFor="let temp of weatherForecast.list?.slice(1, 6)">{{temp.dt_txt | date:'H'}}h</td>
+              </tr>
+              <tr>
+                <td *ngFor="let temp of weatherForecast.list?.slice(1, 6)">
+                  <img src="{{temp.weather[0].icon | meteoicon}}" alt="" width="30" height="30">
+                </td>
+              </tr>
+              <tr>
+                <td *ngFor="let temp of weatherForecast.list?.slice(0, 5)">{{temp.main.temp | round}}°C</td>
+              </tr>
+          </table>
+
+          <!-- <span>
+                <img src="assets/meteo/icons/icon-umberella.png" alt="">{{weatherForecast.list[0].main.humidity}}%</span>
+              <span>
+                <img src="assets/meteo/icons/icon-wind.png" alt="">{{weatherForecast.list[0].wind.speed | round}} km/h</span>
+              <span>
+                <img src="assets/meteo/icons/icon-compass.png" alt="">{{weatherForecast.list[0].wind.deg | degwind}}</span> -->
+        </div>
+        <div *ngIf="forecast">
+            <app-meteo-details [weatherForecast]="weatherForecast"></app-meteo-details>
+          </div>
         <div class="meteo-prevision">
           <button type="button" class="forecast btn btn-info" (click)=forecastToggle()>Prévisions</button>
         </div>
       </div>
     </div>
-    <div *ngIf="forecast">
-      <app-meteo-details [weatherForecast]="weatherForecast"></app-meteo-details>
-    </div>
-
-
-
+    
     <div class="container-meteo-content" *ngIf="!weatherForecast">
       <div class="card meteo-group-card-loading">
         <h5 class="card-header">Chargement..</h5>
