@@ -37,12 +37,12 @@
     width: 40%;
 }
 .container-meteo .main-img {
-    margin: 10px;
-    margin-bottom: 20px;
+    /* margin: 10px; */
+    /* margin-bottom: 20px; */
 }
 
 .meteo-group-card {
-    width: 80%;
+    width: 100%;
     margin: auto;
 }
 
@@ -95,11 +95,11 @@
 
 .meteo-group-right {
     width: 50%;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .meteo-desc {
-    margin-top: -30px;
+    margin-top: -20px;
     margin-bottom: 30px;
 }
 
@@ -127,7 +127,7 @@
 
 .meteoExtend  .fa-angle-down, .meteoExtend .fa-angle-up  {
    color: #b3b3b3 ;
-   margin-right: -450px;
+   margin-right: -550px;
 }
 
 .meteoExtend .fa-angle-down:hover, .meteoExtend .fa-angle-up:hover {
