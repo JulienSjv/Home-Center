@@ -7,7 +7,7 @@ import { HttpModule } from '@angular/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap';
 import { AngularDraggableModule } from 'angular2-draggable';
-import { MovableModule } from 'ng2-movable/index';
+import { MovableModule } from 'ng2-movable';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { DndModule } from 'ng2-dnd';
 import { ClickOutsideModule } from 'ng-click-outside';
@@ -15,7 +15,7 @@ import { FileDropModule } from 'ngx-file-drop';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { AlertModule } from 'ngx-bootstrap';
 import { ChatModule } from './chat/chat.module';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -44,6 +44,7 @@ import { PanelComponent } from './panel/panel.component';
 
 //utils
 import { MessagesComponent } from './messages/messages.component';
+import { TestComponent } from './test/test.component';
 
 
 //meteo
@@ -75,6 +76,8 @@ import { AsyncPipe } from '@angular/common';
 import { TimeAgoPipe } from 'time-ago-pipe';
 import { PaysPipe } from './pipe/pays.pipe';
 import { FrenchDaysPipe } from './pipe/french-days.pipe';
+import { ThemoviedbService } from './themoviedb.service';
+import { FilmService } from './film.service';
 
 
 
@@ -112,7 +115,8 @@ import { FrenchDaysPipe } from './pipe/french-days.pipe';
     FeedComponent,
     FeedConfigModalComponent,
     PanelComponent,
-    FrenchDaysPipe
+    FrenchDaysPipe,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -137,7 +141,7 @@ import { FrenchDaysPipe } from './pipe/french-days.pipe';
    // NgbModule.forRoot(),
     CarouselModule.forRoot()
   ],
-  providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService, TimeZoneService, NexusService],
+  providers: [MeteoService, MessageService, FeedService, ChatService, SpeechSynthesisService, TimeZoneService, NexusService, ThemoviedbService, FilmService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

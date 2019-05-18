@@ -43,7 +43,7 @@ export class MeteoComponent implements OnInit, AfterViewInit, OnDestroy {
       this.getMeteo()
     }
     else {
-      this.getWeatherCity('Montpellier');
+      this.getWeatherCity('Cournonterral');
     }
 
   }

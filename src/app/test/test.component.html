@@ -1,0 +1,51 @@
+<div class="test-container">
+  <div>
+    <div class="container-test-search">
+      <input (keyup.enter)="getMovie(movieName)" [(ngModel)]=movieName class="form-control mr-sm-2" type="search" placeholder="Film..?"
+        aria-label="Search" required>
+      <button class="btn btn-outline-success my-2 " (click)=getMovie(movieName)>Chercher</button>
+    </div>
+    <div *ngIf="movies">
+      <div *ngFor=" let genre of movies.genres">
+        {{genre.name}}
+      </div>
+
+    </div>
+  </div>
+  <div class="test-group">
+    <div class="test-films">
+      <div>
+        <button class="btn btn-outline-success my-2 " (click)=getFilms()>films</button>
+        <button class="btn btn-outline-success my-2 " (click)=orderCat()>OrderCat</button>
+        <button class="btn btn-outline-success my-2 " (click)=saveFilms()>save</button>
+      </div>
+      <input #myInput2 [(ngModel)]="name2" (input)="filterItem2(myInput2.value)"class="form-control mr-sm-2">
+
+      <ul>
+        <div *ngFor="let film of films">
+          <li *ngIf="film.genre">
+            <input [(ngModel)]=film.name class="form-control mr-sm-2" type="search"> / {{ film.genre }}
+            <button class="btn btn-outline-success my-2 " (click)=getGenresSolo(film.name)>load genre</button> 
+          </li>
+        </div>
+      </ul>
+    </div>
+    <div class="test-cat">
+      <button class="btn btn-outline-success my-2 " (click)=countCat()>loadCat</button>
+      <div *ngIf="categories">
+        catégories: {{categories.length -1}}
+        <div *ngFor="let cat of categories" (click)=searchCat(cat.name)>
+          {{cat.name}} : {{cat.nb}}
+        </div>
+        <span><br>{{ total }}</span>
+      </div>
+    </div>
+    <div class="test-cat-search">
+        <input #myInput [(ngModel)]="name" (input)="filterItem(myInput.value)" (onchange)="filterItem(myInput.value)" class="form-control mr-sm-2">
+
+        <div *ngFor="let item of filteredItems">
+           {{item.name}} /{{item.genre}}
+        </div>
+       
+    </div>
+  </div>

@@ -45,7 +45,7 @@
           <!-- {{weather.main.temp | round}}°C -->
         </div>
         <div class="meteo-date">
-          <h4>Aujourd'hui</h4>
+          <h4>Aujourd'hui {{weatherForecast.list[0].dt_txt | date:'EEEE' | frenchDays}} </h4>
         </div>
         <div class="meteo-group">
           <div class="meteo-group-left">

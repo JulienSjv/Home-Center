@@ -4,23 +4,27 @@ import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 
 @Injectable()
-export class TimeZoneService {
+export class ThemoviedbService {
 
-  readonly token = environment.timezone.apiKey;
-  private country: string;
-  private city: string;
-  private apiTimeZone: string = 'http://api.timezonedb.com/v2/get-time-zone?key=' + this.token + '&format=json&by=position&';
+  readonly token = environment.themoviedb.apiKey;
+  private apiMovie: string = 'https://api.themoviedb.org/3/search/movie?api_key=' + this.token + '&language=fr&query=';
 
   constructor(
     private http: Http
   ) { }
 
-  getTimeZone(lat: string, lng: string): Observable<any> {
-    // console.log(this.apiTimeZone + city)
-    return this.http.get(this.apiTimeZone + 'lat=' + lat + '&lng=' + lng)
+  getMovie(movie: string): Observable<any> {
+    return this.http.get(this.apiMovie + movie)
       .map(res => res.json())
       .catch(this.handleError);
   }
+
+  getMovieDetails(movie: string): Observable<any> {
+    return this.http.get('https://api.themoviedb.org/3/movie/'+ movie +'?api_key=' + this.token + '&language=fr&append_to_response=videos')
+      .map(res => res.json())
+      .catch(this.handleError);
+  }
+
 
   private handleError(error: any) {
     // In a real world app, we might use a remote logging infrastructure

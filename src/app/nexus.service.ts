@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class NexusService {
 
-  private urlSofts: string = 'http://localhost:8080/softs'
-  private urlCateories: string = 'http://localhost:8080/categories'
+  private urlSofts: string = 'http://localhost:8099/nexus/softs'
+  private urlCateories: string = 'http://localhost:8099/nexus/categories'
 
 
   constructor(

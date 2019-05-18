@@ -5,21 +5,21 @@
       <table class="table table-sm">
         <tbody>
           <tr>
-            <td *ngFor="let temp of weatherForecast.list?.slice(6, weatherForecast.list.lenght)">
+            <td *ngFor="let temp of weatherForecast.list?.slice(0, weatherForecast.list.lenght)">
               <div *ngIf="nextDays(temp.dt_txt)">
                 <h4>{{temp.dt_txt | date:'EEEE' | frenchDays}}</h4>
               </div>
             </td>
           </tr>
           <tr>
-            <td *ngFor="let temp of weatherForecast.list?.slice(6, weatherForecast.list.lenght)">
+            <td *ngFor="let temp of weatherForecast.list?.slice(0, weatherForecast.list.lenght)">
               <div *ngIf="nextDays(temp.dt_txt)">
                 <img src="{{temp.weather[0].icon | meteoicon}}" alt="" width="50" height="50">
               </div>
             </td>
           </tr>
           <tr>
-            <td *ngFor="let temp of weatherForecast.list?.slice(6, weatherForecast.list.lenght)">
+            <td *ngFor="let temp of weatherForecast.list?.slice(0, weatherForecast.list.lenght)">
               <div *ngIf="nextDays(temp.dt_txt)">
                 <h5>{{temp.main.temp | round}}°C</h5>
 

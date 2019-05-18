@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs';
 import { Feed } from './model/feed';
 
 @Injectable()
 export class FeedService {
 
   private rssToJsonServiceBaseUrl: string = 'https://rss2json.com/api.json?rss_url=';
-  private urlFeeds: string = 'http://localhost:8080/feeds'
+  private urlFeeds: string = 'http://localhost:8099/nexus/feeds'
 
   constructor(
     private http: Http

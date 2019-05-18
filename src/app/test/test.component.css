@@ -1,0 +1,26 @@
+.test-container {
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.test-group {
+    margin: 10px;
+    display: inline-flex;
+}
+
+.test-films {
+    height: 800px;
+    width: 500px;
+    overflow: scroll;
+}
+
+.test-cat {
+    margin-left: 50px;
+    width: 250px;
+}
+
+.test-cat-search {
+    height: 800px;
+    width: 800px;
+    overflow: scroll;
+}

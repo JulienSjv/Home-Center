@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { FeedServiceService } from './feed-service.service';
+import { FeedService } from './feed-service.service';
 
 describe('FeedServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [FeedServiceService]
+      providers: [FeedService]
     });
   });
 
-  it('should be created', inject([FeedServiceService], (service: FeedServiceService) => {
+  it('should be created', inject([FeedService], (service: FeedService) => {
     expect(service).toBeTruthy();
   }));
 });

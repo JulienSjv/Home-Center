@@ -6,7 +6,7 @@ import { environment } from '../environments/environment';
 
 import { Observable } from 'rxjs/Observable';
 
-import 'rxjs/Rx';
+import 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/catch';;
@@ -25,7 +25,7 @@ export class MeteoService {
 
   constructor(private http: Http,
     private messageService: MessageService) {
-    this.urlGetCity = 'http://ip-api.com/json';
+    this.urlGetCity = 'http://www.ip-api.com/json'; 
     this.meteoUrlCity = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.token + '&units=metric&lang=fr&q=';  // URL to web api
     this.urlLatLong = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + this.token + '&units=metric&lang=fr&';
     this.meteoUrlForcastCity = 'http://api.openweathermap.org/data/2.5/forecast?APPID=' + this.token + '&units=metric&lang=fr&q=';
